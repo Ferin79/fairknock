@@ -7,7 +7,7 @@
   "database": "fairknock",
   "synchronize": true,
   "logging": true,
-  "entities": ["dist/**/*.model.js"],
+  "entities": ["dist/**/*/model.js"],
   "migrations": ["dist/migration/**/*.migration.js"],
   "subscribers": ["dist/subscriber/**/*.subscriber.js"]
 }
