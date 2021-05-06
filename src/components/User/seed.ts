@@ -5,25 +5,17 @@ import { User } from "./model";
 export const seedUser = async () => {
   const roles = await Role.find();
 
-  await User.create({
-    firstName: "SYSTEM",
-    lastName: "GENERATED",
-    email: "system1@gmail.com",
-    phoneNumber: "9106054635",
-    password: "1234567890",
-    profileUrl: faker.image.imageUrl(),
-    role: roles[0],
-  }).save({ reload: false });
-
-  await User.create({
-    firstName: "SYSTEM",
-    lastName: "GENERATED",
-    email: "system2@gmail.com",
-    phoneNumber: "9106054636",
-    password: "1234567890",
-    profileUrl: faker.image.imageUrl(),
-    role: roles[1],
-  }).save({ reload: false });
+  for (let i = 0; i < 3; i++) {
+    await User.create({
+      firstName: "SYSTEM",
+      lastName: "GENERATED",
+      email: `system${i + 1}@gmail.com`,
+      phoneNumber: `9106054636${i + 1}`,
+      password: "1234567890",
+      profileUrl: faker.image.imageUrl(),
+      role: roles[i],
+    }).save({ reload: false });
+  }
 
   for (let i = 0; i < 5; i++) {
     await User.create({
