@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix \"./src/**/*.{js,ts,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,ts,json,md}\""
+    "format": "prettier --write \"./src/**/*.{js,ts,json,md}\"",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -40,11 +41,8 @@
     ],
     "src/**/*.{js,ts,json,md}": [
       "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx lint-staged"
-    }
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,ts,json,md}": "prettier --write"
   }
 }
