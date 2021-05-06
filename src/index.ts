@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import { createConnection } from "typeorm";
 import { logger } from "./configs/Logger";
+import { handleErrors } from "./middlewares/handleErrors";
 import routes from "./routes";
 
 dotenv.config();
@@ -12,6 +13,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
+app.use(handleErrors);
 
 createConnection()
   .then(() => {
