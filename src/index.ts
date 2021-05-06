@@ -1,3 +1,1 @@
-console.log('Hello Word');
-
-console.log('Test')
+console.log('hello   work')
