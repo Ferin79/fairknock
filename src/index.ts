@@ -1,10 +1,11 @@
 import * as dotenv from "dotenv";
 import express from "express";
+import path from "path";
 import { createConnection } from "typeorm";
 import { pagination } from "typeorm-pagination";
 import { logger } from "./configs/Logger";
 import { handleErrors } from "./middlewares/handleErrors";
-import routes from "./service/routes";
+import routes from "./services/routes";
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -13,6 +14,8 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.set("views", path.join(__dirname, "./templates"));
+app.set("view engine", "ejs");
 app.use(pagination);
 app.use(routes);
 app.use(handleErrors);

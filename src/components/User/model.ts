@@ -1,6 +1,6 @@
 import { hash } from "bcryptjs";
 import { Exclude } from "class-transformer";
-import { IsEmail, IsNotEmpty, IsString, Min } from "class-validator";
+import { IsEmail, IsNotEmpty, IsString, Length } from "class-validator";
 import {
     BaseEntity,
     BeforeInsert,
@@ -41,14 +41,14 @@ export class User extends BaseEntity {
   @IsNotEmpty()
   @IsString()
   @IsNotBlank()
-  @Min(10)
+  @Length(10, 10)
   @Column({ unique: true })
   phoneNumber: string;
 
   @IsNotEmpty()
   @IsString()
   @IsNotBlank()
-  @Min(8)
+  @Length(8, 20)
   @Exclude()
   @Column()
   password: string;

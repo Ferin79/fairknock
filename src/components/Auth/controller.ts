@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { compare } from "bcryptjs";
 import { classToPlain } from "class-transformer";
 import { validate } from "class-validator";
 import { NextFunction, Request, Response } from "express";
+import jwt from "jsonwebtoken";
 import { BadRequest } from "./../../errors/BadRequest";
 import { InputError } from "./../../errors/InputError";
 import { NotFound } from "./../../errors/NotFound";
@@ -9,6 +11,7 @@ import {
     generateAccessToken,
     generateRefreshToken
 } from "./../../utils/generateToken";
+import { sendConfirmationEmail } from "./../../utils/sendEmails";
 import { toMapErrors } from "./../../utils/toMapErrors";
 import { Role } from "./../Role/model";
 import { User } from "./../User/model";
@@ -94,7 +97,7 @@ export const Register = async (
     user.email = req.body.email;
     user.phoneNumber = req.body.phoneNumber;
     user.password = req.body.password;
-    user.profileUrl = req.body.profileUrl;
+    user.profileUrl = req.body.profileUrl || "";
     user.role = role;
 
     const errors = await validate(user);
@@ -105,6 +108,7 @@ export const Register = async (
     }
 
     await user.save();
+    sendConfirmationEmail(user);
 
     const newUser = <User>classToPlain(user);
 
@@ -112,6 +116,40 @@ export const Register = async (
       success: true,
       user: newUser,
     });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const Confirm = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const token = req.params.token;
+
+    if (!token.trim().length) {
+      return res.render("error");
+    }
+
+    let payload: { id: number | null } = { id: null };
+    try {
+      payload = (await jwt.verify(
+        token,
+        process.env.CONFIRM_EMAIL_SECRET!
+      )) as { id: number | null };
+    } catch (error) {
+      return res.render("error");
+    }
+
+    if (payload.id) {
+      await User.update({ id: payload.id }, { isEmailConfirmed: true });
+    } else {
+      return res.render("error");
+    }
+
+    res.render("successfull");
   } catch (error) {
     return next(error);
   }
