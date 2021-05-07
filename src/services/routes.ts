@@ -10,6 +10,13 @@ router.use("/role", RoleRouter);
 router.use("/user", UserRouter);
 router.use("/auth", AuthRouter);
 
+router.get("/healthCheck", (_req: Request, res: Response) => {
+  res.status(200).json({
+    success: true,
+    message: "API IS WORKING",
+  });
+});
+
 router.use("*", (req: Request, _res: Response, next: NextFunction) => {
   next(new NotFound("API", req.originalUrl));
 });
