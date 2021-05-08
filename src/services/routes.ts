@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
+import PropertyTypeRouter from "../components/PropertyType/routes";
 import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
 import UserRouter from "../components/User/routes";
@@ -11,6 +12,7 @@ router.use("/role", RoleRouter);
 router.use("/user", UserRouter);
 router.use("/auth", AuthRouter);
 router.use("/state", StateRouter);
+router.use("/propertyType", PropertyTypeRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({
