@@ -1,0 +1,35 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { NextFunction, Response } from "express";
+import jwt from "jsonwebtoken";
+import { Forbidden } from "./../errors/Forbidden";
+import { AuthRequest } from "./../types/AuthRequest";
+import { TokenType } from "./../types/TokenType";
+
+export const isAuth = async (
+  req: AuthRequest,
+  _res: Response,
+  next: NextFunction
+) => {
+  try {
+    const header = req.headers["authorization"];
+    if (!header) {
+      throw new Forbidden();
+    }
+
+    const token = header.split(" ")[1];
+    if (!token.trim().length) {
+      throw new Forbidden();
+    }
+
+    const isValid = jwt.verify(
+      token,
+      process.env.ACCESS_TOKEN_SECRET!
+    ) as TokenType;
+
+    req.userId = isValid.id;
+
+    next();
+  } catch (error) {
+    return next(error);
+  }
+};

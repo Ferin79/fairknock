@@ -7,6 +7,7 @@ import jwt from "jsonwebtoken";
 import { BadRequest } from "./../../errors/BadRequest";
 import { InputError } from "./../../errors/InputError";
 import { NotFound } from "./../../errors/NotFound";
+import { TokenType } from "./../../types/TokenType";
 import {
     generateAccessToken,
     generateRefreshToken
@@ -121,11 +122,7 @@ export const Register = async (
   }
 };
 
-export const Confirm = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const Confirm = async (req: Request, res: Response) => {
   try {
     const token = req.params.token;
 
@@ -133,15 +130,10 @@ export const Confirm = async (
       return res.render("error");
     }
 
-    let payload: { id: number | null } = { id: null };
-    try {
-      payload = (await jwt.verify(
-        token,
-        process.env.CONFIRM_EMAIL_SECRET!
-      )) as { id: number | null };
-    } catch (error) {
-      return res.render("error");
-    }
+    const payload = (await jwt.verify(
+      token,
+      process.env.CONFIRM_EMAIL_SECRET!
+    )) as TokenType;
 
     if (payload.id) {
       await User.update({ id: payload.id }, { isEmailConfirmed: true });
@@ -151,6 +143,6 @@ export const Confirm = async (
 
     res.render("successfull");
   } catch (error) {
-    return next(error);
+    return res.render("error");
   }
 };
