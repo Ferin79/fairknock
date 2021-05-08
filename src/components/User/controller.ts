@@ -1,9 +1,9 @@
-import { classToPlain } from "class-transformer";
 import { NextFunction, Request, Response } from "express";
 import { getConnection } from "typeorm";
 import { BadRequest } from "./../../errors/BadRequest";
 import { NotFound } from "./../../errors/NotFound";
 import { AuthRequest } from "./../../types/AuthRequest";
+import { formatUser } from "./../../utils/formatUser";
 import { RoleType } from "./../Role/enum";
 import { User } from "./model";
 
@@ -29,7 +29,7 @@ export const getAllUser = async (
     const newUsers: User[] = [];
     data.forEach((user: User) => {
       if (user.role.name !== RoleType.admin) {
-        newUsers.push(<User>classToPlain(user));
+        newUsers.push(formatUser(user));
       }
     });
 
@@ -61,11 +61,9 @@ export const MeUser = async (
       throw new NotFound("user", userId);
     }
 
-    const newUser = <User>classToPlain(user);
-
     res.status(200).json({
       success: true,
-      user: newUser,
+      user: formatUser(user),
     });
   } catch (error) {
     return next(error);
@@ -86,11 +84,54 @@ export const getUserById = async (
       throw new NotFound("user", id);
     }
 
-    const newUser = <User>classToPlain(user);
+    res.status(200).json({
+      success: true,
+      user: formatUser(user),
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const updateUser = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const userId = req.userId;
+
+    const firstName: string = req.body.firstName || "";
+    const lastName: string = req.body.lastName || "";
+    const profileUrl: string = req.body.profileUrl || "";
+    const fcmToken: string = req.body.fcmToken || "";
+
+    if (!userId) {
+      throw new BadRequest("user id cannot be empty");
+    }
+
+    const updateObj: Record<string, string> = {};
+
+    if (firstName.trim().length) {
+      updateObj["firstName"] = firstName;
+    }
+
+    if (lastName.trim().length) {
+      updateObj["lastName"] = lastName;
+    }
+
+    if (profileUrl.trim().length) {
+      updateObj["profileUrl"] = profileUrl;
+    }
+
+    if (fcmToken.trim().length) {
+      updateObj["fcmToken"] = fcmToken;
+    }
+
+    await User.update({ id: userId }, updateObj);
 
     res.status(200).json({
       success: true,
-      user: newUser,
     });
   } catch (error) {
     return next(error);
