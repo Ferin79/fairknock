@@ -1,6 +1,8 @@
 import { spawn } from "child_process";
 import { createConnection } from "typeorm";
+import { seedCountry } from "./../components/Country/seed";
 import { seedRole } from "./../components/Role/seed";
+import { seedState } from "./../components/State/seed";
 import { seedUser } from "./../components/User/seed";
 import { logger } from "./../configs/Logger";
 
@@ -23,6 +25,8 @@ const dropTables = async () => {
 const runMigration = () => {
   createConnection()
     .then(async () => {
+      await seedCountry();
+      await seedState();
       await seedRole();
       await seedUser();
     })
