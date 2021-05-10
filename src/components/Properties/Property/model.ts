@@ -12,11 +12,15 @@ import { State } from "../../State/model";
 import { User } from "../../User/model";
 import { PropertyOptionProperty } from "../PropertyOptionProperty/model";
 import { PropertyType } from "../PropertyType/model";
+import { PropertyMedia } from "./../PropertyMedia/model";
 
 @Entity()
 export class Property extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
+
+  @Column()
+  displayUrl: string;
 
   @Column()
   description: string;
@@ -26,6 +30,9 @@ export class Property extends BaseEntity {
 
   @Column({ nullable: true })
   addressLine2: string;
+
+  @Column({ nullable: true })
+  community: string;
 
   @Column()
   city: string;
@@ -53,6 +60,9 @@ export class Property extends BaseEntity {
     (propertyOptionProperty) => propertyOptionProperty.property
   )
   propertyOptionsConnection: PropertyOptionProperty[];
+
+  @OneToMany(() => PropertyMedia, (propertyMedia) => propertyMedia.property)
+  propertyMedia: PropertyMedia[];
 
   @CreateDateColumn()
   createdAt: Date;
