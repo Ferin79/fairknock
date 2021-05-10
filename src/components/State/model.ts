@@ -4,8 +4,10 @@ import {
     CreateDateColumn,
     Entity,
     ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn
 } from "typeorm";
+import { Property } from "../Properties/Property/model";
 import { Country } from "./../Country/model";
 
 @Entity()
@@ -21,6 +23,9 @@ export class State extends BaseEntity {
 
   @ManyToOne(() => Country, (country) => country)
   country: Country;
+
+  @OneToMany(() => Property, (property) => property.state)
+  properties: Property[];
 
   @CreateDateColumn()
   createdAt: Date;

@@ -1,7 +1,8 @@
 import { spawn } from "child_process";
 import { createConnection } from "typeorm";
+import { seedPropertyOptions } from "../components/Properties/PropertyOption/seed";
+import { seedPropertyType } from "../components/Properties/PropertyType/seed";
 import { seedCountry } from "./../components/Country/seed";
-import { seedPropertyType } from "./../components/PropertyType/seed";
 import { seedRole } from "./../components/Role/seed";
 import { seedState } from "./../components/State/seed";
 import { seedUser } from "./../components/User/seed";
@@ -31,6 +32,7 @@ const runMigration = () => {
       await seedRole();
       await seedUser();
       await seedPropertyType();
+      await seedPropertyOptions();
     })
     .catch((error: Error) => {
       logger.error(error);

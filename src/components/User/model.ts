@@ -8,10 +8,12 @@ import {
     CreateDateColumn,
     Entity,
     ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
 import { IsNotBlank } from "../../utils/IsNotBlank";
+import { Property } from "../Properties/Property/model";
 import { Role } from "./../Role/model";
 
 @Entity()
@@ -76,6 +78,9 @@ export class User extends BaseEntity {
 
   @ManyToOne(() => Role, (role) => role)
   role: Role;
+
+  @OneToMany(() => Property, (property) => property.user)
+  properties: Property[];
 
   @CreateDateColumn()
   createdAt: Date;

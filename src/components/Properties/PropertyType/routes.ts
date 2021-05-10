@@ -1,6 +1,6 @@
 import express from "express";
-import { isAdmin } from "./../../middlewares/isAdmin";
-import { isAuth } from "./../../middlewares/isAuth";
+import { isAdmin } from "../../../middlewares/isAdmin";
+import { isAuth } from "../../../middlewares/isAuth";
 import { createPropertyType, getAllPropertyType } from "./controller";
 
 const router = express.Router();

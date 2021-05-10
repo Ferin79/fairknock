@@ -1,6 +1,6 @@
 import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
-import PropertyTypeRouter from "../components/PropertyType/routes";
+import PropertyTypeRouter from "../components/Properties/PropertyType/routes";
 import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
 import UserRouter from "../components/User/routes";

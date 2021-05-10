@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { BadRequest } from "./../../errors/BadRequest";
+import { BadRequest } from "../../../errors/BadRequest";
 import { PropertyType } from "./model";
 
 export const getAllPropertyType = async (
