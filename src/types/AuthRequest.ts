@@ -1,2 +1,3 @@
 import { Request } from "express";
-export type AuthRequest = Request & { userId?: number };
+import { User } from "./../components/User/model";
+export type AuthRequest = Request & { user?: User };

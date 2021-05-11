@@ -49,7 +49,7 @@ export const MeUser = async (
   next: NextFunction
 ) => {
   try {
-    const userId = req.userId;
+    const userId = req.user?.id;
 
     if (!userId) {
       throw new BadRequest("user id cannot be empty");
@@ -99,7 +99,7 @@ export const updateUser = async (
   next: NextFunction
 ) => {
   try {
-    const userId = req.userId;
+    const userId = req.user?.id;
 
     const firstName: string = req.body.firstName || "";
     const lastName: string = req.body.lastName || "";

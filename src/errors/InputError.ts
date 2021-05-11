@@ -6,6 +6,6 @@ export class InputError extends Error {
     super();
     this.error = error;
     this.message = "Validation Error";
-    this.statusCode = 401;
+    this.statusCode = 400;
   }
 }

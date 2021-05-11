@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { NextFunction, Response } from "express";
 import jwt from "jsonwebtoken";
+import { User } from "./../components/User/model";
 import { Forbidden } from "./../errors/Forbidden";
 import { AuthRequest } from "./../types/AuthRequest";
 import { TokenType } from "./../types/TokenType";
+import { formatUser } from "./../utils/formatUser";
 
 export const isAuth = async (
   req: AuthRequest,
@@ -26,7 +28,13 @@ export const isAuth = async (
       process.env.ACCESS_TOKEN_SECRET!
     ) as TokenType;
 
-    req.userId = isValid.id;
+    const user = await User.findOne(isValid.id, { relations: ["role"] });
+
+    if (!user) {
+      throw new Forbidden();
+    }
+
+    req.user = formatUser(user);
 
     next();
   } catch (error) {

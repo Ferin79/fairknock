@@ -1,3 +1,4 @@
+import { IsNotEmpty, IsString, IsUrl } from "class-validator";
 import {
     BaseEntity,
     Column,
@@ -7,6 +8,7 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
+import { IsNotBlank } from "../../../utils/IsNotBlank";
 import { Property } from "./../Property/model";
 import { PropertyMediaType } from "./propertyMediaType";
 
@@ -15,9 +17,16 @@ export class PropertyMedia extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @IsNotBlank()
+  @IsString()
+  @IsNotEmpty()
   @Column({ type: "enum", enum: PropertyMediaType })
   mediaType: string;
 
+  @IsNotBlank()
+  @IsNotEmpty()
+  @IsString()
+  @IsUrl()
   @Column()
   url: string;
 

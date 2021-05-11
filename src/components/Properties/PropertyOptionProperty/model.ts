@@ -1,3 +1,4 @@
+import { IsNotEmpty, IsNumber, Min } from "class-validator";
 import {
     BaseEntity,
     Column,
@@ -14,19 +15,34 @@ export class PropertyOptionProperty extends BaseEntity {
   @PrimaryColumn()
   propertyId: number;
 
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(0)
   @PrimaryColumn()
   propertyOptionId: number;
 
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(1)
   @Column({ default: 1 })
   count: number;
 
-  @Column()
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(0)
+  @Column({ default: 0 })
   height: number;
 
-  @Column()
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(0)
+  @Column({ default: 0 })
   width: number;
 
-  @Column()
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(0)
+  @Column({ default: 0 })
   length: number;
 
   @ManyToOne(() => Property, (property) => property.propertyOptionsConnection, {

@@ -1,6 +1,5 @@
 import { NextFunction, Response } from "express";
 import { RoleType } from "./../components/Role/enum";
-import { User } from "./../components/User/model";
 import { Forbidden } from "./../errors/Forbidden";
 import { AuthRequest } from "./../types/AuthRequest";
 export const isAdmin = async (
@@ -9,12 +8,11 @@ export const isAdmin = async (
   next: NextFunction
 ) => {
   try {
-    const userId = req.userId;
-    if (!userId) {
+    const user = req.user;
+    if (!user) {
       throw new Forbidden();
     }
 
-    const user = await User.findOne(userId, { relations: ["role"] });
     if (!user) {
       throw new Forbidden();
     }
