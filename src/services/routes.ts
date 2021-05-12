@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
+import MediaUploaderRouter from "../components/MediaUploader/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
 import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
@@ -21,6 +22,7 @@ router.use("/propertyOption", PropertyOptionRouter);
 router.use("/propertyOptionConnection", PropertyOptionConnectionRouter);
 router.use("/propertyMedia", PropertyMediaRouter);
 router.use("/property", PropertyRouter);
+router.use("/media", MediaUploaderRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({
