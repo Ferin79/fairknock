@@ -76,3 +76,39 @@ export const createPropertyMedia = async (
     return next(error);
   }
 };
+
+export const deletePropertyMedia = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = req.user;
+
+    if (!user) {
+      throw new BadRequest("user cannot be empty");
+    }
+
+    const propertyId = req.body.propertyId || -1;
+    const data: number[] = req.body.data || [];
+
+    const property = await Property.findOne(propertyId);
+    if (!property) {
+      throw new NotFound("property", propertyId);
+    }
+
+    if (property.userId !== user.id) {
+      throw new Unathorized();
+    }
+
+    data.forEach((item) => {
+      PropertyMedia.delete(item);
+    });
+
+    res.status(200).json({
+      success: true,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};

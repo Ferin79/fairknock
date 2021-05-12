@@ -130,10 +130,10 @@ export const Confirm = async (req: Request, res: Response) => {
       return res.render("error");
     }
 
-    const payload = (await jwt.verify(
+    const payload = jwt.verify(
       token,
       process.env.CONFIRM_EMAIL_SECRET!
-    )) as TokenType;
+    ) as TokenType;
 
     if (payload.id) {
       await User.update({ id: payload.id }, { isEmailConfirmed: true });
