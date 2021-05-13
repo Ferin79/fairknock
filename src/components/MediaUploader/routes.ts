@@ -1,10 +1,18 @@
 import express from "express";
-import { upload } from "./../../middlewares/fileStorage";
-import { uploadMultipleImgs, uploadSingleImg } from "./controller";
+import { ImageUpload } from "./../../middlewares/fileStorage";
+import {
+    uploadMultipleImgs,
+    uploadMultipleVids,
+    uploadSingleImg,
+    uploadSingleVid
+} from "./controller";
 
 const router = express.Router();
 
-router.post("/single", upload.single("image"), uploadSingleImg);
-router.post("/multiple", upload.array("images"), uploadMultipleImgs);
+router.post("/image/single", ImageUpload.single("image"), uploadSingleImg);
+router.post("/image/multiple", ImageUpload.array("images"), uploadMultipleImgs);
+
+router.post("/video/single", ImageUpload.single("video"), uploadSingleVid);
+router.post("/video/multiple", ImageUpload.array("vidoes"), uploadMultipleVids);
 
 export default router;

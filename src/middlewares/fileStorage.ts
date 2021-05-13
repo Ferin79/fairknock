@@ -11,7 +11,7 @@ const s3 = new S3({
   secretAccessKey: process.env.AWS_SECRET_KEY,
 });
 
-export const upload = multer({
+export const ImageUpload = multer({
   storage: multerS3({
     s3: s3,
     bucket: process.env.AWS_BUCKET_NAME as string,
@@ -19,11 +19,40 @@ export const upload = multer({
       if (file.mimetype.split("/")[0] === "image") {
         cb(null, { fieldName: file.fieldname });
       } else {
-        cb(null, false);
+        cb(Error(`invalid file ${file.mimetype}`));
       }
     },
-    key: function (_req, __file, cb) {
-      cb(null, Date.now().toString() + ".jpg");
+
+    key: function (_req, file, cb) {
+      if (file.mimetype.split("/")[0] === "image") {
+        cb(null, "images/" + Date.now().toString() + ".jpg");
+      }
     },
   }),
+  limits: {
+    fileSize: 1024 * 1024 * 2,
+  },
+});
+
+export const VideoUpload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: process.env.AWS_BUCKET_NAME as string,
+    metadata: function (_req, file, cb) {
+      if (file.mimetype.split("/")[0] === "video") {
+        cb(null, { fieldName: file.fieldname });
+      } else {
+        cb(Error(`invalid file ${file.mimetype}`));
+      }
+    },
+
+    key: function (_req, file, cb) {
+      if (file.mimetype.split("/")[0] === "video") {
+        cb(null, "video/" + Date.now().toString() + ".mp4");
+      }
+    },
+  }),
+  limits: {
+    fileSize: 1024 * 1024 * 25,
+  },
 });
