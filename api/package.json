@@ -7,6 +7,7 @@
     "build": "npm-run-all build:*",
     "build:lib": "tsc",
     "build:asset": "copyfiles -f src/templates/**/* dist/templates",
+    "build:ormconfig": "copyfiles -f ormconfig.js dist/",
     "seed": "node  --max-old-space-size=8192 dist/services/seeder.js",
     "watch": "tsc -w",
     "dev": "nodemon dist/index.js",
