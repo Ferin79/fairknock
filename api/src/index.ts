@@ -28,9 +28,9 @@ createConnection()
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server 🚀 Started On PORT ${PORT}`);
-      console.log(process.env.AWS_REGION);
     });
   })
   .catch((error: Error) => {
+    console.log(error);
     logger.error(error);
   });
