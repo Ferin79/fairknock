@@ -1,0 +1,43 @@
+{
+  "name": "fairknock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix \"./src/**/*.{js,ts,json}\"",
+    "format": "prettier --write \"./src/**/*.{js,ts,json,md}\"",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ferin79/fairknock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ferin79/fairknock/issues"
+  },
+  "homepage": "https://github.com/Ferin79/fairknock#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.26.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "organize-imports-cli": "^0.8.0",
+    "prettier": "^2.3.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,ts,json,md}": [
+      "prettier --write",
+      "organize-imports-cli"
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.{js,ts,json,md}": "prettier --write"
+  }
+}
