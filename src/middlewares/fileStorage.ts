@@ -16,7 +16,11 @@ export const upload = multer({
     s3: s3,
     bucket: process.env.AWS_BUCKET_NAME as string,
     metadata: function (_req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
+      if (file.mimetype.split("/")[0] === "image") {
+        cb(null, { fieldName: file.fieldname });
+      } else {
+        cb(null, false);
+      }
     },
     key: function (_req, __file, cb) {
       cb(null, Date.now().toString() + ".jpg");
