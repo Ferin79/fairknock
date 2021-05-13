@@ -1,0 +1,7 @@
+node_modules
+dist
+.husky
+.git
+Dockerfile
+.env.example
+.env.test
