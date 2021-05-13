@@ -5,8 +5,6 @@ import multerS3 from "multer-s3";
 
 dotenv.config();
 
-console.log(process.env.AWS_REGION);
-
 const s3 = new S3({
   region: process.env.AWS_REGION,
   accessKeyId: process.env.AWS_ACCESS_KEY,
