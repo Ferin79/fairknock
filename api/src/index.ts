@@ -5,6 +5,7 @@ import path from "path";
 import { createConnection } from "typeorm";
 import { pagination } from "typeorm-pagination";
 import { logger } from "./configs/Logger";
+import { CreateMessageConn } from "./configs/MessageQueue";
 import { handleErrors } from "./middlewares/handleErrors";
 import { logRequest } from "./middlewares/logRequest";
 import routes from "./services/routes";
@@ -25,7 +26,8 @@ app.use(routes);
 app.use(handleErrors);
 
 createConnection()
-  .then(() => {
+  .then(async () => {
+    await CreateMessageConn();
     app.listen(PORT, () => {
       console.log(`Server 🚀 Started On PORT ${PORT}`);
     });

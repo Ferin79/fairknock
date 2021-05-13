@@ -1,4 +1,5 @@
 import { NextFunction, Response } from "express";
+import { publishToQueueImage } from "./../../configs/MessageQueue";
 import { AuthRequest } from "./../../types/AuthRequest";
 
 export const uploadSingleImg = async (
@@ -7,6 +8,8 @@ export const uploadSingleImg = async (
   next: NextFunction
 ) => {
   try {
+    publishToQueueImage(req.file);
+
     res.status(200).json({
       success: true,
       file: req.file,
@@ -22,6 +25,14 @@ export const uploadMultipleImgs = async (
   next: NextFunction
 ) => {
   try {
+    const files: Express.Multer.File[] = req.files as Express.Multer.File[];
+
+    if (files.length) {
+      files.forEach((item) => {
+        publishToQueueImage(item);
+      });
+    }
+
     res.status(200).json({
       success: true,
       files: req.files,

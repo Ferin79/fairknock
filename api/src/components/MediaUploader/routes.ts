@@ -1,5 +1,5 @@
 import express from "express";
-import { ImageUpload } from "./../../middlewares/fileStorage";
+import { ImageUpload, VideoUpload } from "./../../middlewares/fileStorage";
 import {
     uploadMultipleImgs,
     uploadMultipleVids,
@@ -12,7 +12,7 @@ const router = express.Router();
 router.post("/image/single", ImageUpload.single("image"), uploadSingleImg);
 router.post("/image/multiple", ImageUpload.array("images"), uploadMultipleImgs);
 
-router.post("/video/single", ImageUpload.single("video"), uploadSingleVid);
-router.post("/video/multiple", ImageUpload.array("vidoes"), uploadMultipleVids);
+router.post("/video/single", VideoUpload.single("video"), uploadSingleVid);
+router.post("/video/multiple", VideoUpload.array("vidoes"), uploadMultipleVids);
 
 export default router;
