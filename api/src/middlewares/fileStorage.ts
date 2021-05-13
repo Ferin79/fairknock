@@ -1,8 +1,8 @@
 import multerS3 from "multer-s3";
 import * as dotenv from "dotenv";
 import multer from "multer";
-import S3 from "aws-sdk/clients/s3";
 
+import S3 from "aws-sdk/clients/s3";
 dotenv.config();
 
 console.log(process.env.AWS_REGION);
