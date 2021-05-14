@@ -15,6 +15,15 @@ services:
     networks:
       - rabbitmq_go_net
 
+  web:
+    image: fairknock_job:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - rabbitmq
+    networks:
+      - rabbitmq_go_net
+
 networks:
   rabbitmq_go_net:
     driver: bridge

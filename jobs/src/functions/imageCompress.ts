@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { getReadStream, s3 } from "./../config/S3Reader";
+import { ObjectPromise, s3 } from "./../config/S3Reader";
 import imagemin from "imagemin";
-import imageminJpeg from "imagemin-mozjpeg";
+import imageminJpeg from "imagemin-jpegtran";
 
 type fileData = {
   key: string;
@@ -9,11 +9,11 @@ type fileData = {
 };
 
 export const minifyImages = async (receivedData: fileData) => {
-  const data = await getReadStream(receivedData.key);
+  const data = await ObjectPromise(receivedData.key);
 
   if (data.Body) {
     const compressedBuffer = await imagemin.buffer(data.Body as Buffer, {
-      plugins: [imageminJpeg({ quality: 50 })],
+      plugins: [imageminJpeg()],
     });
 
     await s3

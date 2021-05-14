@@ -14,18 +14,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "amqplib": "^0.7.1",
     "aws-sdk": "^2.906.0",
     "dotenv": "^9.0.2",
+    "ffmpeg": "^0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
     "imagemin": "7.0.1",
-    "imagemin-mozjpeg": "^9.0.0"
+    "imagemin-jpegtran": "^7.0.0"
   },
   "devDependencies": {
     "@types/amqplib": "^0.5.17",
     "@types/dotenv": "^8.2.0",
+    "@types/ffmpeg-installer__ffmpeg": "^1.0.0",
+    "@types/fluent-ffmpeg": "^2.1.17",
     "@types/graceful-fs": "^4.1.5",
     "@types/imagemin": "^7.0.0",
-    "@types/imagemin-mozjpeg": "^8.0.0",
+    "@types/imagemin-jpegtran": "^5.0.0",
     "@types/node": "^15.0.3",
     "@types/replace-ext": "^2.0.0",
     "nodemon": "^2.0.7",

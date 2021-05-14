@@ -10,8 +10,13 @@ export const s3 = new S3({
   secretAccessKey: process.env.AWS_SECRET_KEY,
 });
 
-export const getReadStream = (key: string) => {
+export const ObjectPromise = (key: string) => {
   return s3
     .getObject({ Key: key, Bucket: process.env.AWS_BUCKET_NAME! })
     .promise();
 };
+
+export const getReadStream = (key: string) =>
+  s3
+    .getObject({ Key: key, Bucket: process.env.AWS_BUCKET_NAME! })
+    .createReadStream();
