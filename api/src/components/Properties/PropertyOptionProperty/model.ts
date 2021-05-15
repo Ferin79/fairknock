@@ -45,6 +45,12 @@ export class PropertyOptionProperty extends BaseEntity {
   @Column({ default: 0 })
   length: number;
 
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(0)
+  @Column({ nullable: true })
+  squareFeet: number;
+
   @ManyToOne(() => Property, (property) => property.propertyOptionsConnection, {
     primary: true,
   })

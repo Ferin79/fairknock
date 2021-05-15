@@ -28,6 +28,7 @@ export const seedProperty = async () => {
     property.numberOfFloor = Math.floor(Math.random() * 10);
     property.state = allStates[Math.floor(Math.random() * allStates.length)];
     property.user = allUser[Math.floor(Math.random() * allUser.length)];
+    property.yearBuilt = 2021;
     property.propertyType =
       allPropertyType[Math.floor(Math.random() * allPropertyType.length)];
 
@@ -40,6 +41,7 @@ export const seedProperty = async () => {
       propertyOptionsConnection.height = Math.floor(Math.random() * 500);
       propertyOptionsConnection.width = Math.floor(Math.random() * 500);
       propertyOptionsConnection.length = Math.floor(Math.random() * 500);
+      propertyOptionsConnection.squareFeet = Math.floor(Math.random() * 1000);
       propertyOptionsConnection.propertyOptionId =
         allPropertyOption[
           Math.floor(Math.random() * allPropertyOption.length)

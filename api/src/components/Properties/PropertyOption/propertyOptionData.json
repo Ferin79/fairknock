@@ -6,7 +6,16 @@
     "name": "Kitchen"
   },
   {
-    "name": "Bathroom"
+    "name": "Bath"
+  },
+  {
+    "name": "1/2 Bath"
+  },
+  {
+    "name": "3/4 bath"
+  },
+  {
+    "name": "1/4 Bath"
   },
   {
     "name": "Garden"

@@ -80,6 +80,21 @@ export class Property extends BaseEntity {
   @Column({ default: 0 })
   numberOfFloor: number;
 
+  @IsNotEmpty()
+  @IsNumber()
+  @Max(2100)
+  @Min(1900)
+  @Column()
+  yearBuilt: number;
+
+  @IsNotEmpty()
+  @IsNumber()
+  @Column({ default: 0 })
+  HOADue: number;
+
+  @Column({ default: 0 })
+  LotSize: number;
+
   @Column({ default: true })
   isActive: boolean;
 

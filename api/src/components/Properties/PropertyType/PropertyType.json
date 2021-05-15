@@ -1,14 +1,26 @@
 [
   {
-    "name": "House"
-  },
-  {
-    "name": "Land"
+    "name": "Single Family"
   },
   {
     "name": "Condo"
   },
   {
     "name": "Town House"
+  },
+  {
+    "name": "Multi Family"
+  },
+  {
+    "name": "Apartment"
+  },
+  {
+    "name": "Mobile / Manufactured"
+  },
+  {
+    "name": "Coop Unit "
+  },
+  {
+    "name": "Vacant Land"
   }
 ]
