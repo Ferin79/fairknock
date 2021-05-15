@@ -6,6 +6,7 @@ import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
 import PropertyOptionConnectionRouter from "../components/Properties/PropertyOptionProperty/routes";
 import PropertyTypeRouter from "../components/Properties/PropertyType/routes";
+import QuestionTypeRouter from "../components/Questions/QuestionType/routes";
 import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
 import UserRouter from "../components/User/routes";
@@ -23,6 +24,7 @@ router.use("/propertyOptionConnection", PropertyOptionConnectionRouter);
 router.use("/propertyMedia", PropertyMediaRouter);
 router.use("/property", PropertyRouter);
 router.use("/media", MediaUploaderRouter);
+router.use("/questionType", QuestionTypeRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({

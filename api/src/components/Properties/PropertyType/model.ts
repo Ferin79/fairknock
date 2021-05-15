@@ -3,10 +3,12 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    ManyToMany,
     OneToMany,
     PrimaryGeneratedColumn
 } from "typeorm";
 import { Property } from "../Property/model";
+import { Question } from "./../../Questions/Question/model";
 
 @Entity()
 export class PropertyType extends BaseEntity {
@@ -18,6 +20,9 @@ export class PropertyType extends BaseEntity {
 
   @OneToMany(() => Property, (property) => property.propertyType)
   properties: Property[];
+
+  @ManyToMany(() => Question, (question) => question.propertyTypes)
+  questions: Question[];
 
   @Column({ nullable: true })
   description: string;

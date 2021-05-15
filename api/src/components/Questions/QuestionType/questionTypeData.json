@@ -1,0 +1,14 @@
+[
+  {
+    "name": "radio"
+  },
+  {
+    "name": "checkbox"
+  },
+  {
+    "name": "text"
+  },
+  {
+    "name": "file"
+  }
+]

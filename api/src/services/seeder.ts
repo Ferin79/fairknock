@@ -6,6 +6,7 @@ import { seedPropertyOptions } from "../components/Properties/PropertyOption/see
 import { seedPropertyType } from "../components/Properties/PropertyType/seed";
 import { seedCountry } from "./../components/Country/seed";
 import { seedProperty } from "./../components/Properties/Property/seed";
+import { seedQuestionType } from "./../components/Questions/QuestionType/seed";
 import { seedRole } from "./../components/Role/seed";
 import { seedState } from "./../components/State/seed";
 import { seedUser } from "./../components/User/seed";
@@ -38,6 +39,7 @@ const runMigration = () => {
       await seedPropertyType();
       await seedPropertyOptions();
       await seedProperty();
+      await seedQuestionType();
     })
     .catch((error: Error) => {
       logger.error(error);

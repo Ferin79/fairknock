@@ -3,12 +3,14 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    ManyToMany,
     ManyToOne,
     OneToMany,
     PrimaryGeneratedColumn
 } from "typeorm";
 import { Property } from "../Properties/Property/model";
 import { Country } from "./../Country/model";
+import { Question } from "./../Questions/Question/model";
 
 @Entity()
 export class State extends BaseEntity {
@@ -26,6 +28,9 @@ export class State extends BaseEntity {
 
   @OneToMany(() => Property, (property) => property.state)
   properties: Property[];
+
+  @ManyToMany(() => Question, (question) => question.states)
+  questions: Question[];
 
   @CreateDateColumn()
   createdAt: Date;

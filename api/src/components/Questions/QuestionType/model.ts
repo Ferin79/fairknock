@@ -7,21 +7,17 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
-import { Question } from "./../Questions/Question/model";
-import { User } from "./../User/model";
+import { Question } from "./../Question/model";
 
 @Entity()
-export class Role extends BaseEntity {
+export class QuestionType extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ unique: true })
   name: string;
 
-  @OneToMany(() => User, (user) => user.role)
-  users: User[];
-
-  @OneToMany(() => Question, (question) => question.role)
+  @OneToMany(() => Question, (question) => question.questionType)
   questions: Question[];
 
   @CreateDateColumn()
