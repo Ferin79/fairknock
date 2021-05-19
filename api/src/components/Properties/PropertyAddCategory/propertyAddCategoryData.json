@@ -1,0 +1,542 @@
+[
+  {
+    "name": "Appliances",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Dishwasher"
+      },
+      {
+        "name": "Dryer"
+      },
+      {
+        "name": "Freezer"
+      },
+      {
+        "name": "Garbage Disposal"
+      },
+      {
+        "name": "Microwave"
+      },
+      {
+        "name": "Range / Oven"
+      },
+      {
+        "name": "Refrigerator"
+      },
+      {
+        "name": "Trash Compactor"
+      },
+      {
+        "name": "Washer"
+      }
+    ]
+  },
+  {
+    "name": "Basement",
+    "type": "Radio",
+    "items": [
+      {
+        "name": "Finished"
+      },
+      {
+        "name": "Unfinished"
+      },
+      {
+        "name": "Partially Finished"
+      },
+      {
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "name": "Floor Covering",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Carpet"
+      },
+      {
+        "name": "Concrete"
+      },
+      {
+        "name": "Hardwood"
+      },
+      {
+        "name": "Laminate"
+      },
+      {
+        "name": "Linoleum / Vinly"
+      },
+      {
+        "name": "Slate"
+      },
+      {
+        "name": "Softwood"
+      },
+      {
+        "name": "Tile"
+      },
+      {
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Rooms",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Breakfast Room"
+      },
+      {
+        "name": "Dining Room"
+      },
+      {
+        "name": "Family Room"
+      },
+      {
+        "name": "Laundry Room"
+      },
+      {
+        "name": "Library"
+      },
+      {
+        "name": "Master Bath"
+      },
+      {
+        "name": "Mud Room"
+      },
+      {
+        "name": "Office"
+      },
+      {
+        "name": "Pantry"
+      },
+      {
+        "name": "Recreation Room"
+      },
+      {
+        "name": "Workshop"
+      },
+      {
+        "name": "Solarium / Atrium"
+      },
+      {
+        "name": "Sun Room"
+      },
+      {
+        "name": "Walk-in-closet"
+      }
+    ]
+  },
+  {
+    "name": "Indoor Features",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Attic"
+      },
+      {
+        "name": "Cable Ready"
+      },
+      {
+        "name": "Ceiling Fan"
+      },
+      {
+        "name": "Double Pane/Storm Windows"
+      },
+      {
+        "name": "Fireplace"
+      },
+      {
+        "name": "Intercom System"
+      },
+      {
+        "name": "Jetted Tub"
+      },
+      {
+        "name": "Mother-in-law apartment"
+      },
+      {
+        "name": "Security System"
+      },
+      {
+        "name": "Skylights"
+      },
+      {
+        "name": "Vaulted Ceiling"
+      },
+      {
+        "name": "Wet bar"
+      },
+      {
+        "name": "Wired"
+      }
+    ]
+  },
+  {
+    "name": "Cooling Type",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Central"
+      },
+      {
+        "name": "Evaporative"
+      },
+      {
+        "name": "Geothermal"
+      },
+      {
+        "name": "Refrigeration"
+      },
+      {
+        "name": "Solar"
+      },
+      {
+        "name": "Wall"
+      },
+      {
+        "name": "Other"
+      },
+      {
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "name": "Heating Type",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Baseboard"
+      },
+      {
+        "name": "Forced air"
+      },
+      {
+        "name": "Geothermal"
+      },
+      {
+        "name": "Heat Pump"
+      },
+      {
+        "name": "Radiant"
+      },
+      {
+        "name": "Stove"
+      },
+      {
+        "name": "Wall"
+      },
+      {
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Heating Fuel",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Coal"
+      },
+      {
+        "name": "Electric"
+      },
+      {
+        "name": "Gas"
+      },
+      {
+        "name": "Oil"
+      },
+      {
+        "name": "Propane /  Butane"
+      },
+      {
+        "name": "Solar"
+      },
+      {
+        "name": "Wood / Pellet"
+      },
+      {
+        "name": "Other"
+      },
+      {
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "name": "Parking",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Carpot"
+      },
+      {
+        "name": "Garage-Attached"
+      },
+      {
+        "name": "Garage-Detached"
+      },
+      {
+        "name": "Off-street"
+      },
+      {
+        "name": "On-street"
+      },
+      {
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "name": "Roof",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Asphalt"
+      },
+      {
+        "name": "Built-up"
+      },
+      {
+        "name": "Composition"
+      },
+      {
+        "name": "Metal"
+      },
+      {
+        "name": "Shake / Shingle"
+      },
+      {
+        "name": "Slate"
+      },
+      {
+        "name": "Tile"
+      },
+      {
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "View",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "City"
+      },
+      {
+        "name": "Mountain"
+      },
+      {
+        "name": "Park"
+      },
+      {
+        "name": "Territorial"
+      },
+      {
+        "name": "Water"
+      },
+      {
+        "name": "None"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Amenities",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Balcony/patio"
+      },
+      {
+        "name": "Barbecue area"
+      },
+      {
+        "name": "Deck"
+      },
+      {
+        "name": "Dock"
+      },
+      {
+        "name": "Fenced yard"
+      },
+      {
+        "name": "Garden"
+      },
+      {
+        "name": "Greenhouse"
+      },
+      {
+        "name": "Hot tub/spa"
+      },
+      {
+        "name": "Lawn"
+      },
+      {
+        "name": "Pond"
+      },
+      {
+        "name": "Pool"
+      },
+      {
+        "name": "Porch"
+      },
+      {
+        "name": "RV Parking"
+      },
+      {
+        "name": "Sauna"
+      },
+      {
+        "name": "Sprinkler System"
+      },
+      {
+        "name": "Waterfront"
+      }
+    ]
+  },
+  {
+    "name": "Exterior",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Brick"
+      },
+      {
+        "name": "Cement/Concrete"
+      },
+      {
+        "name": "Composition"
+      },
+      {
+        "name": "Metal"
+      },
+      {
+        "name": "Shingle"
+      },
+      {
+        "name": "Stone"
+      },
+      {
+        "name": "Stucco"
+      },
+      {
+        "name": "Vinly"
+      },
+      {
+        "name": "Wood"
+      },
+      {
+        "name": "Wood Products"
+      },
+      {
+        "name": "Other"
+      }
+    ]
+  },
+  {
+    "name": "Building Amenities",
+    "type": "Checkbox",
+    "items": [
+      {
+        "name": "Assisted living community"
+      },
+      {
+        "name": "BasketBall court"
+      },
+      {
+        "name": "Controlled Access"
+      },
+      {
+        "name": "Disabled Access"
+      },
+      {
+        "name": "Doorman"
+      },
+      {
+        "name": "Elevator"
+      },
+      {
+        "name": "Fitness Center"
+      },
+      {
+        "name": "Gated Entry"
+      },
+      {
+        "name": "Near Transportation"
+      },
+      {
+        "name": "Over 55+ active community"
+      },
+      {
+        "name": "Sports club"
+      },
+      {
+        "name": "Storage"
+      },
+      {
+        "name": "Tennis court"
+      }
+    ]
+  },
+  {
+    "name": "Architectural Style",
+    "type": "Radio",
+    "items": [
+      {
+        "name": "Bungalow"
+      },
+      {
+        "name": "Mordern"
+      },
+      {
+        "name": "Cape Cod"
+      },
+      {
+        "name": "Oueen Anne/Victoria"
+      },
+      {
+        "name": "Colonial"
+      },
+      {
+        "name": "Ranch/Rambler"
+      },
+      {
+        "name": "Contemporary"
+      },
+      {
+        "name": "Santa Fe/Pueblo Style"
+      },
+      {
+        "name": "Craftsman"
+      },
+      {
+        "name": "Spanish"
+      },
+      {
+        "name": "French"
+      },
+      {
+        "name": "Split-level"
+      },
+      {
+        "name": "Georgian"
+      },
+      {
+        "name": "Tudor"
+      },
+      {
+        "name": "Loft"
+      },
+      {
+        "name": "Other"
+      }
+    ]
+  }
+]

@@ -30,24 +30,6 @@ export class PropertyOptionProperty extends BaseEntity {
   @IsNotEmpty()
   @IsNumber()
   @Min(0)
-  @Column({ default: 0 })
-  height: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  @Min(0)
-  @Column({ default: 0 })
-  width: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  @Min(0)
-  @Column({ default: 0 })
-  length: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  @Min(0)
   @Column({ nullable: true })
   squareFeet: number;
 

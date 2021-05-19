@@ -38,9 +38,6 @@ export const seedProperty = async () => {
     for (let j = 0; j < jValue; j++) {
       const propertyOptionsConnection = new PropertyOptionProperty();
       propertyOptionsConnection.count = Math.floor(Math.random() * 5);
-      propertyOptionsConnection.height = Math.floor(Math.random() * 500);
-      propertyOptionsConnection.width = Math.floor(Math.random() * 500);
-      propertyOptionsConnection.length = Math.floor(Math.random() * 500);
       propertyOptionsConnection.squareFeet = Math.floor(Math.random() * 1000);
       propertyOptionsConnection.propertyOptionId =
         allPropertyOption[

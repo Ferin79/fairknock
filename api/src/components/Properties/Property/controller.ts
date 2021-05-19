@@ -8,6 +8,7 @@ import { AuthRequest } from "./../../../types/AuthRequest";
 import { formatUser } from "./../../../utils/formatUser";
 import { toMapErrors } from "./../../../utils/toMapErrors";
 import { State } from "./../../State/model";
+import { PropertyType } from "./../PropertyType/model";
 import { Property } from "./model";
 
 export const getAllProperty = async (
@@ -51,6 +52,8 @@ export const getPropertyById = async (
         "propertyOptionsConnection",
         "propertyOptionsConnection.propertyOption",
         "propertyMedia",
+        "PropertyAdditionalItems",
+        "PropertyAdditionalItems.propertyAdditionalCategory",
       ],
     });
 
@@ -77,9 +80,13 @@ export const createProperty = async (
   try {
     const user = req.user;
     const stateId: number = req.body.stateId || -1;
+    const propertyTypeId: number = req.body.propertyTypeId || -1;
 
     if (!user) {
       throw new BadRequest("user id cannot be empty");
+    }
+    if (!propertyTypeId || propertyTypeId !== -1) {
+      throw new BadRequest("property id cannot be empty");
     }
 
     const property = new Property();
@@ -106,7 +113,13 @@ export const createProperty = async (
     if (!state) {
       throw new NotFound("state", stateId);
     }
+    const propertyType = await PropertyType.findOne(propertyTypeId);
+    if (!propertyType) {
+      throw new NotFound("Property type", propertyTypeId);
+    }
+
     property.state = state;
+    property.propertyType = propertyType;
 
     await property.save();
 
