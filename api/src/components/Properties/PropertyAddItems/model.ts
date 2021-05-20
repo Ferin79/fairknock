@@ -22,7 +22,7 @@ export class PropertyAdditionalItem extends BaseEntity {
   @ManyToOne(
     () => PropertyAdditionalCategory,
     (propertyAdditionalCategory) =>
-      propertyAdditionalCategory.PropertyAdditionalItem
+      propertyAdditionalCategory.propertyAdditionalItem
   )
   propertyAdditionalCategory: PropertyAdditionalCategory;
 

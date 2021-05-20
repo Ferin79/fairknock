@@ -38,9 +38,6 @@ export const createPropertyOptionConn = async (
 
       const proOptCon = new PropertyOptionProperty();
       proOptCon.count = item.count;
-      proOptCon.height = item.height;
-      proOptCon.width = item.width;
-      proOptCon.length = item.length;
       proOptCon.propertyOptionId = item.propertyOptionId;
 
       const errors = await validate(proOptCon);

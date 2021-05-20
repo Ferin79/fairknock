@@ -25,7 +25,7 @@ export class PropertyAdditionalCategory extends BaseEntity {
     (propertyAdditionalItem) =>
       propertyAdditionalItem.propertyAdditionalCategory
   )
-  PropertyAdditionalItem: PropertyAdditionalItem[];
+  propertyAdditionalItem: PropertyAdditionalItem[];
 
   @CreateDateColumn()
   createdAt: Date;

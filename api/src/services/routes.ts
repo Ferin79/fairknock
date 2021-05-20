@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
 import MediaUploaderRouter from "../components/MediaUploader/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
+import propertyItemRouter from "../components/Properties/PropertyAddItems/routes";
 import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
 import PropertyOptionConnectionRouter from "../components/Properties/PropertyOptionProperty/routes";
@@ -25,6 +26,7 @@ router.use("/propertyMedia", PropertyMediaRouter);
 router.use("/property", PropertyRouter);
 router.use("/media", MediaUploaderRouter);
 router.use("/questionType", QuestionTypeRouter);
+router.use("/propertyItems", propertyItemRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({
