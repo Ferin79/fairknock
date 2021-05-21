@@ -1,5 +1,6 @@
 import { validate } from "class-validator";
 import { NextFunction, Request, Response } from "express";
+import { nanoid } from "nanoid";
 import { getConnection } from "typeorm";
 import { BadRequest } from "./../../../errors/BadRequest";
 import { InputError } from "./../../../errors/InputError";
@@ -85,13 +86,12 @@ export const createProperty = async (
     if (!user) {
       throw new BadRequest("user id cannot be empty");
     }
-    if (!propertyTypeId || propertyTypeId !== -1) {
+    if (!propertyTypeId || propertyTypeId === -1) {
       throw new BadRequest("property id cannot be empty");
     }
 
     const property = new Property();
 
-    property.displayUrl = req.body.displayUrl;
     property.description = req.body.description;
     property.addressLine1 = req.body.addressLine1;
     property.addressLine2 = req.body.addressLine2 || "";
@@ -100,7 +100,11 @@ export const createProperty = async (
     property.zipCode = req.body.zipCode;
     property.squareFeet = req.body.squareFeet;
     property.numberOfFloor = req.body.numberOfFloor;
+    property.yearBuilt = req.body.yearBuilt;
+    property.HOADue = req.body.HOADue;
+    property.LotSize = req.body.LotSize;
     property.user = user;
+    property.nanoId = nanoid(10);
 
     const errors = await validate(property);
 

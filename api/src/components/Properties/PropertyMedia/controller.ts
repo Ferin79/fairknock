@@ -24,6 +24,7 @@ export const createPropertyMedia = async (
     }
 
     const propertyId = req.body.propertyId || -1;
+    const displayUrl: string = req.body.displayUrl || "";
     const data = req.body.data || [];
 
     const validData: PropertyMedia[] = [];
@@ -48,6 +49,9 @@ export const createPropertyMedia = async (
 
       validData.push(proMed);
     }
+    if (!displayUrl.trim().length) {
+      throw new BadRequest("displayUrl cannot be null");
+    }
 
     const property = await Property.findOne(propertyId);
 
@@ -68,6 +72,8 @@ export const createPropertyMedia = async (
         logger.error(error);
       }
     }
+    property.displayUrl = displayUrl;
+    await property.save({ reload: false });
 
     res.status(200).json({
       success: true,

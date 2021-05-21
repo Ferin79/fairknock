@@ -1,6 +1,7 @@
 import {
     IsNotEmpty,
     IsNumber,
+    IsOptional,
     IsString,
     IsUrl,
     Max,
@@ -32,11 +33,12 @@ export class Property extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @IsOptional()
   @IsNotEmpty()
   @IsString()
   @IsNotBlank()
   @IsUrl()
-  @Column()
+  @Column({ nullable: true })
   displayUrl: string;
 
   @IsNotEmpty()
@@ -86,7 +88,7 @@ export class Property extends BaseEntity {
   @IsNotEmpty()
   @IsNumber()
   @Max(2100)
-  @Min(1900)
+  @Min(1800)
   @Column()
   yearBuilt: number;
 
@@ -95,17 +97,25 @@ export class Property extends BaseEntity {
   @Column({ default: 0 })
   HOADue: number;
 
+  @IsNotEmpty()
+  @IsNumber()
   @Column({ default: 0 })
   LotSize: number;
 
   @Column({ default: true })
   isActive: boolean;
 
-  @ManyToOne(() => State, (state) => state.properties)
-  state: State;
+  @Column({ default: false })
+  isPublished: boolean;
 
   @Column()
   userId: number;
+
+  @Column()
+  nanoId: string;
+
+  @ManyToOne(() => State, (state) => state.properties)
+  state: State;
 
   @ManyToOne(() => User, (user) => user.properties)
   @JoinColumn({ name: "userId" })

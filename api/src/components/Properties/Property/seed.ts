@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import faker from "faker";
+import { nanoid } from "nanoid";
 import { State } from "./../../State/model";
 import { User } from "./../../User/model";
 import { PropertyMedia } from "./../PropertyMedia/model";
@@ -31,6 +32,7 @@ export const seedProperty = async () => {
     property.yearBuilt = 2021;
     property.propertyType =
       allPropertyType[Math.floor(Math.random() * allPropertyType.length)];
+    property.nanoId = nanoid(10);
 
     await property.save();
 
