@@ -1,1 +1,0 @@
-web: cd api && npm install --only=production && npm run build && node dist/index.js
