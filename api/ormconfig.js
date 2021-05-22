@@ -12,6 +12,9 @@ module.exports = {
   entities: ["dist/**/*/model.js"],
   migrations: ["dist/migration/**/*.migration.js"],
   subscribers: ["dist/subscriber/**/*.subscriber.js"],
+  ssl: {
+    rejectUnauthorized: false,
+  },
 };
 
 // host: process.env.DATABASE_HOST,
