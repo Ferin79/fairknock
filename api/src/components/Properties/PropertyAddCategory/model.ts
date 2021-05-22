@@ -17,7 +17,7 @@ export class PropertyAdditionalCategory extends BaseEntity {
   @Column({ unique: true })
   name: string;
 
-  @Column({ enum: ["Checkbox", "Radio"] })
+  @Column()
   type: string;
 
   @OneToMany(
