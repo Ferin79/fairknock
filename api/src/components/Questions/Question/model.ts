@@ -11,7 +11,6 @@ import {
     UpdateDateColumn
 } from "typeorm";
 import { PropertyType } from "./../../Properties/PropertyType/model";
-import { Role } from "./../../Role/model";
 import { State } from "./../../State/model";
 import { QuestionOption } from "./../OuestionOption/model";
 import { QuestionType } from "./../QuestionType/model";
@@ -33,8 +32,8 @@ export class Question extends BaseEntity {
   @Column({ nullable: true })
   fileUrl: string;
 
-  @ManyToOne(() => Role, (role) => role.questions)
-  role: Role;
+  @Column()
+  askTo: string;
 
   @ManyToOne(() => QuestionType, (questionType) => questionType.questions)
   questionType: QuestionType;

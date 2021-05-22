@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsUrl } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString, IsUrl } from "class-validator";
 import {
     BaseEntity,
     Column,
@@ -29,6 +29,11 @@ export class PropertyMedia extends BaseEntity {
   @IsUrl()
   @Column()
   url: string;
+
+  @IsOptional()
+  @IsString()
+  @Column({ nullable: true })
+  description: string;
 
   @ManyToOne(() => Property, (property) => property.propertyMedia)
   property: Property;

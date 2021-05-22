@@ -79,16 +79,10 @@ export const Register = async (
   next: NextFunction
 ) => {
   try {
-    const role_id = req.body.role_id || 0;
-
-    if (!role_id) {
-      throw new BadRequest("role id cannot be empty");
-    }
-
-    const role = await Role.findOne(role_id);
+    const role = await Role.findOne({ where: { name: "user" } });
 
     if (!role) {
-      throw new NotFound("role", role_id);
+      throw new NotFound("role", "user");
     }
 
     const user = new User();

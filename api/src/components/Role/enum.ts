@@ -1,5 +1,4 @@
 export enum RoleType {
-  buyer = "buyer",
-  seller = "seller",
+  user = "user",
   admin = "admin",
 }

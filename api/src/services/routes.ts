@@ -2,11 +2,12 @@ import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
 import MediaUploaderRouter from "../components/MediaUploader/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
-import propertyItemRouter from "../components/Properties/PropertyAddItems/routes";
+import PropertyItemRouter from "../components/Properties/PropertyAddItems/routes";
 import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
 import PropertyOptionConnectionRouter from "../components/Properties/PropertyOptionProperty/routes";
 import PropertyTypeRouter from "../components/Properties/PropertyType/routes";
+import QuestionRouter from "../components/Questions/Question/routes";
 import QuestionTypeRouter from "../components/Questions/QuestionType/routes";
 import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
@@ -23,10 +24,11 @@ router.use("/propertyType", PropertyTypeRouter);
 router.use("/propertyOption", PropertyOptionRouter);
 router.use("/propertyOptionConnection", PropertyOptionConnectionRouter);
 router.use("/propertyMedia", PropertyMediaRouter);
+router.use("/propertyItems", PropertyItemRouter);
 router.use("/property", PropertyRouter);
 router.use("/media", MediaUploaderRouter);
 router.use("/questionType", QuestionTypeRouter);
-router.use("/propertyItems", propertyItemRouter);
+router.use("/question", QuestionRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({

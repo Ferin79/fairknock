@@ -40,6 +40,7 @@ export const createPropertyMedia = async (
 
       proMed.mediaType = item.mediaType;
       proMed.url = item.url;
+      proMed.description = item.description || "";
 
       const errors = await validate(proMed);
       if (errors.length) {
