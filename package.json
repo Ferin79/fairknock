@@ -33,9 +33,11 @@
     "api/src/**/*.{js,ts,json}": [
       "eslint --fix"
     ],
-    "api/src/**/*.{js,ts,json,md}": [
-      "prettier --write",
+    "api/src/**/*.{js,ts}": [
       "organize-imports-cli"
+    ],
+    "api/src/**/*.{js,ts,json,md}": [
+      "prettier --write"
     ]
   }
 }

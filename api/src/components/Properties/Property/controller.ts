@@ -1,31 +1,98 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { validate } from "class-validator";
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Response } from "express";
 import { nanoid } from "nanoid";
 import { getConnection } from "typeorm";
 import { BadRequest } from "./../../../errors/BadRequest";
 import { InputError } from "./../../../errors/InputError";
 import { NotFound } from "./../../../errors/NotFound";
+import { Unathorized } from "./../../../errors/Unauthorized";
 import { AuthRequest } from "./../../../types/AuthRequest";
 import { formatUser } from "./../../../utils/formatUser";
 import { toMapErrors } from "./../../../utils/toMapErrors";
 import { State } from "./../../State/model";
 import { PropertyType } from "./../PropertyType/model";
 import { Property } from "./model";
+import { PropertyStatusType } from "./PropertyStatusType";
 
-export const getAllProperty = async (
-  _req: Request,
+export const getMyProperty = async (
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const properties = await getConnection()
+    const user = req.user;
+    const status: string = (req.query.status as string) || "";
+
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
+    let properties: any = getConnection()
       .getRepository(Property)
       .createQueryBuilder("property")
       .leftJoinAndSelect("property.state", "state")
       .leftJoinAndSelect("property.propertyType", "propertyType")
-      .paginate();
+      .where("property.userId = :id", { id: req.user?.id });
+
+    if (status.trim().length) {
+      properties = properties.andWhere("property.status = :status", { status });
+    }
+    properties = await properties.paginate();
 
     const { data, ...props } = properties;
+
+    data.forEach((item: Property) => {
+      item.user = formatUser(item.user);
+    });
+
+    console.log(status);
+
+    res.status(200).json({
+      success: true,
+      properties: data,
+      ...props,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const getInvitedProperty = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = req.user;
+    const status: string = (req.query.status as string) || "";
+
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
+
+    let properties: any = getConnection()
+      .getRepository(Property)
+      .createQueryBuilder("property")
+      .leftJoinAndSelect("property.state", "state")
+      .leftJoinAndSelect("property.propertyType", "propertyType")
+      .leftJoinAndSelect("property.invitationsAccepted", "invitationsAccepted")
+      .where("invitationsAccepted.id = :id", { id: user.id })
+      .andWhere("property.status != :status", {
+        status: PropertyStatusType.draft,
+      });
+
+    if (status.trim().length) {
+      properties = properties.andWhere("property.status = :status", { status });
+    }
+    properties = await properties.paginate();
+
+    const { data, ...props } = properties;
+
+    data.map((item: Property) => {
+      item.invitationsAccepted = item.invitationsAccepted.map((item2) =>
+        formatUser(item2)
+      );
+    });
 
     res.status(200).json({
       success: true,
@@ -38,25 +105,53 @@ export const getAllProperty = async (
 };
 
 export const getPropertyById = async (
-  req: Request,
+  req: AuthRequest,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const propertyId = req.params.id;
+    const user = req.user;
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
 
-    const property = await Property.findOne(propertyId, {
-      relations: [
-        "user",
-        "state",
-        "propertyType",
-        "propertyOptionsConnection",
+    const propertyId = req.params.id;
+    if (!propertyId.trim().length) {
+      throw new BadRequest("property id cannot be null");
+    }
+
+    const property = await getConnection()
+      .getRepository(Property)
+      .createQueryBuilder("property")
+      .leftJoinAndSelect("property.user", "user")
+      .leftJoinAndSelect("property.state", "state")
+      .leftJoinAndSelect("property.propertyType", "propertyType")
+      .leftJoinAndSelect(
+        "property.propertyOptionsConnection",
+        "propertyOptionsConnection"
+      )
+      .leftJoinAndSelect(
         "propertyOptionsConnection.propertyOption",
-        "propertyMedia",
-        "PropertyAdditionalItems",
-        "PropertyAdditionalItems.propertyAdditionalCategory",
-      ],
-    });
+        "propertyOption"
+      )
+      .leftJoinAndSelect("property.propertyMedia", "propertyMedia")
+      .leftJoinAndSelect(
+        "property.propertyAdditionalItems",
+        "propertyAdditionalItems"
+      )
+      .leftJoinAndSelect(
+        "propertyAdditionalItems.propertyAdditionalCategory",
+        "propertyAdditionalCategory"
+      )
+      .leftJoinAndSelect("property.invitationsAccepted", "invitationsAccepted")
+      .where("property.id = :id", { id: propertyId })
+      .andWhere("property.status != :status", {
+        status: PropertyStatusType.draft,
+      })
+      .andWhere("invitationsAccepted.id = :userId", {
+        userId: user.id,
+      })
+      .getOne();
 
     if (!property) {
       throw new NotFound("property", propertyId);
@@ -126,6 +221,60 @@ export const createProperty = async (
     property.propertyType = propertyType;
 
     await property.save();
+
+    res.status(200).json({
+      success: true,
+      property,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const updatePropertyStatus = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = req.user;
+    const status = req.body.status || "";
+    const propertyId = req.body.propertyId || -1;
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
+
+    if (!status.trim().length) {
+      throw new BadRequest("status cannot be null");
+    }
+
+    if (!Object.values(PropertyStatusType).includes(status)) {
+      throw new BadRequest("invalid property status");
+    }
+
+    if (propertyId < 0) {
+      throw new BadRequest("property id cannot be null");
+    }
+
+    const property = await Property.findOne(propertyId, {
+      relations: ["user"],
+    });
+
+    if (!property) {
+      throw new NotFound("property", propertyId);
+    }
+
+    if (property.user.id !== user.id) {
+      throw new Unathorized();
+    }
+
+    if (property.state !== status) {
+      property.status = status;
+
+      await property.save({ reload: false });
+    }
+
+    property.user = user;
 
     res.status(200).json({
       success: true,

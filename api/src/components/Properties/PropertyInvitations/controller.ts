@@ -4,6 +4,7 @@ import { BadRequest } from "./../../../errors/BadRequest";
 import { NotFound } from "./../../../errors/NotFound";
 import { AuthRequest } from "./../../../types/AuthRequest";
 import { Property } from "./../Property/model";
+import { PropertyStatusType } from "./../Property/PropertyStatusType";
 
 export const acceptInvitation = async (
   req: AuthRequest,
@@ -18,10 +19,16 @@ export const acceptInvitation = async (
       throw new BadRequest("user cannot be null");
     }
 
-    const property = await Property.findOne(propertyId);
+    const property = await Property.findOne({ where: { nanoId: propertyId } });
 
     if (!property) {
       throw new NotFound("property", propertyId);
+    }
+    if (property.userId === user.id) {
+      throw new BadRequest("you are the owner of the property");
+    }
+    if (property.status === PropertyStatusType.draft) {
+      throw new BadRequest("property is not published yet");
     }
 
     try {
@@ -31,9 +38,7 @@ export const acceptInvitation = async (
         .of(property)
         .add(user);
     } catch (error) {
-      res.status(200).json({
-        sucess: true,
-      });
+      return next(error);
     }
     res.status(200).json({
       sucess: true,
@@ -59,7 +64,7 @@ export const removeInvitation = async (
       throw new BadRequest("property cannot be null");
     }
 
-    const property = await Property.findOne(propertyId);
+    const property = await Property.findOne({ where: { nanoId: propertyId } });
 
     if (!property) {
       throw new NotFound("property", propertyId);
