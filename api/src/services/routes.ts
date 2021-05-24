@@ -13,6 +13,7 @@ import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
 import UserRouter from "../components/User/routes";
 import { NotFound } from "../errors/NotFound";
+import { ToPdf } from "./../utils/toPdf";
 
 const router = express.Router();
 
@@ -29,6 +30,7 @@ router.use("/property", PropertyRouter);
 router.use("/media", MediaUploaderRouter);
 router.use("/questionType", QuestionTypeRouter);
 router.use("/question", QuestionRouter);
+router.get("/test-pdf", ToPdf);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({

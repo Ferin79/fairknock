@@ -3,7 +3,6 @@ import {
     Column,
     CreateDateColumn,
     Entity,
-    ManyToMany,
     ManyToOne,
     OneToMany,
     PrimaryGeneratedColumn
@@ -29,7 +28,7 @@ export class State extends BaseEntity {
   @OneToMany(() => Property, (property) => property.state)
   properties: Property[];
 
-  @ManyToMany(() => Question, (question) => question.states)
+  @OneToMany(() => Question, (question) => question.state)
   questions: Question[];
 
   @CreateDateColumn()

@@ -5,6 +5,7 @@ import { State } from "./../../State/model";
 import { QuestionOption } from "./../OuestionOption/model";
 import { QuestionType } from "./../QuestionType/model";
 import { Question } from "./model";
+
 export const seedQuestions = async () => {
   const allUserType = Object.values(UserType);
   const allQuestionType = await QuestionType.find();
@@ -35,7 +36,7 @@ export const seedQuestions = async () => {
       question.questionOptions = questionOptionData;
     }
     await question.save();
-    question.states = [allState[Math.floor(Math.random() * allState.length)]];
+    question.state = allState[Math.floor(Math.random() * allState.length)];
 
     question.propertyTypes = [
       allPropertyType[Math.floor(Math.random() * allPropertyType.length)],

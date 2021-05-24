@@ -41,9 +41,8 @@ export class Question extends BaseEntity {
   @OneToMany(() => QuestionOption, (questionOption) => questionOption.question)
   questionOptions: QuestionOption[];
 
-  @ManyToMany(() => State, (state) => state.questions, { cascade: true })
-  @JoinTable()
-  states: State[];
+  @ManyToOne(() => State, (state) => state.questions)
+  state: State;
 
   @ManyToMany(() => PropertyType, (propertyType) => propertyType, {
     cascade: true,
