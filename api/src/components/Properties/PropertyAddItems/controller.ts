@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { getConnection } from "typeorm";
 import { BadRequest } from "./../../../errors/BadRequest";
 import { NotFound } from "./../../../errors/NotFound";
+import { Unathorized } from "./../../../errors/Unauthorized";
 import { AuthRequest } from "./../../../types/AuthRequest";
 import { Property } from "./../Property/model";
 import { PropertyAdditionalCategory } from "./../PropertyAddCategory/model";
@@ -67,13 +68,14 @@ export const createPropertyItem = async (
 
     property.PropertyAdditionalItems = validData;
 
-    await property.save();
-
-    if (property.userId !== user?.id)
-      res.status(200).json({
-        success: true,
-        property,
-      });
+    if (property.userId !== user.id) {
+      throw new Unathorized();
+    }
+    await property.save({ reload: false });
+    res.status(200).json({
+      success: true,
+      property,
+    });
   } catch (error) {
     return next(error);
   }

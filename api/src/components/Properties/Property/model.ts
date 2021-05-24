@@ -102,11 +102,8 @@ export class Property extends BaseEntity {
   @Column({ default: 0 })
   LotSize: number;
 
-  @Column({ default: true })
-  isActive: boolean;
-
-  @Column({ default: false })
-  isPublished: boolean;
+  @Column({ default: "draft" })
+  status: string;
 
   @Column()
   userId: number;
