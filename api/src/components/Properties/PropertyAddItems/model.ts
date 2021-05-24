@@ -1,12 +1,12 @@
 import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    ManyToMany,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToMany,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { Property } from "./../Property/model";
 import { PropertyAdditionalCategory } from "./../PropertyAddCategory/model";
@@ -26,7 +26,7 @@ export class PropertyAdditionalItem extends BaseEntity {
   )
   propertyAdditionalCategory: PropertyAdditionalCategory;
 
-  @ManyToMany(() => Property, (property) => property.PropertyAdditionalItems)
+  @ManyToMany(() => Property, (property) => property.propertyAdditionalItems)
   properties: Property[];
 
   @CreateDateColumn()

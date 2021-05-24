@@ -3,6 +3,7 @@ import AuthRouter from "../components/Auth/routes";
 import MediaUploaderRouter from "../components/MediaUploader/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
 import PropertyItemRouter from "../components/Properties/PropertyAddItems/routes";
+import PropertyInvitationRouter from "../components/Properties/PropertyInvitations/routes";
 import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
 import PropertyOptionConnectionRouter from "../components/Properties/PropertyOptionProperty/routes";
@@ -30,6 +31,7 @@ router.use("/property", PropertyRouter);
 router.use("/media", MediaUploaderRouter);
 router.use("/questionType", QuestionTypeRouter);
 router.use("/question", QuestionRouter);
+router.use("/propertyInvitation", PropertyInvitationRouter);
 router.get("/test-pdf", ToPdf);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {

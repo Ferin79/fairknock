@@ -66,7 +66,7 @@ export const createPropertyItem = async (
       }
     }
 
-    property.PropertyAdditionalItems = validData;
+    property.propertyAdditionalItems = validData;
 
     if (property.userId !== user.id) {
       throw new Unathorized();

@@ -2,15 +2,16 @@ import { hash } from "bcryptjs";
 import { Exclude } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsString, Length } from "class-validator";
 import {
-    BaseEntity,
-    BeforeInsert,
-    Column,
-    CreateDateColumn,
-    Entity,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  BeforeInsert,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToMany,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { IsNotBlank } from "../../utils/IsNotBlank";
 import { Property } from "../Properties/Property/model";
@@ -81,6 +82,9 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Property, (property) => property.user)
   properties: Property[];
+
+  @ManyToMany(() => Property, (property) => property.invitationsAccepted)
+  propertyInvitations: Property[];
 
   @CreateDateColumn()
   createdAt: Date;

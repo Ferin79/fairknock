@@ -1,24 +1,24 @@
 import {
-    IsNotEmpty,
-    IsNumber,
-    IsOptional,
-    IsString,
-    IsUrl,
-    Max,
-    Min
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  IsUrl,
+  Max,
+  Min,
 } from "class-validator";
 import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    JoinColumn,
-    JoinTable,
-    ManyToMany,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { IsNotBlank } from "../../../utils/IsNotBlank";
 import { State } from "../../State/model";
@@ -130,12 +130,16 @@ export class Property extends BaseEntity {
   @OneToMany(() => PropertyMedia, (propertyMedia) => propertyMedia.property)
   propertyMedia: PropertyMedia[];
 
+  @ManyToMany(() => User, (user) => user.propertyInvitations)
+  @JoinTable()
+  invitationsAccepted: User[];
+
   @ManyToMany(
     () => PropertyAdditionalItem,
     (propertyAdditionalItem) => propertyAdditionalItem.properties
   )
   @JoinTable()
-  PropertyAdditionalItems: PropertyAdditionalItem[];
+  propertyAdditionalItems: PropertyAdditionalItem[];
 
   @CreateDateColumn()
   createdAt: Date;
