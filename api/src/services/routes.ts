@@ -8,7 +8,7 @@ import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
 import PropertyOptionConnectionRouter from "../components/Properties/PropertyOptionProperty/routes";
 import PropertyTypeRouter from "../components/Properties/PropertyType/routes";
-import QuestionRouter from "../components/Questions/Question/routes";
+import QuestionTemplateRouter from "../components/Questions/QuestionTemplate/routes";
 import QuestionTypeRouter from "../components/Questions/QuestionType/routes";
 import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
@@ -29,7 +29,7 @@ router.use("/propertyItems", PropertyItemRouter);
 router.use("/property", PropertyRouter);
 router.use("/media", MediaUploaderRouter);
 router.use("/questionType", QuestionTypeRouter);
-router.use("/question", QuestionRouter);
+router.use("/questionTemplate", QuestionTemplateRouter);
 router.use("/propertyInvitation", PropertyInvitationRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {

@@ -1,0 +1,442 @@
+[
+  {
+    "name": "Transfer",
+    "state": "CA",
+    "questions": [
+      {
+        "title": "Substituted Disclosures",
+        "description": "The following disclosures and other disclosures required by law, including the Natural Hazard DisclosureReport/Statement that may include airport annoyances, earthquake, fire, flood, or special assessment information, have or will be madein connection with this real estate transfer, and are intended to satisfy the disclosure obligations on this form, where the subjectmatter is the same",
+        "sequenceNumber": 1,
+        "questionType": "checkbox",
+        "isCompulsory": true,
+        "questionOptions": [
+          {
+            "name": "Inspection reports completed pursuant to the contract of sale or receipt for deposit."
+          },
+          {
+            "name": "Additional inspection reports or disclosures"
+          },
+          {
+            "name": "No substituted disclosures for this transfer"
+          }
+        ]
+      },
+      {
+        "title": "The subject property has the items checked below",
+        "description": "",
+        "sequenceNumber": 2,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Range"
+          },
+          {
+            "name": "Oven"
+          },
+          {
+            "name": "Microwave"
+          },
+          {
+            "name": "Dishwasher"
+          },
+          {
+            "name": "Trash Compactor"
+          },
+          {
+            "name": "Garbage Disposal"
+          },
+          {
+            "name": "Washer/Dryer Hookups"
+          },
+          {
+            "name": "Rain Gutters"
+          },
+          {
+            "name": "Burglar Alarms "
+          },
+          {
+            "name": "Carbon Monoxide Device(s) "
+          },
+          {
+            "name": "Smoke Detector(s) "
+          },
+          {
+            "name": "Fire Alarm "
+          },
+          {
+            "name": "TV Antenna"
+          },
+          {
+            "name": "Satellite Dish "
+          },
+          {
+            "name": "Intercom "
+          },
+          {
+            "name": "Central Heating "
+          },
+          {
+            "name": "Central Air Conditioning "
+          },
+          {
+            "name": "Evaporator Cooler(s)"
+          },
+          {
+            "name": "Wall/Window Air Conditioning "
+          },
+          {
+            "name": "Sprinklers "
+          },
+          {
+            "name": "Public Sewer System "
+          },
+          {
+            "name": "Septic Tank "
+          },
+          {
+            "name": "Sump Pump "
+          },
+          {
+            "name": "Water Softener "
+          },
+          {
+            "name": "Patio/Decking "
+          },
+          {
+            "name": "Built-in Barbecue "
+          },
+          {
+            "name": "Gazebo "
+          },
+          {
+            "name": "Security Gate(s) "
+          },
+          {
+            "name": "Sauna"
+          },
+          {
+            "name": " Window Screens"
+          },
+          {
+            "name": "Water-Conserving Plumbing Fixtures"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Garage ?",
+        "description": "",
+        "sequenceNumber": 3,
+        "questionType": "radio",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Attached"
+          },
+          {
+            "name": "Not Attached"
+          },
+          {
+            "name": "Carport"
+          },
+          {
+            "name": "Automatic Garage Opener"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Hot Tub/Spa?",
+        "description": "",
+        "sequenceNumber": 4,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Locking Safety Cover"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Pool?",
+        "description": "",
+        "sequenceNumber": 5,
+        "questionType": "radio",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Child Resistance Barrier"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Pool/Spa Heater?",
+        "description": "",
+        "sequenceNumber": 6,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Gas"
+          },
+          {
+            "name": "Solar"
+          },
+          {
+            "name": "Electric"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Water Heater?",
+        "description": "",
+        "sequenceNumber": 7,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Gas"
+          },
+          {
+            "name": "Solar"
+          },
+          {
+            "name": "Electric"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Water Supply?",
+        "description": "",
+        "sequenceNumber": 8,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "City"
+          },
+          {
+            "name": "Well"
+          },
+          {
+            "name": "Private Utility"
+          },
+          {
+            "name": "Other"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Gas Supply?",
+        "description": "",
+        "sequenceNumber": 9,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Utility"
+          },
+          {
+            "name": "Bottled(Tank)"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Window Security Bars?",
+        "description": "",
+        "sequenceNumber": 10,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Quick Release Mechanism on Bedroom Windows"
+          }
+        ]
+      },
+      {
+        "title": "Are you (Seller) aware of any significant defects/malfunctions in any of the following? ",
+        "description": "",
+        "sequenceNumber": 11,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "name": "Interior Walls"
+          },
+          {
+            "name": "Ceilings"
+          },
+          {
+            "name": "Floors"
+          },
+          {
+            "name": "Exterior Walls"
+          },
+          {
+            "name": "Insulation"
+          },
+          {
+            "name": "Roof"
+          },
+          {
+            "name": "Windows"
+          },
+          {
+            "name": "Doors"
+          },
+          {
+            "name": "Foundation"
+          },
+          {
+            "name": "Slab"
+          },
+          {
+            "name": "Driveways"
+          },
+          {
+            "name": "Sidewalks"
+          },
+          {
+            "name": "Walls/Fences"
+          },
+          {
+            "name": "Electrical System"
+          },
+          {
+            "name": "Plumbing/Sewers/Septics"
+          },
+          {
+            "name": "Other Structural Components"
+          }
+        ]
+      },
+      {
+        "title": "Substances, materials, or products which may be an environmental hazard such as, but not limited to, asbestos,formaldehyde, radon gas, lead-based paint, mold, fuel or chemical storage tanks, and contaminated soil or wateron the subject property",
+        "description": "",
+        "sequenceNumber": 12,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Features of the property shared in common with adjoining landowners, such as walls, fences, and driveways,whose use or responsibility for maintenance may have an effect on the subject property",
+        "description": "",
+        "sequenceNumber": 13,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Any encroachments, easements or similar matters that may affect your interest in the subject property",
+        "description": "",
+        "sequenceNumber": 14,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Room additions, structural modifications, or other alterations or repairs made without necessary permits",
+        "description": "",
+        "sequenceNumber": 15,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Room additions, structural modifications, or other alterations or repairs not in compliance with building codes",
+        "description": "",
+        "sequenceNumber": 16,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Fill (compacted or otherwise) on the property or any portion there",
+        "description": "",
+        "sequenceNumber": 17,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Any settling from any cause, or slippage, sliding, or other soil problems",
+        "description": "",
+        "sequenceNumber": 18,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Flooding, drainage or grading problems",
+        "description": "",
+        "sequenceNumber": 19,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Major damage to the property or any of the structures from fire, earthquake, floods, or landslides",
+        "description": "",
+        "sequenceNumber": 20,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Any zoning violations, nonconforming uses, violations of 'setback' requirement",
+        "description": "",
+        "sequenceNumber": 21,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Neighborhood noise problems or other nuisance",
+        "description": "",
+        "sequenceNumber": 22,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "CC&R's or other deed restrictions or obligations",
+        "description": "",
+        "sequenceNumber": 23,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Homeowners' Association which has any authority over the subject property",
+        "description": "",
+        "sequenceNumber": 24,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Any 'common area' (facilities such as pools, tennis courts, walkways, or other areas co-owned in undividedinterest with others)",
+        "description": "",
+        "sequenceNumber": 25,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Any notices of abatement or citations against the property",
+        "description": "",
+        "sequenceNumber": 26,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      },
+      {
+        "title": "Any lawsuits by or against the Seller threatening to or affecting this real property, claims for damages by theSeller pursuant to Section 910 or 914 of the Civil Code threatening to or affecting this real property, claims forbreach of warranty pursuant to Section 900 of the Civil Code threatening to or affecting this real property, orclaims for breach of an enhanced protection agreement pursuant to Section 903 of the Civil Code threatening toor affecting this real property, including any lawsuits or claims for damages pursuant to Section 910 or 914 ofthe Civil Code alleging a defect or deficiency in this real property or 'common areas' (facilities such as pools,tennis courts, walkways, or other areas co-owned in undivided interest with other",
+        "description": "",
+        "sequenceNumber": 27,
+        "isCompulsory": true,
+        "questionType": "boolean",
+        "questionOptions": []
+      }
+    ]
+  }
+]

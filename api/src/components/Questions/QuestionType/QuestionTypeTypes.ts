@@ -3,4 +3,5 @@ export enum QuestionTypeTypes {
   checkbox = "checkbox",
   text = "text",
   file = "file",
+  boolean = "boolean",
 }
