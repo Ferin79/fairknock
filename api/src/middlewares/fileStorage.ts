@@ -6,17 +6,11 @@ dotenv.config();
 
 export const ImageUpload = multer({
   storage: multer.diskStorage({
-    destination: function (_req, file, cb) {
-      if (file.mimetype.split("/")[0] === "image") {
-        cb(null, path.join(__dirname + "/../uploads/images"));
-      } else {
-        cb(Error(`invalid file ${file.mimetype}`), "");
-      }
+    destination: function (_req, _file, cb) {
+      cb(null, path.join(__dirname + "/../uploads/images"));
     },
-    filename: function (_req, file, cb) {
-      if (file.mimetype.split("/")[0] === "image") {
-        cb(null, Date.now().toString() + ".jpg");
-      }
+    filename: function (_req, _file, cb) {
+      cb(null, Date.now().toString() + ".jpg");
     },
   }),
   limits: {
@@ -26,17 +20,11 @@ export const ImageUpload = multer({
 
 export const VideoUpload = multer({
   storage: multer.diskStorage({
-    destination: function (_req, file, cb) {
-      if (file.mimetype.split("/")[0] === "video") {
-        cb(null, path.join(__dirname + "/../uploads/video"));
-      } else {
-        cb(Error(`invalid file ${file.mimetype}`), "");
-      }
+    destination: function (_req, _file, cb) {
+      cb(null, path.join(__dirname + "/../uploads/video"));
     },
-    filename: function (_req, file, cb) {
-      if (file.mimetype.split("/")[0] === "video") {
-        cb(null, Date.now().toString() + ".mp4");
-      }
+    filename: function (_req, _file, cb) {
+      cb(null, Date.now().toString() + ".mp4");
     },
   }),
   limits: {
