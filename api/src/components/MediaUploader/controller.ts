@@ -9,8 +9,10 @@ export const uploadSingleImg = async (
   next: NextFunction
 ) => {
   try {
+    console.log(req.file);
     const data = await cloudinary.v2.uploader.upload(req.file.path, {
       upload_preset: "ayk26en4",
+      format: "jpg",
     });
 
     fs.unlinkSync(req.file.path);
@@ -39,6 +41,7 @@ export const uploadMultipleImgs = async (
         const file = files[i];
         const UploadedData = await cloudinary.v2.uploader.upload(file.path, {
           upload_preset: "ayk26en4",
+          format: "jpg",
         });
         data.push(UploadedData);
         fs.unlinkSync(file.path);
@@ -64,6 +67,7 @@ export const uploadSingleVid = async (
       req.file.path,
       {
         upload_preset: "x27u4ewd",
+        format: "mp4",
       },
       function (error, data) {
         fs.unlinkSync(req.file.path);
@@ -103,6 +107,7 @@ export const uploadMultipleVids = async (
           req.file.path,
           {
             upload_preset: "x27u4ewd",
+            format: "mp4",
           },
           function (error, result) {
             fs.unlinkSync(file.path);

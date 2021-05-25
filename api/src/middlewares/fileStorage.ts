@@ -10,7 +10,7 @@ export const ImageUpload = multer({
       cb(null, path.join(__dirname + "/../uploads/images"));
     },
     filename: function (_req, _file, cb) {
-      cb(null, Date.now().toString() + ".jpg");
+      cb(null, Date.now() + ".jpg");
     },
   }),
   limits: {
