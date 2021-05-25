@@ -1,5 +1,6 @@
 import ejs from "ejs";
-import pdf from "html-pdf";
+import fs from "fs";
+import html_to_pdf from "html-pdf-node";
 import path from "path";
 
 export const ToPdf = async () => {
@@ -10,31 +11,16 @@ export const ToPdf = async () => {
         console.log(err);
         return;
       }
-      const options = {
-        height: "11.25in",
-        width: "8.5in",
-        header: {
-          height: "20mm",
-        },
-        footer: {
-          height: "20mm",
-        },
-      };
-      pdf
-        .create(data, options)
-        .toFile(
+      const options = { format: "A4" };
+      const file = { content: data };
+      html_to_pdf.generatePdf(file, options).then((pdfBuffer: string) => {
+        fs.writeFileSync(
           path.join(
             __dirname + "/../uploads/pdf/" + Date.now().toString() + ".pdf"
           ),
-          function (err) {
-            if (err) {
-              console.log(err);
-              return;
-            } else {
-              console.log("File created successfully");
-            }
-          }
+          pdfBuffer
         );
+      });
     }
   );
 };

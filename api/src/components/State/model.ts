@@ -9,7 +9,7 @@ import {
 } from "typeorm";
 import { Property } from "../Properties/Property/model";
 import { Country } from "./../Country/model";
-import { Question } from "./../Questions/Question/model";
+import { QuestionTemplate } from "./../Questions/QuestionTemplate/model";
 
 @Entity()
 export class State extends BaseEntity {
@@ -28,8 +28,11 @@ export class State extends BaseEntity {
   @OneToMany(() => Property, (property) => property.state)
   properties: Property[];
 
-  @OneToMany(() => Question, (question) => question.state)
-  questions: Question[];
+  @OneToMany(
+    () => QuestionTemplate,
+    (questionTemplate) => questionTemplate.state
+  )
+  questionTemplates: QuestionTemplate[];
 
   @CreateDateColumn()
   createdAt: Date;

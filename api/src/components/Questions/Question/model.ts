@@ -3,16 +3,13 @@ import {
     Column,
     CreateDateColumn,
     Entity,
-    JoinTable,
-    ManyToMany,
     ManyToOne,
     OneToMany,
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from "typeorm";
-import { PropertyType } from "./../../Properties/PropertyType/model";
-import { State } from "./../../State/model";
 import { QuestionOption } from "./../OuestionOption/model";
+import { QuestionTemplate } from "./../QuestionTemplate/model";
 import { QuestionType } from "./../QuestionType/model";
 
 @Entity()
@@ -35,20 +32,17 @@ export class Question extends BaseEntity {
   @Column()
   askTo: string;
 
+  @Column()
+  sequenceNumber: number;
+
   @ManyToOne(() => QuestionType, (questionType) => questionType.questions)
   questionType: QuestionType;
 
+  @ManyToOne(() => QuestionTemplate, (questionTemplate) => questionTemplate)
+  questionTemplate: QuestionTemplate;
+
   @OneToMany(() => QuestionOption, (questionOption) => questionOption.question)
   questionOptions: QuestionOption[];
-
-  @ManyToOne(() => State, (state) => state.questions)
-  state: State;
-
-  @ManyToMany(() => PropertyType, (propertyType) => propertyType, {
-    cascade: true,
-  })
-  @JoinTable()
-  propertyTypes: PropertyType[];
 
   @CreateDateColumn()
   createdAt: Date;
