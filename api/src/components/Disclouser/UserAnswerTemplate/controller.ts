@@ -14,11 +14,7 @@ type questionType = {
   userAnswer: {
     answer: string;
     justification: string;
-    options: [
-      {
-        optionId: string;
-      }
-    ];
+    options: QuestionOption[];
   };
 } & Question;
 
@@ -78,14 +74,9 @@ export const createUserAnswer = async (
       for (let j = 0; j < item.userAnswer.options.length; j++) {
         const item2 = item.userAnswer.options[i];
 
-        const findOption = await QuestionOption.findOne(item2.optionId);
-        if (!findOption) {
-          throw new NotFound("option", item2.optionId);
-        }
-
         const userOption = new UserAnswerOption();
         userOption.userAnswer = userAnswer;
-        userOption.questionOption = findOption;
+        userOption.questionOption = item2;
 
         await userOption.save();
 
