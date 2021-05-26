@@ -1,6 +1,7 @@
 import { NextFunction, Response } from "express";
 import { BadRequest } from "./../../../errors/BadRequest";
 import { NotFound } from "./../../../errors/NotFound";
+import { Unathorized } from "./../../../errors/Unauthorized";
 import { AuthRequest } from "./../../../types/AuthRequest";
 import { Property } from "./../../Properties/Property/model";
 import { QuestionOption } from "./../OuestionOption/model";
@@ -50,6 +51,10 @@ export const createUserAnswer = async (
 
     if (!property) {
       throw new NotFound("property", propertyId);
+    }
+
+    if (property.userId !== user.id) {
+      throw new Unathorized();
     }
 
     const userAnswerTemplate = new UserAnswerTemplate();
