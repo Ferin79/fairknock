@@ -94,7 +94,12 @@ export const createUserAnswer = async (
         userOption.questionOption = item2;
 
         await userOption.save();
-        item.userAnswer.optionsKey[item2.key] = item2.name;
+        if (item.userAnswer.optionsKey) {
+          item.userAnswer.optionsKey[item2.key] = item2.name;
+        } else {
+          item.userAnswer["optionsKey"] = {};
+          item.userAnswer.optionsKey[item2.key] = item2.name;
+        }
       }
     }
 
