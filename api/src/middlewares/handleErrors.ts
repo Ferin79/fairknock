@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from "express";
 import { GeneralError } from "../errors/GeneralError";
+import { logger } from "./../configs/Logger";
 import { InputError } from "./../errors/InputError";
 
 export const handleErrors = (
@@ -9,6 +10,7 @@ export const handleErrors = (
   res: Response,
   _next: NextFunction
 ) => {
+  logger.error(err);
   if (err instanceof GeneralError) {
     return res.status(err.getCode()).json({
       success: false,

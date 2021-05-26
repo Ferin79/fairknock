@@ -64,7 +64,6 @@ export const createUserAnswer = async (
     userAnswerTemplate.user = user;
     await userAnswerTemplate.save();
 
-    const userAnswerArray: UserAnswer[] = [];
     for (let i = 0; i < questions.length; i++) {
       const item = questions[i];
 
@@ -75,7 +74,6 @@ export const createUserAnswer = async (
 
       await userAnswer.save();
 
-      const userOptionsArray: UserAnswerOption[] = [];
       for (let j = 0; j < item.userAnswer.options.length; j++) {
         const item2 = item.userAnswer.options[i];
 
@@ -84,14 +82,8 @@ export const createUserAnswer = async (
         userOption.questionOption = item2;
 
         await userOption.save();
-
-        userOptionsArray.push(userOption);
       }
-
-      userAnswer.userAnswerOptions = userOptionsArray;
-      userAnswerArray.push(userAnswer);
     }
-    userAnswerTemplate.userAnswers = userAnswerArray;
 
     res.status(200).json({
       success: true,
