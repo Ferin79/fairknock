@@ -12,6 +12,7 @@ import { UserType } from "../../../types/UserType";
 import { QuestionOption } from "../OuestionOption/model";
 import { QuestionTemplate } from "../QuestionTemplate/model";
 import { QuestionType } from "../QuestionType/model";
+import { UserAnswer } from "./../UserAnswer/model";
 
 @Entity()
 export class Question extends BaseEntity {
@@ -50,6 +51,9 @@ export class Question extends BaseEntity {
 
   @OneToMany(() => QuestionOption, (questionOption) => questionOption.question)
   questionOptions: QuestionOption[];
+
+  @OneToMany(() => UserAnswer, (userAnswer) => userAnswer.question)
+  userAnswers: UserAnswer[];
 
   @CreateDateColumn()
   createdAt: Date;

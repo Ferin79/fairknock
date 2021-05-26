@@ -15,6 +15,7 @@ import {
 } from "typeorm";
 import { IsNotBlank } from "../../utils/IsNotBlank";
 import { Property } from "../Properties/Property/model";
+import { UserAnswerTemplate } from "./../Disclouser/UserAnswerTemplate/model";
 import { Role } from "./../Role/model";
 
 @Entity()
@@ -85,6 +86,12 @@ export class User extends BaseEntity {
 
   @ManyToMany(() => Property, (property) => property.invitationsAccepted)
   propertyInvitations: Property[];
+
+  @OneToMany(
+    () => UserAnswerTemplate,
+    (userAnswerTemplate) => userAnswerTemplate.user
+  )
+  userAnswerTemplate: UserAnswerTemplate[];
 
   @CreateDateColumn()
   createdAt: Date;

@@ -4,10 +4,12 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 import { Question } from "../Question/model";
+import { UserAnswerOption } from "./../UserAnswerOption/model";
 
 @Entity()
 export class QuestionOption extends BaseEntity {
@@ -19,6 +21,12 @@ export class QuestionOption extends BaseEntity {
 
   @ManyToOne(() => Question, (question) => question.questionOptions)
   question: Question;
+
+  @OneToMany(
+    () => UserAnswerOption,
+    (userAnswerOption) => userAnswerOption.questionOption
+  )
+  userAnswerOptions: UserAnswerOption[];
 
   @CreateDateColumn()
   createdAt: Date;

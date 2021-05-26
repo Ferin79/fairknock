@@ -25,6 +25,7 @@ import { State } from "../../State/model";
 import { User } from "../../User/model";
 import { PropertyOptionProperty } from "../PropertyOptionProperty/model";
 import { PropertyType } from "../PropertyType/model";
+import { UserAnswerTemplate } from "./../../Disclouser/UserAnswerTemplate/model";
 import { PropertyAdditionalItem } from "./../PropertyAddItems/model";
 import { PropertyMedia } from "./../PropertyMedia/model";
 
@@ -129,6 +130,12 @@ export class Property extends BaseEntity {
 
   @OneToMany(() => PropertyMedia, (propertyMedia) => propertyMedia.property)
   propertyMedia: PropertyMedia[];
+
+  @OneToMany(
+    () => UserAnswerTemplate,
+    (userAnswerTemplate) => userAnswerTemplate.property
+  )
+  userAnswerTemplates: UserAnswerTemplate[];
 
   @ManyToMany(() => User, (user) => user.propertyInvitations)
   @JoinTable()
