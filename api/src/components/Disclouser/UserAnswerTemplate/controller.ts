@@ -3,6 +3,7 @@ import { BadRequest } from "./../../../errors/BadRequest";
 import { NotFound } from "./../../../errors/NotFound";
 import { Unathorized } from "./../../../errors/Unauthorized";
 import { AuthRequest } from "./../../../types/AuthRequest";
+import { ToPdf } from "./../../../utils/toPdf";
 import { Property } from "./../../Properties/Property/model";
 import { QuestionOption } from "./../OuestionOption/model";
 import { Question } from "./../Question/model";
@@ -11,7 +12,7 @@ import { UserAnswer } from "./../UserAnswer/model";
 import { UserAnswerOption } from "./../UserAnswerOption/model";
 import { UserAnswerTemplate } from "./model";
 
-type questionType = {
+export type questionTypeInput = {
   userAnswer: {
     answer: string;
     justification: string;
@@ -28,7 +29,7 @@ export const createUserAnswer = async (
     const user = req.user;
     const questionTemplateId: string = req.body.questionTemplateId || "";
     const propertyId: string = req.body.propertyId || "";
-    const questions: questionType[] = req.body.questions || [];
+    const questions: questionTypeInput[] = req.body.questions || [];
 
     if (!user) {
       throw new BadRequest("user cannot be null");
@@ -47,7 +48,9 @@ export const createUserAnswer = async (
       throw new NotFound("questionTemplate", questionTemplateId);
     }
 
-    const property = await Property.findOne(propertyId);
+    const property = await Property.findOne(propertyId, {
+      relations: ["state"],
+    });
 
     if (!property) {
       throw new NotFound("property", propertyId);
@@ -55,6 +58,13 @@ export const createUserAnswer = async (
 
     if (property.userId !== user.id) {
       throw new Unathorized();
+    }
+
+    const oldData = await UserAnswerTemplate.findOne({
+      where: { property: propertyId, user: user.id },
+    });
+    if (oldData) {
+      throw new BadRequest("entry already exist");
     }
 
     const userAnswerTemplate = new UserAnswerTemplate();
@@ -68,6 +78,7 @@ export const createUserAnswer = async (
       const item = questions[i];
 
       const userAnswer = new UserAnswer();
+      userAnswer.question = item;
       userAnswer.answer = item.userAnswer.answer;
       userAnswer.justification = item.userAnswer.justification;
       userAnswer.userAnswerTemplate = userAnswerTemplate;
@@ -88,6 +99,26 @@ export const createUserAnswer = async (
     res.status(200).json({
       success: true,
       userAnswerTemplate,
+    });
+
+    ToPdf(userAnswerTemplate, questions);
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const deleteUserAnswer = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const id = req.params.id;
+
+    await UserAnswerTemplate.delete(id);
+
+    res.status(200).json({
+      success: true,
     });
   } catch (error) {
     return next(error);

@@ -2,10 +2,20 @@ import ejs from "ejs";
 import fs from "fs";
 import html_to_pdf from "html-pdf-node";
 import path from "path";
+import { questionTypeInput } from "./../components/Disclouser/UserAnswerTemplate/controller";
+import { UserAnswerTemplate } from "./../components/Disclouser/UserAnswerTemplate/model";
 
-export const ToPdf = async () => {
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const ToPdf = async (
+  userAnswerTemplate: UserAnswerTemplate,
+  questions: questionTypeInput[]
+) => {
+  console.log(questions);
+  console.log(userAnswerTemplate);
+
   ejs.renderFile(
-    path.join(__dirname + "/../templates/report.ejs"),
+    path.join(__dirname + "/../templates/ca/transfer.ejs"),
     function (err, data) {
       if (err) {
         console.log(err);
@@ -23,4 +33,5 @@ export const ToPdf = async () => {
       });
     }
   );
+  return;
 };

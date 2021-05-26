@@ -1,12 +1,12 @@
 import {
-  BaseEntity,
-  Column,
-  CreateDateColumn,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity,
+    ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
 } from "typeorm";
 import { State } from "../../State/model";
 import { Question } from "../Question/model";
@@ -19,6 +19,9 @@ export class QuestionTemplate extends BaseEntity {
 
   @Column()
   name: string;
+
+  @Column({ unique: true })
+  uniqueName: string;
 
   @ManyToOne(() => State, (state) => state.questionTemplates)
   state: State;

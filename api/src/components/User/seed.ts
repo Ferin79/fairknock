@@ -14,6 +14,7 @@ export const seedUser = async () => {
       password: "1234567890",
       profileUrl: faker.image.imageUrl(),
       role: roles[i],
+      isEmailConfirmed: true,
     }).save({ reload: false });
   }
 

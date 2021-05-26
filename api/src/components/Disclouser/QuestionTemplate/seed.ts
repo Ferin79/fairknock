@@ -19,6 +19,7 @@ export const seedQuestions = async () => {
 
     const questionTemplate = new QuestionTemplate();
     questionTemplate.name = item.name;
+    questionTemplate.uniqueName = item.uniqueName;
     questionTemplate.state = state;
     await questionTemplate.save();
 

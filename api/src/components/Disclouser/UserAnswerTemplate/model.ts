@@ -1,11 +1,11 @@
 import {
-  BaseEntity,
-  CreateDateColumn,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
+    BaseEntity,
+    CreateDateColumn,
+    Entity,
+    ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
 } from "typeorm";
 import { Property } from "./../../Properties/Property/model";
 import { User } from "./../../User/model";
@@ -19,11 +19,14 @@ export class UserAnswerTemplate extends BaseEntity {
 
   @ManyToOne(
     () => QuestionTemplate,
-    (questionTemplate) => questionTemplate.userAnswerTemplates
+    (questionTemplate) => questionTemplate.userAnswerTemplates,
+    { onDelete: "CASCADE" }
   )
   questionTemplate: QuestionTemplate;
 
-  @ManyToOne(() => Property, (property) => property.userAnswerTemplates)
+  @ManyToOne(() => Property, (property) => property.userAnswerTemplates, {
+    onDelete: "CASCADE",
+  })
   property: Property;
 
   @ManyToOne(() => User, (user) => user.userAnswerTemplate)

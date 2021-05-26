@@ -1,12 +1,12 @@
 import {
-  BaseEntity,
-  Column,
-  CreateDateColumn,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity,
+    ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
 } from "typeorm";
 import { Question } from "./../Question/model";
 import { UserAnswerOption } from "./../UserAnswerOption/model";
@@ -23,12 +23,15 @@ export class UserAnswer extends BaseEntity {
   @Column({ type: "text", nullable: true })
   justification: string;
 
-  @ManyToOne(() => Question, (question) => question.userAnswers)
+  @ManyToOne(() => Question, (question) => question.userAnswers, {
+    onDelete: "CASCADE",
+  })
   question: Question;
 
   @ManyToOne(
     () => UserAnswerTemplate,
-    (userAnswerTemplate) => userAnswerTemplate.userAnswers
+    (userAnswerTemplate) => userAnswerTemplate.userAnswers,
+    { onDelete: "CASCADE" }
   )
   userAnswerTemplate: UserAnswerTemplate;
 

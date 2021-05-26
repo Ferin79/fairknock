@@ -1,6 +1,7 @@
 [
   {
-    "name": "Transfer",
+    "name": "Transfer Disclouser Statement",
+    "uniqueName": "CA_TDS",
     "state": "CA",
     "questions": [
       {
