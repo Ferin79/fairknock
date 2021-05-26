@@ -50,6 +50,7 @@ export const seedQuestions = async () => {
         const newOption = new QuestionOption();
         newOption.question = question;
         newOption.name = options.name;
+        newOption.key = options.key;
         await newOption.save({ reload: false });
       }
     }

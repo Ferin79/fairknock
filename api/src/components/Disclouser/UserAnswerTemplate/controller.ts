@@ -17,6 +17,7 @@ export type questionTypeInput = {
     answer: string;
     justification: string;
     options: QuestionOption[];
+    optionsKey: Record<string, string>;
   };
 } & Question;
 
@@ -93,6 +94,7 @@ export const createUserAnswer = async (
         userOption.questionOption = item2;
 
         await userOption.save();
+        item.userAnswer.optionsKey[item2.key] = item2.name;
       }
     }
 

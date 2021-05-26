@@ -63,17 +63,25 @@
         <p style="font-weight: bold">
           THIS DISCLOSURE STATEMENT CONCERNS THE REAL PROPERTY SITUATED IN THE
           CITY OF
-          <span style="text-decoration: underline">INSERT_CITY_NAME</span> ,
-          COUNTY OF
+          <span style="text-decoration: underline"
+            ><%= userAnswerTemplate.property.city %></span
+          >
+          , COUNTY OF
           <span style="text-decoration: underline">INSERT_COUNTY_NAME</span> ,
           STATE OF CALIFORNIA, DESCRIBED AS
-          <span style="text-decoration: underline">INSERT_ADDRESS_HERE</span> .
-          THIS STATEMENT IS A DISCLOSURE OF THE CONDITION OF THE ABOVE DESCRIBED
-          PROPERTY IN COMPLIANCE WITH SECTION 1102 OF THE CIVIL CODE AS OF , 20
-          . IT IS NOT A WARRANTY OF ANY KIND BY THE SELLER(S) OR ANY AGENT(S)
-          REPRESENTING ANY PRINCIPAL(S) IN THIS TRANSACTION, AND IS NOT A
-          SUBSTITUTE FOR ANY INSPECTIONS OR WARRANTIES THE PRINCIPAL(S) MAY WISH
-          TO OBTAIN.
+          <span style="text-decoration: underline"
+            ><%= userAnswerTemplate.property.addressLine1 %> <%=
+            userAnswerTemplate.property.addressLine2 %> <%=
+            userAnswerTemplate.property.city %> <%=
+            userAnswerTemplate.property.zipCode %> <%=
+            userAnswerTemplate.property.state.name %></span
+          >
+          . THIS STATEMENT IS A DISCLOSURE OF THE CONDITION OF THE ABOVE
+          DESCRIBED PROPERTY IN COMPLIANCE WITH SECTION 1102 OF THE CIVIL CODE
+          AS OF , 20 . IT IS NOT A WARRANTY OF ANY KIND BY THE SELLER(S) OR ANY
+          AGENT(S) REPRESENTING ANY PRINCIPAL(S) IN THIS TRANSACTION, AND IS NOT
+          A SUBSTITUTE FOR ANY INSPECTIONS OR WARRANTIES THE PRINCIPAL(S) MAY
+          WISH TO OBTAIN.
         </p>
       </div>
       <div class="section1">
@@ -98,18 +106,23 @@
         </div>
         <div style="margin: 10px 20px">
           <div style="display: flex">
-            <input type="checkbox" name="Substituted_Disclosures" checked />
+            <input type="checkbox" name="Substituted_Disclosures" <%=
+            questions[0].userAnswer.options["CA_TDS_options1"] ? "checked" :"" %> />
             <div>
               Inspection reports completed pursuant to the contract of sale or
               receipt for deposit.
             </div>
           </div>
           <div style="display: flex">
-            <input type="checkbox" name="Substituted_Disclosures" />
+            <input type="checkbox" name="Substituted_Disclosures" <%=
+            questions[0].userAnswer.options.find((item) => item.name ===
+            `Additional inspection reports or disclosures`) ? "checked" :"" %>/>
             <div>Additional inspection reports or disclosures:</div>
           </div>
           <div style="display: flex">
-            <input type="checkbox" name="Substituted_Disclosures" />
+            <input type="checkbox" name="Substituted_Disclosures" <%=
+            questions[0].userAnswer.options.find((item) => item.name === `No
+            substituted disclosures for this transfer`) ? "checked" :"" %> />
             <div>No substituted disclosures for this transfer.</div>
           </div>
         </div>

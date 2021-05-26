@@ -16,6 +16,9 @@ export class QuestionOption extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ unique: true })
+  key: string;
+
   @Column()
   name: string;
 

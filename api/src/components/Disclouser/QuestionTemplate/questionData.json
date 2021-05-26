@@ -12,12 +12,15 @@
         "isCompulsory": true,
         "questionOptions": [
           {
-            "name": "Inspection reports completed pursuant to the contract of sale or receipt for deposit."
+            "key": "1.1",
+            "name": "Inspection reports completed pursuant to the contract of sale or receipt for deposit"
           },
           {
+            "key": "1.2",
             "name": "Additional inspection reports or disclosures"
           },
           {
+            "key": "1.3",
             "name": "No substituted disclosures for this transfer"
           }
         ]
@@ -30,96 +33,127 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "2.1",
             "name": "Range"
           },
           {
+            "key": "2.2",
             "name": "Oven"
           },
           {
+            "key": "2.3",
             "name": "Microwave"
           },
           {
+            "key": "2.4",
             "name": "Dishwasher"
           },
           {
+            "key": "2.5",
             "name": "Trash Compactor"
           },
           {
+            "key": "2.6",
             "name": "Garbage Disposal"
           },
           {
+            "key": "2.7",
             "name": "Washer/Dryer Hookups"
           },
           {
+            "key": "2.8",
             "name": "Rain Gutters"
           },
           {
+            "key": "2.9",
             "name": "Burglar Alarms "
           },
           {
+            "key": "2.10",
             "name": "Carbon Monoxide Device(s) "
           },
           {
+            "key": "2.11",
             "name": "Smoke Detector(s) "
           },
           {
+            "key": "2.12",
             "name": "Fire Alarm "
           },
           {
+            "key": "2.13",
             "name": "TV Antenna"
           },
           {
+            "key": "2.14",
             "name": "Satellite Dish "
           },
           {
+            "key": "2.15",
             "name": "Intercom "
           },
           {
+            "key": "2.16",
             "name": "Central Heating "
           },
           {
+            "key": "2.17",
             "name": "Central Air Conditioning "
           },
           {
+            "key": "2.18",
             "name": "Evaporator Cooler(s)"
           },
           {
+            "key": "2.19",
             "name": "Wall/Window Air Conditioning "
           },
           {
+            "key": "2.20",
             "name": "Sprinklers "
           },
           {
+            "key": "2.21",
             "name": "Public Sewer System "
           },
           {
+            "key": "2.22",
             "name": "Septic Tank "
           },
           {
+            "key": "2.23",
             "name": "Sump Pump "
           },
           {
+            "key": "2.24",
             "name": "Water Softener "
           },
           {
+            "key": "2.25",
             "name": "Patio/Decking "
           },
           {
+            "key": "2.26",
             "name": "Built-in Barbecue "
           },
           {
+            "key": "2.27",
             "name": "Gazebo "
           },
           {
+            "key": "2.28",
             "name": "Security Gate(s) "
           },
           {
+            "key": "2.29",
             "name": "Sauna"
           },
           {
+            "key": "2.30",
             "name": " Window Screens"
           },
           {
+            "key": "2.31",
             "name": "Water-Conserving Plumbing Fixtures"
           }
         ]
@@ -132,15 +166,19 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "3.1",
             "name": "Attached"
           },
           {
+            "key": "3.2",
             "name": "Not Attached"
           },
           {
+            "key": "3.3",
             "name": "Carport"
           },
           {
+            "key": "3.4",
             "name": "Automatic Garage Opener"
           }
         ]
@@ -153,6 +191,7 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "4.1",
             "name": "Locking Safety Cover"
           }
         ]
@@ -165,6 +204,7 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "5.1",
             "name": "Child Resistance Barrier"
           }
         ]
@@ -177,12 +217,15 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "6.1",
             "name": "Gas"
           },
           {
+            "key": "6.2",
             "name": "Solar"
           },
           {
+            "key": "6.3",
             "name": "Electric"
           }
         ]
@@ -195,12 +238,15 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "7.1",
             "name": "Gas"
           },
           {
+            "key": "7.2",
             "name": "Solar"
           },
           {
+            "key": "7.3",
             "name": "Electric"
           }
         ]
@@ -213,15 +259,19 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "8.1",
             "name": "City"
           },
           {
+            "key": "8.2",
             "name": "Well"
           },
           {
+            "key": "8.3",
             "name": "Private Utility"
           },
           {
+            "key": "8.4",
             "name": "Other"
           }
         ]
@@ -234,9 +284,11 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "9.1",
             "name": "Utility"
           },
           {
+            "key": "9.2",
             "name": "Bottled(Tank)"
           }
         ]
@@ -249,6 +301,7 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "10.1",
             "name": "Quick Release Mechanism on Bedroom Windows"
           }
         ]
@@ -261,51 +314,67 @@
         "isCompulsory": false,
         "questionOptions": [
           {
+            "key": "11.1",
             "name": "Interior Walls"
           },
           {
+            "key": "11.2",
             "name": "Ceilings"
           },
           {
+            "key": "11.3",
             "name": "Floors"
           },
           {
+            "key": "11.4",
             "name": "Exterior Walls"
           },
           {
+            "key": "11.5",
             "name": "Insulation"
           },
           {
+            "key": "11.6",
             "name": "Roof"
           },
           {
+            "key": "11.7",
             "name": "Windows"
           },
           {
+            "key": "11.8",
             "name": "Doors"
           },
           {
+            "key": "11.9",
             "name": "Foundation"
           },
           {
+            "key": "11.10",
             "name": "Slab"
           },
           {
+            "key": "11.11",
             "name": "Driveways"
           },
           {
+            "key": "11.12",
             "name": "Sidewalks"
           },
           {
+            "key": "11.13",
             "name": "Walls/Fences"
           },
           {
+            "key": "11.14",
             "name": "Electrical System"
           },
           {
+            "key": "11.15",
             "name": "Plumbing/Sewers/Septics"
           },
           {
+            "key": "11.16",
             "name": "Other Structural Components"
           }
         ]
