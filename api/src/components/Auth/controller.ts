@@ -9,8 +9,8 @@ import { InputError } from "./../../errors/InputError";
 import { NotFound } from "./../../errors/NotFound";
 import { TokenType } from "./../../types/TokenType";
 import {
-    generateAccessToken,
-    generateRefreshToken
+  generateAccessToken,
+  generateRefreshToken,
 } from "./../../utils/generateToken";
 import { sendConfirmationEmail } from "./../../utils/sendEmails";
 import { toMapErrors } from "./../../utils/toMapErrors";
@@ -138,5 +138,33 @@ export const Confirm = async (req: Request, res: Response) => {
     res.render("successfull");
   } catch (error) {
     return res.render("error");
+  }
+};
+
+export const resendConfirmation = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const email: string = req.body.email;
+
+    if (!email.trim().length) {
+      throw new BadRequest("email cannot be null");
+    }
+
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      throw new NotFound("user", email);
+    }
+
+    await sendConfirmationEmail(user);
+
+    res.status(200).json({
+      success: true,
+    });
+  } catch (error) {
+    return next(error);
   }
 };
