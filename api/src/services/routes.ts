@@ -2,6 +2,7 @@ import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
 import QuestionTemplateRouter from "../components/Disclouser/QuestionTemplate/routes";
 import QuestionTypeRouter from "../components/Disclouser/QuestionType/routes";
+import userAnswerTemplateRouter from "../components/Disclouser/UserAnswerTemplate/routes";
 import MediaUploaderRouter from "../components/MediaUploader/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
 import PropertyItemRouter from "../components/Properties/PropertyAddItems/routes";
@@ -31,6 +32,7 @@ router.use("/media", MediaUploaderRouter);
 router.use("/questionType", QuestionTypeRouter);
 router.use("/questionTemplate", QuestionTemplateRouter);
 router.use("/propertyInvitation", PropertyInvitationRouter);
+router.use("/userAnswerTemplate", userAnswerTemplateRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({

@@ -1,7 +1,8 @@
 import express from "express";
+import { createUserAnswer } from "./controller";
 
 const router = express.Router();
 
-router.get("/");
+router.post("/", createUserAnswer);
 
 export default router;
