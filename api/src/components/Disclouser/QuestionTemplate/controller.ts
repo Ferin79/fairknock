@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { getConnection } from "typeorm";
-import { BadRequest } from "./../../../errors/BadRequest";
+import { BadRequest } from "../../../errors/BadRequest";
 import { QuestionTemplate } from "./model";
 
 export const getQuestionTemplateById = async (

@@ -1,15 +1,15 @@
 import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
 } from "typeorm";
+import { QuestionTemplate } from "../Disclouser/QuestionTemplate/model";
 import { Property } from "../Properties/Property/model";
 import { Country } from "./../Country/model";
-import { QuestionTemplate } from "./../Questions/QuestionTemplate/model";
 
 @Entity()
 export class State extends BaseEntity {

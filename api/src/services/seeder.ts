@@ -2,13 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { spawn } from "child_process";
 import { createConnection } from "typeorm";
+import { seedQuestions } from "../components/Disclouser/QuestionTemplate/seed";
+import { seedQuestionType } from "../components/Disclouser/QuestionType/seed";
 import { seedPropertyOptions } from "../components/Properties/PropertyOption/seed";
 import { seedPropertyType } from "../components/Properties/PropertyType/seed";
-import { seedQuestions } from "../components/Questions/QuestionTemplate/seed";
 import { seedCountry } from "./../components/Country/seed";
 import { seedProperty } from "./../components/Properties/Property/seed";
 import { seedPropertyAdditionalCategoryItems } from "./../components/Properties/PropertyAddCategory/seed";
-import { seedQuestionType } from "./../components/Questions/QuestionType/seed";
 import { seedRole } from "./../components/Role/seed";
 import { seedState } from "./../components/State/seed";
 import { seedUser } from "./../components/User/seed";

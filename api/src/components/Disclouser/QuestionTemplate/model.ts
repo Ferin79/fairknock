@@ -1,15 +1,15 @@
 import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
-import { State } from "./../../State/model";
-import { Question } from "./../Question/model";
+import { State } from "../../State/model";
+import { Question } from "../Question/model";
 
 @Entity()
 export class QuestionTemplate extends BaseEntity {

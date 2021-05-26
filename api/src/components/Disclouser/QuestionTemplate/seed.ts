@@ -1,7 +1,7 @@
-import { State } from "./../../State/model";
-import { QuestionOption } from "./../OuestionOption/model";
-import { Question } from "./../Question/model";
-import { QuestionType } from "./../QuestionType/model";
+import { State } from "../../State/model";
+import { QuestionOption } from "../OuestionOption/model";
+import { Question } from "../Question/model";
+import { QuestionType } from "../QuestionType/model";
 import { QuestionTemplate } from "./model";
 import data from "./questionData.json";
 

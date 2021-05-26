@@ -1,17 +1,17 @@
 import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
-import { UserType } from "./../../../types/UserType";
-import { QuestionOption } from "./../OuestionOption/model";
-import { QuestionTemplate } from "./../QuestionTemplate/model";
-import { QuestionType } from "./../QuestionType/model";
+import { UserType } from "../../../types/UserType";
+import { QuestionOption } from "../OuestionOption/model";
+import { QuestionTemplate } from "../QuestionTemplate/model";
+import { QuestionType } from "../QuestionType/model";
 
 @Entity()
 export class Question extends BaseEntity {

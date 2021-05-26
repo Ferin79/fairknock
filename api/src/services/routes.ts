@@ -1,5 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import AuthRouter from "../components/Auth/routes";
+import QuestionTemplateRouter from "../components/Disclouser/QuestionTemplate/routes";
+import QuestionTypeRouter from "../components/Disclouser/QuestionType/routes";
 import MediaUploaderRouter from "../components/MediaUploader/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
 import PropertyItemRouter from "../components/Properties/PropertyAddItems/routes";
@@ -8,8 +10,6 @@ import PropertyMediaRouter from "../components/Properties/PropertyMedia/routes";
 import PropertyOptionRouter from "../components/Properties/PropertyOption/routes";
 import PropertyOptionConnectionRouter from "../components/Properties/PropertyOptionProperty/routes";
 import PropertyTypeRouter from "../components/Properties/PropertyType/routes";
-import QuestionTemplateRouter from "../components/Questions/QuestionTemplate/routes";
-import QuestionTypeRouter from "../components/Questions/QuestionType/routes";
 import RoleRouter from "../components/Role/routes";
 import StateRouter from "../components/State/routes";
 import UserRouter from "../components/User/routes";
