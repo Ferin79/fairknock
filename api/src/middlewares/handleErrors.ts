@@ -10,7 +10,8 @@ export const handleErrors = (
   res: Response,
   _next: NextFunction
 ) => {
-  logger.error(err);
+  console.log(err);
+  logger.error(err.message);
   if (err instanceof GeneralError) {
     return res.status(err.getCode()).json({
       success: false,

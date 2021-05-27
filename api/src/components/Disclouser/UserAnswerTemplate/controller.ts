@@ -86,6 +86,7 @@ export const createUserAnswer = async (
 
       await userAnswer.save();
 
+      item.userAnswer["optionsKey"] = {};
       for (let j = 0; j < item.userAnswer.options.length; j++) {
         const item2 = item.userAnswer.options[i];
 
@@ -94,6 +95,7 @@ export const createUserAnswer = async (
         userOption.questionOption = item2;
 
         await userOption.save();
+
         if (item.userAnswer.optionsKey) {
           item.userAnswer.optionsKey[item2.key] = item2.name;
         } else {

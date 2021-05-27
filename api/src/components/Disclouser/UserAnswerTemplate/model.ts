@@ -1,11 +1,12 @@
 import {
-    BaseEntity,
-    CreateDateColumn,
-    Entity,
-    ManyToOne,
-    OneToMany,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { Property } from "./../../Properties/Property/model";
 import { User } from "./../../User/model";
@@ -34,6 +35,9 @@ export class UserAnswerTemplate extends BaseEntity {
 
   @OneToMany(() => UserAnswer, (userAnswer) => userAnswer.userAnswerTemplate)
   userAnswers: UserAnswer[];
+
+  @Column({ nullable: true })
+  pdfUrl: string;
 
   @CreateDateColumn()
   createdAt: Date;

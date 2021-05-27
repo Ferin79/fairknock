@@ -2,26 +2,14 @@ import ejs from "ejs";
 import fs from "fs";
 import html_to_pdf from "html-pdf-node";
 import path from "path";
+import cloudinary from "../configs/Cloudinary";
 import { questionTypeInput } from "./../components/Disclouser/UserAnswerTemplate/controller";
 import { UserAnswerTemplate } from "./../components/Disclouser/UserAnswerTemplate/model";
-import { logger } from "./../configs/Logger";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const ToPdf = async (
   userAnswerTemplate: UserAnswerTemplate,
   questions: questionTypeInput[]
 ) => {
-  logger.info(questions);
-  console.log(questions[0]);
-
-  const data = questions[0].userAnswer.options.find(
-    (item) =>
-      item.name ===
-      `Inspection reports completed pursuant to the contract of sale or
-receipt for deposit.`
-  );
-  console.log(data ? "checked" : "");
-
   ejs.renderFile(
     path.join(
       __dirname +
@@ -38,12 +26,32 @@ receipt for deposit.`
       const options = { format: "A4" };
       const file = { content: data };
       html_to_pdf.generatePdf(file, options).then((pdfBuffer: string) => {
-        fs.writeFileSync(
-          path.join(
-            __dirname + "/../uploads/pdf/" + Date.now().toString() + ".pdf"
-          ),
-          pdfBuffer
+        const fileName = path.join(
+          __dirname + "/../uploads/pdf/" + Date.now().toString() + ".pdf"
         );
+        fs.writeFile(fileName, pdfBuffer, async () => {
+          try {
+            const data = await cloudinary.v2.uploader.upload(fileName, {
+              upload_preset: "vbbin7bb",
+              format: "pdf",
+            });
+
+            userAnswerTemplate.pdfUrl = data.url;
+            userAnswerTemplate.save();
+
+            fs.unlink(
+              path.join(
+                __dirname + "/../uploads/pdf/" + Date.now().toString() + ".pdf"
+              ),
+              () => {
+                return;
+              }
+            );
+          } catch (error) {
+            console.log(error);
+            return error;
+          }
+        });
       });
     }
   );

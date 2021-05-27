@@ -107,7 +107,7 @@
         <div style="margin: 10px 20px">
           <div style="display: flex">
             <input type="checkbox" name="Substituted_Disclosures" <%=
-            questions[0].userAnswer.options["CA_TDS_options1"] ? "checked" :"" %> />
+            questions[0].userAnswer.optionsKey["1.1"] ? "checked" :"" %> />
             <div>
               Inspection reports completed pursuant to the contract of sale or
               receipt for deposit.
@@ -115,14 +115,12 @@
           </div>
           <div style="display: flex">
             <input type="checkbox" name="Substituted_Disclosures" <%=
-            questions[0].userAnswer.options.find((item) => item.name ===
-            `Additional inspection reports or disclosures`) ? "checked" :"" %>/>
+            questions[0].userAnswer.optionsKey["1.2"] ? "checked" :"" %> />
             <div>Additional inspection reports or disclosures:</div>
           </div>
           <div style="display: flex">
             <input type="checkbox" name="Substituted_Disclosures" <%=
-            questions[0].userAnswer.options.find((item) => item.name === `No
-            substituted disclosures for this transfer`) ? "checked" :"" %> />
+            questions[0].userAnswer.optionsKey["1.3"] ? "checked" :"" %> />
             <div>No substituted disclosures for this transfer.</div>
           </div>
         </div>
@@ -154,118 +152,146 @@
         >
           <div>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.1"] ? "checked" :"" %> />
               <div>Range</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.2"] ? "checked" :"" %> />
               <div>Oven</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.3"] ? "checked" :"" %>/>
               <div>Microwave</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.4"] ? "checked" :"" %> />
               <div>Dishwasher</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.5"] ? "checked" :"" %> />
               <div>Trash Compactor</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.6"] ? "checked" :"" %> />
               <div>Garbage Disposal</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.7"] ? "checked" :"" %> />
               <div>Washer/Dryer Hookups</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.8"] ? "checked" :"" %> />
               <div>Rain Gutters</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.9"] ? "checked" :"" %> />
               <div>Burglar Alarms</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
-              <div>Carbon Monoxide</div>
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.10"] ? "checked" :"" %> />
+              <div>Carbon Monoxide Device(s)</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
-              <div>Device(s) Smoke Detector(s)</div>
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.11"] ? "checked" :"" %> />
+              <div>Smoke Detector(s)</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.12"] ? "checked" :"" %> />
               <div>Fire Alarm</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.13"] ? "checked" :"" %> />
               <div>TV Antenna</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.14"] ? "checked" :"" %> />
               <div>Satellite Dish</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.15"] ? "checked" :"" %> />
               <div>Intercom</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.16"] ? "checked" :"" %> />
               <div>Central Heating</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.17"] ? "checked" :"" %> />
               <div>Central Air Conditioning</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.18"] ? "checked" :"" %> />
               <div>Evaporator Cooler(s)</div>
             </li>
           </div>
 
           <div>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.19"] ? "checked" :"" %> />
               <div>Window Air Conditioning</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.20"] ? "checked" :"" %> />
               <div>Sprinklers</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.21"] ? "checked" :"" %> />
               <div>Public Sewer System</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.22"] ? "checked" :"" %> />
               <div>Septic Tank</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.23"] ? "checked" :"" %> />
               <div>Sump Pump</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.24"] ? "checked" :"" %> />
               <div>Water Softener</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.25"] ? "checked" :"" %> />
               <div>Patio/Decking</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.26"] ? "checked" :"" %> />
               <div>Built-in Barbecue</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.27"] ? "checked" :"" %> />
               <div>Gazebo</div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.28"] ? "checked" :"" %> />
               <div>Security Gate(s)</div>
             </li>
             <li>
@@ -276,26 +302,35 @@
               <div style="margin-left: 15px">
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[2].userAnswer.optionsKey["3.1"] ? "checked" :"" %>
+                    />
                     <div>Attached</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[2].userAnswer.optionsKey["3.2"] ? "checked" :"" %>
+                    />
                     <div>Not Attached</div>
                   </div>
                 </div>
                 <div style="display: flex">
-                  <input type="checkbox" />
+                  <input type="checkbox" <%=
+                  questions[2].userAnswer.optionsKey["3.3"] ? "checked" :"" %>
+                  />
                   <div>Carport</div>
                 </div>
                 <div style="display: flex">
-                  <input type="checkbox" />
+                  <input type="checkbox" <%=
+                  questions[2].userAnswer.optionsKey["3.4"] ? "checked" :"" %>
+                  />
                   <div>Automatic Garage Opener</div>
                 </div>
               </div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.29"] ? "checked" :"" %> />
               <div>Sauna</div>
             </li>
             <li>
@@ -305,7 +340,9 @@
               </div>
               <div style="margin-left: 15px">
                 <div style="display: flex">
-                  <input type="checkbox" />
+                  <input type="checkbox" <%=
+                  questions[3].userAnswer.optionsKey["4.1"] ? "checked" :"" %>
+                  />
                   <div>Locking Safety Cover</div>
                 </div>
               </div>
@@ -320,7 +357,9 @@
               </div>
               <div style="margin-left: 15px">
                 <div style="display: flex">
-                  <input type="checkbox" />
+                  <input type="checkbox" <%=
+                  questions[4].userAnswer.optionsKey["5.1"] ? "checked" :"" %>
+                  />
                   <div>Child Resistance Barrier</div>
                 </div>
               </div>
@@ -333,15 +372,21 @@
               <div style="margin-left: 15px">
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[5].userAnswer.optionsKey["6.1"] ? "checked" :"" %>
+                    />
                     <div>Gas</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[5].userAnswer.optionsKey["6.2"] ? "checked" :"" %>
+                    />
                     <div>Solar</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[5].userAnswer.optionsKey["6.3"] ? "checked" :"" %>
+                    />
                     <div>Electric</div>
                   </div>
                 </div>
@@ -355,15 +400,21 @@
               <div style="margin-left: 15px">
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[6].userAnswer.optionsKey["7.1"] ? "checked" :"" %>
+                    />
                     <div>Gas</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[6].userAnswer.optionsKey["7.2"] ? "checked" :"" %>
+                    />
                     <div>Solar</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[6].userAnswer.optionsKey["7.3"] ? "checked" :"" %>
+                    />
                     <div>Electric</div>
                   </div>
                 </div>
@@ -377,21 +428,29 @@
               <div style="margin-left: 15px">
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[7].userAnswer.optionsKey["8.1"] ? "checked" :"" %>
+                    />
                     <div>City</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[7].userAnswer.optionsKey["8.2"] ? "checked" :"" %>
+                    />
                     <div>Well</div>
                   </div>
                 </div>
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[7].userAnswer.optionsKey["8.3"] ? "checked" :"" %>
+                    />
                     <div>Private Utility</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[7].userAnswer.optionsKey["8.4"] ? "checked" :"" %>
+                    />
                     <div>Other</div>
                   </div>
                 </div>
@@ -405,18 +464,23 @@
               <div style="margin-left: 15px">
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[8].userAnswer.optionsKey["9.1"] ? "checked" :"" %>
+                    />
                     <div>Utility</div>
                   </div>
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[8].userAnswer.optionsKey["9.2"] ? "checked" :"" %>
+                    />
                     <div>Bottled(Tank)</div>
                   </div>
                 </div>
               </div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.30"] ? "checked" :"" %> />
               <div>Window Screens</div>
             </li>
             <li>
@@ -427,14 +491,17 @@
               <div style="margin-left: 15px">
                 <div style="display: flex">
                   <div style="display: flex">
-                    <input type="checkbox" />
+                    <input type="checkbox" <%=
+                    questions[9].userAnswer.optionsKey["10.1"] ? "checked" :""
+                    %> />
                     <div>Quick Release Mechanism on Bedroom Windows</div>
                   </div>
                 </div>
               </div>
             </li>
             <li style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.31"] ? "checked" :"" %> />
               <div>Water-Conserving Plumbing Fixtures</div>
             </li>
           </div>
@@ -442,15 +509,15 @@
         <div style="width: 100%; display: flex; justify-content: space-evenly">
           <div>
             Exhaust Fan(s) in
-            <span style="text-decoration: underline">ANSWER HERE</span>
+            <span style="text-decoration: underline">____________</span>
           </div>
           <div>
             220 Volt Wriring in
-            <span style="text-decoration: underline">ANSWER HERE</span>
+            <span style="text-decoration: underline">____________</span>
           </div>
           <div>
             Fireplace(s) in
-            <span style="text-decoration: underline">ANSWER HERE</span>
+            <span style="text-decoration: underline">____________</span>
           </div>
         </div>
         <div style="width: 100%; display: flex; justify-content: space-evenly">
@@ -522,69 +589,85 @@
       </div>
       <div style="width: 100%; display: flex; margin-top: 10px">
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.1"]
+          ? "checked" : "" %> />
           <div>Interior Walls</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.2"]
+          ? "checked" : "" %> />
           <div>Ceilings</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.3"]
+          ? "checked" : "" %> />
           <div>Floors</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.4"]
+          ? "checked" : "" %> />
           <div>Exterior Walls</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.5"]
+          ? "checked" : "" %> />
           <div>Insulation</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.6"]
+          ? "checked" : "" %> />
           <div>Roof(s)</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.7"]
+          ? "checked" : "" %> />
           <div>Windows</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.8"]
+          ? "checked" : "" %> />
           <div>Doors</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[10].userAnswer.optionsKey["11.9"]
+          ? "checked" : "" %> />
           <div>Foundation</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.10"] ? "checked" : "" %> />
           <div>Slab(s)</div>
         </div>
       </div>
       <div style="width: 100%; display: flex; margin-top: 10px">
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.11"] ? "checked" : "" %> />
           <div>Driveways</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.12"] ? "checked" : "" %> />
           <div>Sidewalks</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.13"] ? "checked" : "" %> />
           <div>Walls/Fences</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.14"] ? "checked" : "" %> />
           <div>Electrical Systems</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.15"] ? "checked" : "" %> />
           <div>Plumbing/Sewers/Septics</div>
         </div>
         <div style="display: flex">
-          <input type="checkbox" />
+          <input type="checkbox" <%=
+          questions[10].userAnswer.optionsKey["11.16"] ? "checked" : "" %> />
           <div>Other Structural Components</div>
         </div>
       </div>
@@ -621,11 +704,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[11].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[11].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -639,11 +726,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[12].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[12].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -656,11 +747,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[13].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[13].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -673,11 +768,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[14].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[14].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -690,11 +789,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[15].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[15].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -706,11 +809,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[16].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[16].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -722,11 +829,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[17].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[17].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -738,11 +849,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[18].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[18].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -755,11 +870,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[19].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[19].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -771,11 +890,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[20].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[20].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -787,11 +910,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[21].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[21].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -803,11 +930,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[22].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[22].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -819,11 +950,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[23].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[23].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -836,11 +971,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[24].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[24].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -852,11 +991,15 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[25].userAnswer.answer.toLowerCase() === "yes" ?
+              "checked" : "" %> />
               <div>Yes</div>
             </div>
             <div style="display: flex">
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[25].userAnswer.answer.toLowerCase() === "no" ? "checked"
+              : "" %> />
               <div>No</div>
             </div>
           </div>
@@ -879,12 +1022,18 @@
           </div>
           <div style="display: flex">
             <div style="display: flex">
-              <input type="checkbox" />
-              <div>Yes</div>
-            </div>
-            <div style="display: flex">
-              <input type="checkbox" />
-              <div>No</div>
+              <div style="display: flex">
+                <input type="checkbox" <%=
+                questions[26].userAnswer.answer.toLowerCase() === "yes" ?
+                "checked" : "" %> />
+                <div>Yes</div>
+              </div>
+              <div style="display: flex">
+                <input type="checkbox" <%=
+                questions[26].userAnswer.answer.toLowerCase() === "no" ?
+                "checked" : "" %> />
+                <div>No</div>
+              </div>
             </div>
           </div>
         </li>

@@ -256,15 +256,13 @@ export const updatePropertyStatus = async (
       throw new BadRequest("property id cannot be null");
     }
 
-    const property = await Property.findOne(propertyId, {
-      relations: ["user"],
-    });
+    const property = await Property.findOne(propertyId);
 
     if (!property) {
       throw new NotFound("property", propertyId);
     }
 
-    if (property.user.id !== user.id) {
+    if (property.userId !== user.id) {
       throw new Unathorized();
     }
 
