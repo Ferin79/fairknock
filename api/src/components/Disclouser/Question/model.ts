@@ -34,7 +34,7 @@ export class Question extends BaseEntity {
   @Column({ default: UserType.seller })
   askTo: string;
 
-  @Column()
+  @Column({ unique: true })
   sequenceNumber: number;
 
   @Column({ default: false })

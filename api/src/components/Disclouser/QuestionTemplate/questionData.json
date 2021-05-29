@@ -517,7 +517,7 @@
       {
         "title": "Fire Severity Zone",
         "description": "The home is in a high or very high fire hazard severity zone.",
-        "sequenceNumber": 1,
+        "sequenceNumber": 28,
         "questionType": "boolean",
         "isCompulsory": true,
         "questionOptions": []
@@ -525,32 +525,32 @@
       {
         "title": "Fire Hardening Vulnerabilities",
         "description": "Seller is aware of the following features that may make the home vulnerable towildfire and flying embers (check all that apply):",
-        "sequenceNumber": 2,
+        "sequenceNumber": 29,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "2.1",
+            "key": "29.1",
             "name": "Eave, soffit, and roof ventilation where the vents have openings in excess of one-eighth of an inch or are not flame andember resistant."
           },
           {
-            "key": "2.2",
+            "key": "29.2",
             "name": "Roof coverings made of untreated wood shingles or shakes."
           },
           {
-            "key": "2.3",
+            "key": "29.3",
             "name": "Combustible landscaping or other materials within five feet of the home and under the footprint of any attached deck."
           },
           {
-            "key": "2.4",
+            "key": "29.4",
             "name": "Single pane or non-tempered glass windows."
           },
           {
-            "key": "2.5",
+            "key": "29.5",
             "name": "Loose or missing bird stopping or roof flashing."
           },
           {
-            "key": "2.6",
+            "key": "29.6",
             "name": "Rain gutters without metal or noncombustible gutter covers."
           }
         ]
@@ -558,20 +558,20 @@
       {
         "title": "DEFENSIBLE SPACE COMPLIANCE ((1) applies unless (2), (3), or (4) is checked):",
         "description": "(1) NO LOCAL ORDINANCE, BUYER shall obtain documentation of compliance with the State defensible space law;No local ordinance: There is no local ordinance requiring proof of compliance with defensible space laws. Buyer shallobtain documentation of compliancewithin one year ofClose Of Escrow. This requirement only applies if there is a stateor local agency, or other governmental entity, or qualified non-profit entity in the jurisdiction where the Property is locatedthat is authorized to inspect the Property and provide documentation of compliance (“Authorized Inspector”).",
-        "sequenceNumber": 3,
+        "sequenceNumber": 30,
         "questionType": "checkbox",
         "isCompulsory": true,
         "questionOptions": [
           {
-            "key": "3.1",
+            "key": "30.1",
             "name": "(2) NO LOCAL ORDINANCE. SELLER within the previous 6 months has already obtained documentation ofcompliance with the State defensible space law: There is no local ordinance requiring Seller to provide proof ofcompliance with defensible space laws, but Seller voluntarily obtained documentation within the last 6 months, from anAuthorized Inspector. Seller shall deliver documentation to Buyer within 7 Days after Acceptance."
           },
           {
-            "key": "3.2",
+            "key": "30.2",
             "name": "(3) LOCAL VEGETATION MANAGEMENT ORDINANCE IN EFFECT. BUYER shall obtain documentation ofcompliance with the defensible space law: There is a local ordinance requiring proof of compliance with defensiblespace laws anditallowseitherSellerorBuyertoobtaindocumentation of compliance. Buyer shall comply with therequirements of the ordinance after Close Of Escrow. "
           },
           {
-            "key": "3.3",
+            "key": "30.3",
             "name": "(4) LOCAL VEGETATION MANAGEMENT ORDINANCE IN EFFECT. SELLER shall provide documentation thatProperty is in compliance with defensible space law: There is a local ordinancerequiringSellertoprovideproofofcompliance with defensible space laws prior to Close Of Escrow. If Seller has already obtained documentation, Sellershall deliver documentation to Buyer within 7 Days after Acceptance. If Seller has not yet obtained documentation, Sellershall deliver documentation to Buyer 5 days prior to Close Of Escrow."
           }
         ]
