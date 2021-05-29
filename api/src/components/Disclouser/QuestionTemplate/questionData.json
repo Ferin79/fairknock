@@ -7,20 +7,20 @@
       {
         "title": "Substituted Disclosures",
         "description": "The following disclosures and other disclosures required by law, including the Natural Hazard DisclosureReport/Statement that may include airport annoyances, earthquake, fire, flood, or special assessment information, have or will be madein connection with this real estate transfer, and are intended to satisfy the disclosure obligations on this form, where the subjectmatter is the same",
-        "sequenceNumber": 1,
+        "sequenceNumber": 0,
         "questionType": "checkbox",
         "isCompulsory": true,
         "questionOptions": [
           {
-            "key": "1.1",
+            "key": "0.1",
             "name": "Inspection reports completed pursuant to the contract of sale or receipt for deposit"
           },
           {
-            "key": "1.2",
+            "key": "0.2",
             "name": "Additional inspection reports or disclosures"
           },
           {
-            "key": "1.3",
+            "key": "0.3",
             "name": "No substituted disclosures for this transfer"
           }
         ]
@@ -28,132 +28,132 @@
       {
         "title": "The subject property has the items checked below",
         "description": "",
-        "sequenceNumber": 2,
+        "sequenceNumber": 1,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "2.1",
+            "key": "1.1",
             "name": "Range"
           },
           {
-            "key": "2.2",
+            "key": "1.2",
             "name": "Oven"
           },
           {
-            "key": "2.3",
+            "key": "1.3",
             "name": "Microwave"
           },
           {
-            "key": "2.4",
+            "key": "1.4",
             "name": "Dishwasher"
           },
           {
-            "key": "2.5",
+            "key": "1.5",
             "name": "Trash Compactor"
           },
           {
-            "key": "2.6",
+            "key": "1.6",
             "name": "Garbage Disposal"
           },
           {
-            "key": "2.7",
+            "key": "1.7",
             "name": "Washer/Dryer Hookups"
           },
           {
-            "key": "2.8",
+            "key": "1.8",
             "name": "Rain Gutters"
           },
           {
-            "key": "2.9",
+            "key": "1.9",
             "name": "Burglar Alarms "
           },
           {
-            "key": "2.10",
+            "key": "1.10",
             "name": "Carbon Monoxide Device(s) "
           },
           {
-            "key": "2.11",
+            "key": "1.11",
             "name": "Smoke Detector(s) "
           },
           {
-            "key": "2.12",
+            "key": "1.12",
             "name": "Fire Alarm "
           },
           {
-            "key": "2.13",
+            "key": "1.13",
             "name": "TV Antenna"
           },
           {
-            "key": "2.14",
+            "key": "1.14",
             "name": "Satellite Dish "
           },
           {
-            "key": "2.15",
+            "key": "1.15",
             "name": "Intercom "
           },
           {
-            "key": "2.16",
+            "key": "1.16",
             "name": "Central Heating "
           },
           {
-            "key": "2.17",
+            "key": "1.17",
             "name": "Central Air Conditioning "
           },
           {
-            "key": "2.18",
+            "key": "1.18",
             "name": "Evaporator Cooler(s)"
           },
           {
-            "key": "2.19",
+            "key": "1.19",
             "name": "Wall/Window Air Conditioning "
           },
           {
-            "key": "2.20",
+            "key": "1.20",
             "name": "Sprinklers "
           },
           {
-            "key": "2.21",
+            "key": "1.21",
             "name": "Public Sewer System "
           },
           {
-            "key": "2.22",
+            "key": "1.22",
             "name": "Septic Tank "
           },
           {
-            "key": "2.23",
+            "key": "1.23",
             "name": "Sump Pump "
           },
           {
-            "key": "2.24",
+            "key": "1.24",
             "name": "Water Softener "
           },
           {
-            "key": "2.25",
+            "key": "1.25",
             "name": "Patio/Decking "
           },
           {
-            "key": "2.26",
+            "key": "1.26",
             "name": "Built-in Barbecue "
           },
           {
-            "key": "2.27",
+            "key": "1.27",
             "name": "Gazebo "
           },
           {
-            "key": "2.28",
+            "key": "1.28",
             "name": "Security Gate(s) "
           },
           {
-            "key": "2.29",
+            "key": "1.29",
             "name": "Sauna"
           },
           {
-            "key": "2.30",
+            "key": "1.30",
             "name": " Window Screens"
           },
           {
-            "key": "2.31",
+            "key": "1.31",
             "name": "Water-Conserving Plumbing Fixtures"
           }
         ]
@@ -161,24 +161,24 @@
       {
         "title": "Do you have Garage ?",
         "description": "",
-        "sequenceNumber": 3,
+        "sequenceNumber": 2,
         "questionType": "radio",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "3.1",
+            "key": "2.1",
             "name": "Attached"
           },
           {
-            "key": "3.2",
+            "key": "2.2",
             "name": "Not Attached"
           },
           {
-            "key": "3.3",
+            "key": "2.3",
             "name": "Carport"
           },
           {
-            "key": "3.4",
+            "key": "2.4",
             "name": "Automatic Garage Opener"
           }
         ]
@@ -186,12 +186,12 @@
       {
         "title": "Do you have Hot Tub/Spa?",
         "description": "",
-        "sequenceNumber": 4,
+        "sequenceNumber": 3,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "4.1",
+            "key": "3.1",
             "name": "Locking Safety Cover"
           }
         ]
@@ -199,18 +199,39 @@
       {
         "title": "Do you have Pool?",
         "description": "",
-        "sequenceNumber": 5,
+        "sequenceNumber": 4,
         "questionType": "radio",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "5.1",
+            "key": "4.1",
             "name": "Child Resistance Barrier"
           }
         ]
       },
       {
         "title": "Do you have Pool/Spa Heater?",
+        "description": "",
+        "sequenceNumber": 5,
+        "questionType": "checkbox",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "key": "5.1",
+            "name": "Gas"
+          },
+          {
+            "key": "5.2",
+            "name": "Solar"
+          },
+          {
+            "key": "5.3",
+            "name": "Electric"
+          }
+        ]
+      },
+      {
+        "title": "Do you have Water Heater?",
         "description": "",
         "sequenceNumber": 6,
         "questionType": "checkbox",
@@ -231,7 +252,7 @@
         ]
       },
       {
-        "title": "Do you have Water Heater?",
+        "title": "Do you have Water Supply?",
         "description": "",
         "sequenceNumber": 7,
         "questionType": "checkbox",
@@ -239,39 +260,18 @@
         "questionOptions": [
           {
             "key": "7.1",
-            "name": "Gas"
-          },
-          {
-            "key": "7.2",
-            "name": "Solar"
-          },
-          {
-            "key": "7.3",
-            "name": "Electric"
-          }
-        ]
-      },
-      {
-        "title": "Do you have Water Supply?",
-        "description": "",
-        "sequenceNumber": 8,
-        "questionType": "checkbox",
-        "isCompulsory": false,
-        "questionOptions": [
-          {
-            "key": "8.1",
             "name": "City"
           },
           {
-            "key": "8.2",
+            "key": "7.2",
             "name": "Well"
           },
           {
-            "key": "8.3",
+            "key": "7.3",
             "name": "Private Utility"
           },
           {
-            "key": "8.4",
+            "key": "7.4",
             "name": "Other"
           }
         ]
@@ -279,16 +279,16 @@
       {
         "title": "Do you have Gas Supply?",
         "description": "",
-        "sequenceNumber": 9,
+        "sequenceNumber": 8,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "9.1",
+            "key": "8.1",
             "name": "Utility"
           },
           {
-            "key": "9.2",
+            "key": "8.2",
             "name": "Bottled(Tank)"
           }
         ]
@@ -296,12 +296,12 @@
       {
         "title": "Do you have Window Security Bars?",
         "description": "",
-        "sequenceNumber": 10,
+        "sequenceNumber": 9,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "10.1",
+            "key": "9.1",
             "name": "Quick Release Mechanism on Bedroom Windows"
           }
         ]
@@ -309,72 +309,72 @@
       {
         "title": "Are you (Seller) aware of any significant defects/malfunctions in any of the following? ",
         "description": "",
-        "sequenceNumber": 11,
+        "sequenceNumber": 10,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "11.1",
+            "key": "10.1",
             "name": "Interior Walls"
           },
           {
-            "key": "11.2",
+            "key": "10.2",
             "name": "Ceilings"
           },
           {
-            "key": "11.3",
+            "key": "10.3",
             "name": "Floors"
           },
           {
-            "key": "11.4",
+            "key": "10.4",
             "name": "Exterior Walls"
           },
           {
-            "key": "11.5",
+            "key": "10.5",
             "name": "Insulation"
           },
           {
-            "key": "11.6",
+            "key": "10.6",
             "name": "Roof"
           },
           {
-            "key": "11.7",
+            "key": "10.7",
             "name": "Windows"
           },
           {
-            "key": "11.8",
+            "key": "10.8",
             "name": "Doors"
           },
           {
-            "key": "11.9",
+            "key": "10.9",
             "name": "Foundation"
           },
           {
-            "key": "11.10",
+            "key": "10.10",
             "name": "Slab"
           },
           {
-            "key": "11.11",
+            "key": "10.11",
             "name": "Driveways"
           },
           {
-            "key": "11.12",
+            "key": "10.12",
             "name": "Sidewalks"
           },
           {
-            "key": "11.13",
+            "key": "10.13",
             "name": "Walls/Fences"
           },
           {
-            "key": "11.14",
+            "key": "10.14",
             "name": "Electrical System"
           },
           {
-            "key": "11.15",
+            "key": "10.15",
             "name": "Plumbing/Sewers/Septics"
           },
           {
-            "key": "11.16",
+            "key": "10.16",
             "name": "Other Structural Components"
           }
         ]
@@ -382,7 +382,7 @@
       {
         "title": "Substances, materials, or products which may be an environmental hazard such as, but not limited to, asbestos,formaldehyde, radon gas, lead-based paint, mold, fuel or chemical storage tanks, and contaminated soil or wateron the subject property",
         "description": "",
-        "sequenceNumber": 12,
+        "sequenceNumber": 11,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -390,7 +390,7 @@
       {
         "title": "Features of the property shared in common with adjoining landowners, such as walls, fences, and driveways,whose use or responsibility for maintenance may have an effect on the subject property",
         "description": "",
-        "sequenceNumber": 13,
+        "sequenceNumber": 12,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -398,7 +398,7 @@
       {
         "title": "Any encroachments, easements or similar matters that may affect your interest in the subject property",
         "description": "",
-        "sequenceNumber": 14,
+        "sequenceNumber": 13,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -406,7 +406,7 @@
       {
         "title": "Room additions, structural modifications, or other alterations or repairs made without necessary permits",
         "description": "",
-        "sequenceNumber": 15,
+        "sequenceNumber": 14,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -414,7 +414,7 @@
       {
         "title": "Room additions, structural modifications, or other alterations or repairs not in compliance with building codes",
         "description": "",
-        "sequenceNumber": 16,
+        "sequenceNumber": 15,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -422,7 +422,7 @@
       {
         "title": "Fill (compacted or otherwise) on the property or any portion there",
         "description": "",
-        "sequenceNumber": 17,
+        "sequenceNumber": 16,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -430,7 +430,7 @@
       {
         "title": "Any settling from any cause, or slippage, sliding, or other soil problems",
         "description": "",
-        "sequenceNumber": 18,
+        "sequenceNumber": 17,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -438,7 +438,7 @@
       {
         "title": "Flooding, drainage or grading problems",
         "description": "",
-        "sequenceNumber": 19,
+        "sequenceNumber": 18,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -446,7 +446,7 @@
       {
         "title": "Major damage to the property or any of the structures from fire, earthquake, floods, or landslides",
         "description": "",
-        "sequenceNumber": 20,
+        "sequenceNumber": 19,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -454,7 +454,7 @@
       {
         "title": "Any zoning violations, nonconforming uses, violations of 'setback' requirement",
         "description": "",
-        "sequenceNumber": 21,
+        "sequenceNumber": 20,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -462,7 +462,7 @@
       {
         "title": "Neighborhood noise problems or other nuisance",
         "description": "",
-        "sequenceNumber": 22,
+        "sequenceNumber": 21,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -470,7 +470,7 @@
       {
         "title": "CC&R's or other deed restrictions or obligations",
         "description": "",
-        "sequenceNumber": 23,
+        "sequenceNumber": 22,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -478,7 +478,7 @@
       {
         "title": "Homeowners' Association which has any authority over the subject property",
         "description": "",
-        "sequenceNumber": 24,
+        "sequenceNumber": 23,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -486,7 +486,7 @@
       {
         "title": "Any 'common area' (facilities such as pools, tennis courts, walkways, or other areas co-owned in undividedinterest with others)",
         "description": "",
-        "sequenceNumber": 25,
+        "sequenceNumber": 24,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -494,7 +494,7 @@
       {
         "title": "Any notices of abatement or citations against the property",
         "description": "",
-        "sequenceNumber": 26,
+        "sequenceNumber": 25,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -502,7 +502,7 @@
       {
         "title": "Any lawsuits by or against the Seller threatening to or affecting this real property, claims for damages by theSeller pursuant to Section 910 or 914 of the Civil Code threatening to or affecting this real property, claims forbreach of warranty pursuant to Section 900 of the Civil Code threatening to or affecting this real property, orclaims for breach of an enhanced protection agreement pursuant to Section 903 of the Civil Code threatening toor affecting this real property, including any lawsuits or claims for damages pursuant to Section 910 or 914 ofthe Civil Code alleging a defect or deficiency in this real property or 'common areas' (facilities such as pools,tennis courts, walkways, or other areas co-owned in undivided interest with other",
         "description": "",
-        "sequenceNumber": 27,
+        "sequenceNumber": 26,
         "isCompulsory": true,
         "questionType": "boolean",
         "questionOptions": []
@@ -517,7 +517,7 @@
       {
         "title": "Fire Severity Zone",
         "description": "The home is in a high or very high fire hazard severity zone.",
-        "sequenceNumber": 28,
+        "sequenceNumber": 0,
         "questionType": "boolean",
         "isCompulsory": true,
         "questionOptions": []
@@ -525,32 +525,32 @@
       {
         "title": "Fire Hardening Vulnerabilities",
         "description": "Seller is aware of the following features that may make the home vulnerable towildfire and flying embers (check all that apply):",
-        "sequenceNumber": 29,
+        "sequenceNumber": 1,
         "questionType": "checkbox",
         "isCompulsory": false,
         "questionOptions": [
           {
-            "key": "29.1",
+            "key": "1.1",
             "name": "Eave, soffit, and roof ventilation where the vents have openings in excess of one-eighth of an inch or are not flame andember resistant."
           },
           {
-            "key": "29.2",
+            "key": "1.2",
             "name": "Roof coverings made of untreated wood shingles or shakes."
           },
           {
-            "key": "29.3",
+            "key": "1.3",
             "name": "Combustible landscaping or other materials within five feet of the home and under the footprint of any attached deck."
           },
           {
-            "key": "29.4",
+            "key": "1.4",
             "name": "Single pane or non-tempered glass windows."
           },
           {
-            "key": "29.5",
+            "key": "1.5",
             "name": "Loose or missing bird stopping or roof flashing."
           },
           {
-            "key": "29.6",
+            "key": "1.6",
             "name": "Rain gutters without metal or noncombustible gutter covers."
           }
         ]
@@ -558,20 +558,20 @@
       {
         "title": "DEFENSIBLE SPACE COMPLIANCE ((1) applies unless (2), (3), or (4) is checked):",
         "description": "(1) NO LOCAL ORDINANCE, BUYER shall obtain documentation of compliance with the State defensible space law;No local ordinance: There is no local ordinance requiring proof of compliance with defensible space laws. Buyer shallobtain documentation of compliancewithin one year ofClose Of Escrow. This requirement only applies if there is a stateor local agency, or other governmental entity, or qualified non-profit entity in the jurisdiction where the Property is locatedthat is authorized to inspect the Property and provide documentation of compliance (“Authorized Inspector”).",
-        "sequenceNumber": 30,
+        "sequenceNumber": 2,
         "questionType": "checkbox",
         "isCompulsory": true,
         "questionOptions": [
           {
-            "key": "30.1",
+            "key": "2.1",
             "name": "(2) NO LOCAL ORDINANCE. SELLER within the previous 6 months has already obtained documentation ofcompliance with the State defensible space law: There is no local ordinance requiring Seller to provide proof ofcompliance with defensible space laws, but Seller voluntarily obtained documentation within the last 6 months, from anAuthorized Inspector. Seller shall deliver documentation to Buyer within 7 Days after Acceptance."
           },
           {
-            "key": "30.2",
+            "key": "2.2",
             "name": "(3) LOCAL VEGETATION MANAGEMENT ORDINANCE IN EFFECT. BUYER shall obtain documentation ofcompliance with the defensible space law: There is a local ordinance requiring proof of compliance with defensiblespace laws anditallowseitherSellerorBuyertoobtaindocumentation of compliance. Buyer shall comply with therequirements of the ordinance after Close Of Escrow. "
           },
           {
-            "key": "30.3",
+            "key": "2.3",
             "name": "(4) LOCAL VEGETATION MANAGEMENT ORDINANCE IN EFFECT. SELLER shall provide documentation thatProperty is in compliance with defensible space law: There is a local ordinancerequiringSellertoprovideproofofcompliance with defensible space laws prior to Close Of Escrow. If Seller has already obtained documentation, Sellershall deliver documentation to Buyer within 7 Days after Acceptance. If Seller has not yet obtained documentation, Sellershall deliver documentation to Buyer 5 days prior to Close Of Escrow."
           }
         ]
