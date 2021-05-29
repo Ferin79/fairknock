@@ -219,6 +219,7 @@ export const createProperty = async (
 
     property.state = state;
     property.propertyType = propertyType;
+    property.invitationsAccepted = [user];
 
     await property.save();
 
