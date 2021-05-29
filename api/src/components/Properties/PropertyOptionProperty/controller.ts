@@ -28,7 +28,6 @@ export const createPropertyOptionConn = async (
     if (!data.length) {
       return res.status(200).json({
         success: true,
-        data,
       });
     }
 
@@ -69,7 +68,7 @@ export const createPropertyOptionConn = async (
 
     for (let i = 0; i < validData.length; i++) {
       const item = validData[i];
-      item.propertyId = propertyId;
+      item.propertyId = property.id;
       try {
         await item.save({ reload: false });
       } catch (error) {

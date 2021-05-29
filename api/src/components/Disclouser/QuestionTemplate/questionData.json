@@ -508,5 +508,53 @@
         "questionOptions": []
       }
     ]
+  },
+  {
+    "name": "Fire Hardening and Defensible Space Advisory, Disclosure, and Addendum",
+    "uniqueName": "CA_FHDSADA",
+    "state": "CA",
+    "questions": [
+      {
+        "title": "Fire Severity Zone",
+        "description": "The home is in a high or very high fire hazard severity zone.",
+        "sequenceNumber": 1,
+        "questionType": "boolean",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "Fire Hardening Vulnerabilities",
+        "description": "Seller is aware of the following features that may make the home vulnerable towildfire and flying embers (check all that apply):",
+        "sequenceNumber": 2,
+        "questionType": "boolean",
+        "isCompulsory": false,
+        "questionOptions": [
+          {
+            "key": "2.1",
+            "name": "Eave, soffit, and roof ventilation where the vents have openings in excess of one-eighth of an inch or are not flame andember resistant."
+          },
+          {
+            "key": "2.2",
+            "name": "Roof coverings made of untreated wood shingles or shakes."
+          },
+          {
+            "key": "2.3",
+            "name": "Combustible landscaping or other materials within five feet of the home and under the footprint of any attached deck."
+          },
+          {
+            "key": "2.4",
+            "name": "Single pane or non-tempered glass windows."
+          },
+          {
+            "key": "2.5",
+            "name": "Loose or missing bird stopping or roof flashing."
+          },
+          {
+            "key": "2.6",
+            "name": "Rain gutters without metal or noncombustible gutter covers."
+          }
+        ]
+      }
+    ]
   }
 ]

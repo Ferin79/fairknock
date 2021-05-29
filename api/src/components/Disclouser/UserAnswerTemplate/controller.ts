@@ -88,7 +88,7 @@ export const createUserAnswer = async (
 
       item.userAnswer["optionsKey"] = {};
       for (let j = 0; j < item.userAnswer.options.length; j++) {
-        const item2 = item.userAnswer.options[i];
+        const item2 = item.userAnswer.options[j];
 
         const userOption = new UserAnswerOption();
         userOption.userAnswer = userAnswer;
