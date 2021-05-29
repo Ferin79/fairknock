@@ -65,8 +65,8 @@
 
       <div>
         This is an advisory, disclosure, and addendum to the Purchase Agreement,
-        OR Other _____________________ (“Agreement”), dated ________________ ,
-        on property known as __________________________________________________
+        OR Other _____________________ (“Agreement”), dated <%= date %> , on
+        property known as __________________________________________________
         (“Property”),in which __________________________________________________
         is referred to as Buyer,and
         __________________________________________________ is referred to as
@@ -153,7 +153,9 @@
           >
           <div style="display: flex">
             <span>B.</span>
-            <input type="checkbox" />
+            <input type="checkbox" <%=
+            questions[0].userAnswer.answer.toLowerCase() === "no" ? "checked" :
+            "" %> />
             <span
               >The home is NOT in a high or very high fire hazard severity zone.
               Seller is providing this form as an advisory and, ifparagraph 3B
@@ -197,7 +199,8 @@
             >
             <div style="display: flex; align-items: flex-start">
               <span>(1) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.1"] ? "checked" : "" %> />
               <span
                 >Eave, soffit, and roof ventilation where the vents have
                 openings in excess of one-eighth of an inch or are not flame
@@ -207,7 +210,8 @@
 
             <div style="display: flex; align-items: flex-start">
               <span>(2) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.2"] ? "checked" : "" %> />
               <span
                 >Roof coverings made of untreated wood shingles or shakes.</span
               >
@@ -215,7 +219,8 @@
 
             <div style="display: flex; align-items: flex-start">
               <span>(3) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.3"] ? "checked" : "" %> />
               <span
                 >Combustible landscaping or other materials within five feet of
                 the home and under the footprint of any attached deck.</span
@@ -224,19 +229,22 @@
 
             <div style="display: flex; align-items: flex-start">
               <span>(4) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.4"] ? "checked" : "" %> />
               <span>Single pane or non-tempered glass windows.</span>
             </div>
 
             <div style="display: flex; align-items: flex-start">
               <span>(5) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.5"] ? "checked" : "" %> />
               <span>Loose or missing bird stopping or roof flashing.</span>
             </div>
 
             <div style="display: flex; align-items: flex-start">
               <span>(6) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[1].userAnswer.optionsKey["2.6"] ? "checked" : "" %> />
               <span
                 >Rain gutters without metal or noncombustible gutter
                 covers.</span
@@ -297,7 +305,8 @@
               "
             >
               <span style="font-weight: bold"> (2) </span>
-              <input type="checkbox" />
+              <input type="checkbox" <%=
+              questions[2].userAnswer.optionsKey["3.1"] ? "checked" : "" %> />
               <span>
                 <span style="font-weight: bold"
                   >NO LOCAL ORDINANCE. SELLER within the previous 6 months has
@@ -326,7 +335,8 @@
           "
         >
           <span style="font-weight: bold"> (3) </span>
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[2].userAnswer.optionsKey["3.2"] ?
+          "checked" : "" %> />
           <span>
             <span style="font-weight: bold"
               >LOCAL VEGETATION MANAGEMENT ORDINANCE IN EFFECT. BUYER shall
@@ -349,7 +359,8 @@
           "
         >
           <span style="font-weight: bold"> (4) </span>
-          <input type="checkbox" />
+          <input type="checkbox" <%= questions[2].userAnswer.optionsKey["3.3"] ?
+          "checked" : "" %> />
           <span>
             <span style="font-weight: bold"
               >LOCAL VEGETATION MANAGEMENT ORDINANCE IN EFFECT. SELLER shall
@@ -411,7 +422,7 @@
         </div>
         <div style="width: 25%; display: flex">
           <div>Date:</div>
-          <div>__________</div>
+          <div><%= date %></div>
         </div>
         <div style="width: 25%; display: flex">
           <div>Buyer:</div>
@@ -419,7 +430,7 @@
         </div>
         <div style="width: 25%; display: flex">
           <div>Date:</div>
-          <div>__________</div>
+          <div><%= date %></div>
         </div>
       </div>
 
@@ -443,7 +454,7 @@
         </div>
         <div style="width: 25%; display: flex">
           <div>Date:</div>
-          <div>__________</div>
+          <div><%= date %></div>
         </div>
         <div style="width: 25%; display: flex">
           <div>Buyer:</div>
@@ -451,7 +462,7 @@
         </div>
         <div style="width: 25%; display: flex">
           <div>Date:</div>
-          <div>__________</div>
+          <div><%= date %></div>
         </div>
       </div>
     </div>

@@ -10,6 +10,14 @@ export const ToPdf = async (
   userAnswerTemplate: UserAnswerTemplate,
   questions: questionTypeInput[]
 ) => {
+  const originalDate = new Date();
+  const date =
+    originalDate.getMonth() +
+    "/" +
+    originalDate.getDate() +
+    "/" +
+    originalDate.getFullYear();
+
   ejs.renderFile(
     path.join(
       __dirname +
@@ -17,7 +25,7 @@ export const ToPdf = async (
           userAnswerTemplate.questionTemplate.uniqueName
         }.ejs`
     ),
-    { questions, userAnswerTemplate },
+    { questions, userAnswerTemplate, date },
     function (err, data) {
       if (err) {
         console.log(err);
