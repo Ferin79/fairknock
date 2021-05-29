@@ -62,7 +62,11 @@ export const createUserAnswer = async (
     }
 
     const oldData = await UserAnswerTemplate.findOne({
-      where: { property: propertyId, user: user.id },
+      where: {
+        property: propertyId,
+        user: user.id,
+        questionTemplate: questionTemplateId,
+      },
     });
     if (oldData) {
       throw new BadRequest("entry already exist");
