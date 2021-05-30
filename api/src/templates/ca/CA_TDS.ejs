@@ -83,7 +83,6 @@
           A SUBSTITUTE FOR ANY INSPECTIONS OR WARRANTIES THE PRINCIPAL(S) MAY
           WISH TO OBTAIN.
         </p>
-        </p>
       </div>
       <div class="section1">
         <div style="width: 100%; text-align: center">
@@ -573,6 +572,22 @@
     </div>
 
     <div class="page">
+      <div style="width: 100%; display: flex; justify-content: space-evenly">
+        <div style="width: 75%; display: flex">
+          <div>Property Address:</div>
+          <div style="text-decoration: underline">
+            <%= userAnswerTemplate.property.addressLine1 %> <%=
+            userAnswerTemplate.property.addressLine2 %> <%=
+            userAnswerTemplate.property.city %> <%=
+            userAnswerTemplate.property.zipCode %> <%=
+            userAnswerTemplate.property.state.name %>
+          </div>
+        </div>
+        <div style="width: 25%; display: flex">
+          <div>Date:</div>
+          <div style="text-decoration: underline"><%= date %></div>
+        </div>
+      </div>
       <div style="display: flex">
         <div>
           B. Are you (Seller) aware of any significant defects/malfunctions in
@@ -1094,10 +1109,12 @@
           <div style="text-decoration: underline"><%= date %></div>
         </div>
       </div>
+
       <div style="font-weight: bold; margin: 10px 0">
         Seller certifies that the information herein is true and correct to the
         best of the Seller's knowledge as of the date signed by the Seller.
       </div>
+
       <div
         style="
           width: 100%;
@@ -1117,6 +1134,7 @@
           <div style="text-decoration: underline"><%= date %></div>
         </div>
       </div>
+
       <div
         style="
           width: 100%;
@@ -1328,7 +1346,6 @@
         <div style="display: flex; width: 15%">
           <div>Date:</div>
           <div style="text-decoration: underline"><%= date %></div>
-        </div>
         </div>
       </div>
 

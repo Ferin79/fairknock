@@ -577,5 +577,49 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Lead Based Paint and Lead based Paint hazard disclouser, Acknowledgement and Addendum",
+    "uniqueName": "CA_LBP",
+    "state": "CA",
+    "questions": [
+      {
+        "title": "The following terms and conditions are hereby incorporated in and made a part of the",
+        "description": "",
+        "sequenceNumber": 0,
+        "questionType": "radio",
+        "isCompulsory": true,
+        "questionOptions": [
+          {
+            "key": "0.1",
+            "name": "California Residential Purchase Agreement "
+          },
+          {
+            "key": "0.2",
+            "name": "Residential Lease or Month-to-Month Rental Agreement"
+          },
+          {
+            "key": "0.3",
+            "name": "Other"
+          }
+        ]
+      },
+      {
+        "title": " I (we) have no knowledge of lead-based paint and/or lead-based paint hazards in the housing other than the following: ",
+        "description": "",
+        "sequenceNumber": 1,
+        "questionType": "text",
+        "isCompulsory": false,
+        "questionOptions": []
+      },
+      {
+        "title": "I (we) have no reports or records pertaining to lead-based paint and/or lead-based paint hazards in the housing otherthan the following, which, previously or as an attachment to this addendum, have been provided to Buyer or Tenant: ",
+        "description": "",
+        "sequenceNumber": 2,
+        "questionType": "text",
+        "isCompulsory": false,
+        "questionOptions": []
+      }
+    ]
   }
 ]

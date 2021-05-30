@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      LEAD-BASED PAINT AND LEAD-BASED PAINT HAZARDSDISCLOSURE, ACKNOWLEDGMENT
+      AND ADDENDUM
+    </title>
+    <style>
+      * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+        font: 13px "Tahoma";
+      }
+      li {
+        list-style: none;
+      }
+
+      .page {
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 0.5cm;
+        margin: 1cm auto;
+        border: 1px #d3d3d3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        .page {
+          margin: 0;
+          border: initial;
+          border-radius: initial;
+          width: initial;
+          min-height: initial;
+          box-shadow: initial;
+          background: initial;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="header" style="width: 100%; text-align: center">
+        <h4>
+          LEAD-BASED PAINT AND LEAD-BASED PAINT HAZARDSDISCLOSURE,
+          ACKNOWLEDGMENT AND ADDENDUM
+        </h4>
+        <h6>For Pre-1978 Housing Sales, Leases, or Rentals</h6>
+        <p>(C.A.R. Form FLD, Revised 11/10)</p>
+      </div>
+
+      <div>
+        The following terms and conditions are hereby incorporated in and made a
+        part of the
+        <span
+          ><input type="checkbox" <%= questions[0].userAnswer.optionsKey["0.1"]
+          ? "checked" : "" %> /></span
+        >
+        California Residential Purchase Agreement
+        <span
+          ><input type="checkbox" <%= questions[0].userAnswer.optionsKey["0.2"]
+          ? "checked" : "" %> /></span
+        >
+        Residential Lease or Month-to-Month Rental Agreement, or
+        <span
+          ><input type="checkbox" <%= questions[0].userAnswer.optionsKey["0.3"]
+          ? "checked" : "" %> /></span
+        >
+        Other: ________________
+        ______________________________________________________________________,
+        dated: <span style="text-decoration: underline"> <%= date %> </span>, on
+        property known as:
+        <span style="text-decoration: underline"
+          ><%= userAnswerTemplate.property.addressLine1 %> <%=
+          userAnswerTemplate.property.addressLine2 %> <%=
+          userAnswerTemplate.property.city %> <%=
+          userAnswerTemplate.property.zipCode %> <%=
+          userAnswerTemplate.property.state.name %></span
+        >
+        ("Property") in which ____________________________ is referred to as
+        Buyer or Tenant and
+        <span>
+          <%= userAnswerTemplate.user.firstName %> <%=
+          userAnswerTemplate.user.lastName %>
+        </span>
+        is referred to as Seller or Landlord.
+      </div>
+
+      <div>
+        <span style="font-weight: bold"
+          >LEAD WARNING STATEMENT (SALE OR PURCHASE)</span
+        >
+        Every purchaser of any interest in residential real property onwhich a
+        residential dwelling was built prior to 1978 is notified that such
+        property may present exposure to lead fromlead-based paint that may
+        place young children at risk of developing lead poisoning. Lead
+        poisoning in young children mayproduce permanent neurological damage,
+        including learning disabilities, reduced intelligent quotient,
+        behavioral problemsand impaired memory. Lead poisoning also poses a
+        particular risk to pregnant women. The seller of any interest
+        inresidential real property is required to provide the buyer with any
+        information on lead-based paint hazards from riskassessments or
+        inspections in the seller's possession and notify the buyer of any known
+        lead-based paint hazards. A riskassessment or inspection for possible
+        lead-based paint hazards is recommended prior to purchase.
+      </div>
+      <div>
+        <span style="font-weight: bold"
+          >LEAD WARNING STATEMENT (LEASE OR RENTAL)</span
+        >
+        Housing built before 1978 may contain lead-based paint. Leadfrom paint,
+        paint chips and dust can pose health hazards if not managed properly.
+        Lead exposure is especially harmful toyoung children and pregnant women.
+        Before renting pre-1978 housing, lessors must disclose the presence of
+        lead-basedpaint and/or lead-based paint hazards in the dwelling. Lessees
+        must also receive federally approved pamphlet on leadpoisoning
+        prevention.
+      </div>
+      <div>
+        <span style="font-weight: bold"
+          >EPA'S LEAD-BASED PAINT RENOVATION, REPAIR AND PAINTING RULE:</span
+        >
+        The new rule requires that contractorsand maintenance professionals
+        working in pre-1978 housing, child care facilities, and schools with
+        lead-based paint becertified; that their employees be trained; and that
+        they follow protective work practice standards. The rule applies
+        torenovation, repair, or painting activities affecting more than six
+        square feet oflead-based paint in a room or more than 20square feet of
+        lead-based paint on the exterior. Enforcement of the rule begins October
+        1, 2010. See the EPA website at www.epa.gov/lead for more information.
+      </div>
+      <div style="margin-top: 20px">
+        <div style="font-weight: bold">
+          1. SELLER'S OR LANDLORD'S DISCLOSURE
+        </div>
+        <div style="margin-left: 25px">
+          <div>
+            I (we) have no knowledge of lead-based paint and/or lead-based paint
+            hazards in the housing other than the following:
+          </div>
+          <div style="text-decoration: underline">
+            <%= questions[1].userAnswer.answer %>
+          </div>
+          <div style="margin-top: 20px">
+            I (we) have no reports or records pertaining to lead-based paint
+            and/or lead-based paint hazards in the housing otherthan the
+            following, which, previously or as an attachment to this addendum,
+            have been provided to Buyer or Tenant:
+          </div>
+          <div style="text-decoration: underline">
+            <%= questions[2].userAnswer.answer %>
+          </div>
+          <div style="margin-top: 20px">
+            I (we), previously or as an attachment to this addendum, have
+            provided Buyer or Tenant with the pamphlet“Protect YourFamily From
+            Lead In Your Home”or an equivalent pamphlet approved for use in the
+            State such as“The Homeowner'sGuide to Environmental Hazards and
+            Earthquake Safety.”
+          </div>
+          <div>
+            <span style="text-decoration: underline; margin-top: 10px"
+              >For Sales Transactions Only:</span
+            >
+            Buyer has 10 days, unless otherwise agreed in the real estate
+            purchase contract, toconduct a risk assessment or inspection for the
+            presence of lead-based paint and/or lead-based paint hazards.
+          </div>
+        </div>
+      </div>
+      <div style="font-weight: bold">
+        I (we) have reviewed the information above and certify, to the best of
+        my (our) knowledge, that the informationprovided is true and correct
+      </div>
+
+      <div style="margin-top: 25px">
+        <hr />
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 50px;
+        "
+      >
+        <div>Seller or Landlord</div>
+        <div>date</div>
+      </div>
+
+      <div style="margin-top: 20px">
+        <hr />
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 50px;
+        "
+      >
+        <div>Seller or Landlord</div>
+        <div>date</div>
+      </div>
+    </div>
+    <div class="page">
+      <div style="width: 100%; display: flex; justify-content: space-evenly">
+        <div style="width: 75%; display: flex">
+          <div>Property Address:</div>
+          <div style="text-decoration: underline">
+            <%= userAnswerTemplate.property.addressLine1 %> <%=
+            userAnswerTemplate.property.addressLine2 %> <%=
+            userAnswerTemplate.property.city %> <%=
+            userAnswerTemplate.property.zipCode %> <%=
+            userAnswerTemplate.property.state.name %>
+          </div>
+        </div>
+        <div style="width: 25%; display: flex">
+          <div>Date:</div>
+          <div style="text-decoration: underline"><%= date %></div>
+        </div>
+      </div>
+
+      <div style="font-weight: bold; margin-top: 10px">
+        2. LISTING AGENT'S ACKNOWLEDGMENT
+      </div>
+      <div style="margin: 10px 20px">
+        Agent has informed Seller or Landlord of Seller's or Landlord's
+        obligations under §42 U.S.C. 4852d and is aware ofAgent's responsibility
+        to ensure compliance.
+      </div>
+      <div style="font-weight: bold">
+        I have reviewed the information above and certify, to the best of my
+        knowledge, that the information provided istrue and correct.
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        "
+      >
+        <div>
+          <div>_____________________________________________</div>
+          <div>
+            (Please Print) Agent (Broker representing Seller or Landlord
+          </div>
+        </div>
+        <div>By</div>
+        <div>
+          <div>_____________________________________________</div>
+          <div>Associate-Licensee or Broker Signature</div>
+        </div>
+        <div>
+          <div><%= date %></div>
+          <div>Date</div>
+        </div>
+      </div>
+      <hr />
+
+      <div style="font-weight: bold; margin-top: 20px">
+        3. BUYER'S OR TENANT'S ACKNOWLEDGMENT
+      </div>
+      <div>
+        I (we) have received copies of all information listed, if any, in 1
+        above and the pamphlet “Protect Your Family From LeadIn Your Home” or an
+        equivalent pamphlet approved for use in the State such as “The
+        Homeowner's Guide toEnvironmental Hazards and Earthquake Safety.”
+        <span style="font-weight: bold"
+          >If delivery of any of the disclosures or pamphlet referenced
+          inparagraph 1 above occurs after Acceptance of an offer to purchase,
+          Buyer has a right to cancel pursuant to thepurchase contract. If you
+          wish to cancel, you must act within the prescribed period</span
+        >
+      </div>
+
+      <div style="margin-top: 20px">
+        For Sales Transactions Only: Buyer acknowledges the right for 10 days,
+        unless otherwise agreed in the real estatepurchase contract, to conduct
+        a risk assessment or inspection for the presence of lead-based paint
+        and/or lead-basedpaint hazards; OR,
+        <span><input type="checkbox" /></span> Buyer waives the right to conduct
+        a risk assessment or inspection for the presenceof lead-based paint
+        and/or lead-based paint hazards.
+      </div>
+
+      <div style="font-weight: bold; margin-top: 25px">
+        I (we) have reviewed the information above and certify, to the best of
+        my (our) knowledge, that the informationprovided is true and correct.
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 100%;
+          margin-top: 25px;
+        "
+      >
+        <div style="width: 45%">
+          <hr />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding: 0 20px;
+            "
+          >
+            <div>Buyer or Tenant</div>
+            <div>Date</div>
+          </div>
+        </div>
+
+        <div style="width: 45%">
+          <hr />
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              padding: 0 20px;
+            "
+          >
+            <div>Buyer or Tenant</div>
+            <div>Date</div>
+          </div>
+        </div>
+      </div>
+      <div style="font-weight: bold">4. COOPERATING AGENT'S ACKNOWLEDGMENT</div>
+      <div style="margin: 10px 20px">
+        Agent has informed Seller or Landlord, through the Listing Agent if the
+        property is listed, of Seller's or Landlord'sobligations under §42
+        U.S.C. 4852d and is aware of Agent's responsibility to ensure
+        compliance.
+      </div>
+      <div style="font-weight: bold">
+        I have reviewed the information above and certify, to the best of my
+        knowledge, that the information provided istrue and correct.
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 20px;
+          margin-top: 50px;
+        "
+      >
+        <div>
+          <div>_____________________________________________</div>
+          <div>Agent (Broker obtaining the Offer)</div>
+        </div>
+        <div>By</div>
+        <div>
+          <div>_____________________________________________</div>
+          <div>Associate-Licensee or Broker Signature</div>
+        </div>
+        <div>
+          <div><%= date %></div>
+          <div>Date</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

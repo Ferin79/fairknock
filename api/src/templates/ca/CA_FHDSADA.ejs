@@ -67,11 +67,22 @@
         This is an advisory, disclosure, and addendum to the Purchase Agreement,
         OR Other _____________________ (“Agreement”), dated:
         <span style="text-decoration: underline"><%= date %></span> , on
-        property known as __________________________________________________
-        (“Property”),in which __________________________________________________
-        is referred to as Buyer,and
+        property known as
+        <span style="text-decoration: underline"
+          ><%= userAnswerTemplate.property.addressLine1 %> <%=
+          userAnswerTemplate.property.addressLine2 %> <%=
+          userAnswerTemplate.property.city %> <%=
+          userAnswerTemplate.property.zipCode %> <%=
+          userAnswerTemplate.property.state.name %></span
+        >
+        (“Property”), in which
         __________________________________________________ is referred to as
-        Seller.
+        Buyer, and
+        <span>
+          <%= userAnswerTemplate.user.firstName %> <%=
+          userAnswerTemplate.user.lastName %>
+        </span>
+        is referred to as Seller.
       </div>
 
       <div style="margin-top: 10px">
