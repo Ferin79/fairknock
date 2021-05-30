@@ -1,6 +1,6 @@
 import { validate } from "class-validator";
 import { NextFunction, Response } from "express";
-import cloudinary from "src/configs/Cloudinary";
+import cloudinary from "../../../configs/Cloudinary";
 import { InputError } from "../../../errors/InputError";
 import { toMapErrors } from "../../../utils/toMapErrors";
 import { logger } from "./../../../configs/Logger";
