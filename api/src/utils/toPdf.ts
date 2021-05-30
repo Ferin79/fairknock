@@ -45,6 +45,7 @@ export const ToPdf = async (
             });
 
             userAnswerTemplate.pdfUrl = data.url;
+            userAnswerTemplate.key = data.public_id;
             userAnswerTemplate.save();
 
             fs.unlink(

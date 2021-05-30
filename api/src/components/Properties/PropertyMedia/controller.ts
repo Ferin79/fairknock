@@ -1,5 +1,6 @@
 import { validate } from "class-validator";
 import { NextFunction, Response } from "express";
+import cloudinary from "src/configs/Cloudinary";
 import { InputError } from "../../../errors/InputError";
 import { toMapErrors } from "../../../utils/toMapErrors";
 import { logger } from "./../../../configs/Logger";
@@ -40,6 +41,7 @@ export const createPropertyMedia = async (
 
       proMed.mediaType = item.mediaType;
       proMed.url = item.url;
+      proMed.key = item.key;
       proMed.description = item.description || "";
 
       const errors = await validate(proMed);
@@ -97,7 +99,7 @@ export const deletePropertyMedia = async (
     }
 
     const propertyId = req.body.propertyId || -1;
-    const data: number[] = req.body.data || [];
+    const data: PropertyMedia[] = req.body.data || [];
 
     const property = await Property.findOne(propertyId);
     if (!property) {
@@ -109,7 +111,10 @@ export const deletePropertyMedia = async (
     }
 
     data.forEach((item) => {
-      PropertyMedia.delete(item);
+      PropertyMedia.delete(item.id);
+      cloudinary.v2.uploader.destroy(item.key).catch((error) => {
+        logger.error(error.message);
+      });
     });
 
     res.status(200).json({

@@ -1,4 +1,5 @@
 import { NextFunction, Response } from "express";
+import cloudinary from "../../../configs/Cloudinary";
 import { BadRequest } from "./../../../errors/BadRequest";
 import { NotFound } from "./../../../errors/NotFound";
 import { Unathorized } from "./../../../errors/Unauthorized";
@@ -126,10 +127,26 @@ export const deleteUserAnswer = async (
   next: NextFunction
 ) => {
   try {
+    const user = req.user;
+
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
+
     const id = req.params.id;
 
-    await UserAnswerTemplate.delete(id);
+    const userTemplate = await UserAnswerTemplate.findOne(id, {
+      relations: ["user"],
+    });
 
+    if (!userTemplate) {
+      throw new NotFound("user answer template", id);
+    }
+    if (userTemplate.user.id !== user.id) {
+      throw new Unathorized();
+    }
+    cloudinary.v2.uploader.destroy(userTemplate.key);
+    await UserAnswerTemplate.delete(id);
     res.status(200).json({
       success: true,
     });

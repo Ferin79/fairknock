@@ -39,6 +39,9 @@ export class UserAnswerTemplate extends BaseEntity {
   @Column({ nullable: true })
   pdfUrl: string;
 
+  @Column({ nullable: true })
+  key: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

@@ -1,12 +1,12 @@
 import { IsNotEmpty, IsOptional, IsString, IsUrl } from "class-validator";
 import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    ManyToOne,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { IsNotBlank } from "../../../utils/IsNotBlank";
 import { Property } from "./../Property/model";
@@ -29,6 +29,12 @@ export class PropertyMedia extends BaseEntity {
   @IsUrl()
   @Column()
   url: string;
+
+  @IsNotBlank()
+  @IsNotEmpty()
+  @IsString()
+  @Column()
+  key: string;
 
   @IsOptional()
   @IsString()

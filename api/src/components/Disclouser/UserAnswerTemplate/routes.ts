@@ -5,6 +5,6 @@ import { createUserAnswer, deleteUserAnswer } from "./controller";
 const router = express.Router();
 
 router.post("/", isAuth, createUserAnswer);
-router.delete("/:id", deleteUserAnswer);
+router.delete("/:id", isAuth, deleteUserAnswer);
 
 export default router;

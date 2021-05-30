@@ -177,6 +177,11 @@ export const createProperty = async (
     const user = req.user;
     const stateId: number = req.body.stateId || -1;
     const propertyTypeId: number = req.body.propertyTypeId || -1;
+    const propertyId: number = req.body.propertyId || -1;
+
+    if (propertyId > 0) {
+      return updateProperty(req, res, next);
+    }
 
     if (!user) {
       throw new BadRequest("user id cannot be empty");
@@ -221,6 +226,71 @@ export const createProperty = async (
     property.propertyType = propertyType;
     property.invitationsAccepted = [user];
 
+    await property.save();
+
+    res.status(200).json({
+      success: true,
+      property,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const updateProperty = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = req.user;
+
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
+    const propertyId: number = req.body.propertyId || -1;
+    const stateId: number = req.body.stateId || -1;
+    const propertyTypeId: number = req.body.propertyTypeId || -1;
+
+    const property = await Property.findOne(propertyId);
+    if (!property) {
+      throw new NotFound("property", propertyId);
+    }
+
+    if (property.userId !== user.id) {
+      throw new Unathorized();
+    }
+
+    property.description = req.body.description;
+    property.addressLine1 = req.body.addressLine1;
+    property.addressLine2 = req.body.addressLine2 || "";
+    property.community = req.body.community || "";
+    property.city = req.body.city;
+    property.zipCode = req.body.zipCode;
+    property.squareFeet = req.body.squareFeet;
+    property.numberOfFloor = req.body.numberOfFloor;
+    property.yearBuilt = req.body.yearBuilt;
+    property.HOADue = req.body.HOADue;
+    property.LotSize = req.body.LotSize;
+
+    const errors = await validate(property);
+
+    if (errors.length) {
+      const { errorMap } = toMapErrors(errors);
+      throw new InputError(errorMap);
+    }
+
+    const state = await State.findOne(stateId);
+    if (!state) {
+      throw new NotFound("state", stateId);
+    }
+    const propertyType = await PropertyType.findOne(propertyTypeId);
+    if (!propertyType) {
+      throw new NotFound("Property type", propertyTypeId);
+    }
+
+    property.state = state;
+    property.propertyType = propertyType;
     await property.save();
 
     res.status(200).json({
@@ -278,6 +348,40 @@ export const updatePropertyStatus = async (
     res.status(200).json({
       success: true,
       property,
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
+export const updateInvitationCode = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = req.user;
+
+    if (!user) {
+      throw new BadRequest("user cannot be null");
+    }
+    const propertyId: number = req.body.propertyId || -1;
+
+    const property = await Property.findOne(propertyId);
+
+    if (!property) {
+      throw new NotFound("property", propertyId);
+    }
+
+    if (property.userId !== user.id) {
+      throw new Unathorized();
+    }
+
+    property.nanoId = nanoid(10);
+    await property.save();
+
+    res.status(200).json({
+      success: true,
     });
   } catch (error) {
     return next(error);

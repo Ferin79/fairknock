@@ -5,6 +5,8 @@ import {
   getInvitedProperty,
   getMyProperty,
   getPropertyById,
+  updateInvitationCode,
+  updateProperty,
   updatePropertyStatus,
 } from "./controller";
 
@@ -15,5 +17,7 @@ router.get("/invited", isAuth, getInvitedProperty);
 router.get("/:id", isAuth, getPropertyById);
 router.post("/", isAuth, createProperty);
 router.patch("/status", isAuth, updatePropertyStatus);
+router.patch("/inviteCode", isAuth, updateInvitationCode);
+router.patch("/", isAuth, updateProperty);
 
 export default router;
