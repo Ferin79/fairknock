@@ -14,6 +14,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { IsNotBlank } from "../../utils/IsNotBlank";
+import { Offer } from "../Offers/Offer/model";
 import { Property } from "../Properties/Property/model";
 import { UserAnswerTemplate } from "./../Disclouser/UserAnswerTemplate/model";
 import { Role } from "./../Role/model";
@@ -83,6 +84,9 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Property, (property) => property.user)
   properties: Property[];
+
+  @OneToMany(() => Offer, (offer) => offer.user)
+  offers: Offer[];
 
   @ManyToMany(() => Property, (property) => property.invitationsAccepted)
   propertyInvitations: Property[];

@@ -12,6 +12,7 @@ import { QuestionTemplate } from "./../QuestionTemplate/model";
 import { UserAnswer } from "./../UserAnswer/model";
 import { UserAnswerOption } from "./../UserAnswerOption/model";
 import { UserAnswerTemplate } from "./model";
+import { TemplateType } from "./templateType";
 
 export type questionTypeInput = {
   userAnswer: {
@@ -31,6 +32,8 @@ export const createUserAnswer = async (
     const user = req.user;
     const questionTemplateId: string = req.body.questionTemplateId || "";
     const propertyId: string = req.body.propertyId || "";
+    const templateType: string =
+      req.body.templateType || TemplateType.disclouser;
     const questions: questionTypeInput[] = req.body.questions || [];
 
     if (!user) {
@@ -78,6 +81,7 @@ export const createUserAnswer = async (
     userAnswerTemplate.property = property;
     userAnswerTemplate.questionTemplate = questionTemplate;
     userAnswerTemplate.user = user;
+    userAnswerTemplate.type = templateType;
     await userAnswerTemplate.save();
 
     for (let i = 0; i < questions.length; i++) {

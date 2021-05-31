@@ -10,7 +10,6 @@ export const getQuestionTemplateById = async (
 ) => {
   try {
     const stateId = req.params.id;
-    const askTo: string = (req.query.askTo as string) || "seller";
 
     const questionTemplates = await QuestionTemplate.find({
       relations: [
@@ -19,7 +18,7 @@ export const getQuestionTemplateById = async (
         "questions.questionType",
         "questions.questionOptions",
       ],
-      where: { state: stateId, askTo: askTo },
+      where: { state: stateId },
     });
 
     res.status(200).json({
@@ -38,7 +37,6 @@ export const getSpecificQuestions = async (
 ) => {
   try {
     const stateId: string = req.query.stateId as string;
-    const askTo: string = (req.query.askTo as string) || "seller";
 
     if (!stateId || !stateId.trim().length) {
       throw new BadRequest("state id cannot be null");
@@ -52,7 +50,6 @@ export const getSpecificQuestions = async (
       .leftJoinAndSelect("questions.questionOptions", "questionOptions")
       .leftJoinAndSelect("questions.questionType", "questionType")
       .where("questionTemplate.state = :stateId", { stateId })
-      .andWhere("questionTemplate.askTo = :askToId", { askToId: askTo })
       .getMany();
 
     res.status(200).json({

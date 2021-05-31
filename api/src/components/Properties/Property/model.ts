@@ -21,6 +21,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { IsNotBlank } from "../../../utils/IsNotBlank";
+import { Offer } from "../../Offers/Offer/model";
 import { State } from "../../State/model";
 import { User } from "../../User/model";
 import { PropertyOptionProperty } from "../PropertyOptionProperty/model";
@@ -136,6 +137,9 @@ export class Property extends BaseEntity {
     (userAnswerTemplate) => userAnswerTemplate.property
   )
   userAnswerTemplates: UserAnswerTemplate[];
+
+  @OneToMany(() => Offer, (offer) => offer.property)
+  offers: Offer[];
 
   @ManyToMany(() => User, (user) => user.propertyInvitations)
   @JoinTable()

@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { Question } from "../Question/model";
+import { OfferQuestion } from "./../../Offers/OfferQuestion/model";
 
 @Entity()
 export class QuestionType extends BaseEntity {
@@ -16,6 +17,9 @@ export class QuestionType extends BaseEntity {
 
   @Column({ unique: true })
   name: string;
+
+  @OneToMany(() => OfferQuestion, (offerQuestion) => offerQuestion.questionType)
+  offerQuestions: OfferQuestion[];
 
   @OneToMany(() => Question, (question) => question.questionType)
   questions: Question[];

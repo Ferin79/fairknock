@@ -10,7 +10,6 @@ import {
 } from "typeorm";
 import { State } from "../../State/model";
 import { Question } from "../Question/model";
-import { UserType } from "./../../../types/UserType";
 import { UserAnswerTemplate } from "./../UserAnswerTemplate/model";
 
 @Entity()
@@ -23,9 +22,6 @@ export class QuestionTemplate extends BaseEntity {
 
   @Column({ unique: true })
   uniqueName: string;
-
-  @Column({ default: UserType.seller })
-  askTo: string;
 
   @ManyToOne(() => State, (state) => state.questionTemplates)
   state: State;
