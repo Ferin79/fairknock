@@ -18,7 +18,13 @@ export class OfferQuestion extends BaseEntity {
   id: number;
 
   @Column()
-  question: string;
+  title: string;
+
+  @Column({ nullable: true })
+  description: string;
+
+  @Column()
+  isCompulsory: boolean;
 
   @ManyToOne(() => QuestionType, (questionType) => questionType.offerQuestions)
   questionType: QuestionType;

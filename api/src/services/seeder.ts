@@ -7,6 +7,7 @@ import { seedQuestionType } from "../components/Disclouser/QuestionType/seed";
 import { seedPropertyOptions } from "../components/Properties/PropertyOption/seed";
 import { seedPropertyType } from "../components/Properties/PropertyType/seed";
 import { seedCountry } from "./../components/Country/seed";
+import { seedOfferQuestions } from "./../components/Offers/OfferQuestion/seed";
 import { seedPropertyAdditionalCategoryItems } from "./../components/Properties/PropertyAddCategory/seed";
 import { seedRole } from "./../components/Role/seed";
 import { seedState } from "./../components/State/seed";
@@ -43,6 +44,7 @@ const runMigration = () => {
       // await seedProperty();
       await seedQuestionType();
       await seedQuestions();
+      await seedOfferQuestions();
     })
     .catch((error: Error) => {
       logger.error(error);

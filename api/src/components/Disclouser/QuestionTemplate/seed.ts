@@ -21,7 +21,6 @@ export const seedQuestions = async () => {
     questionTemplate.name = item.name;
     questionTemplate.uniqueName = item.uniqueName;
     questionTemplate.state = state;
-    questionTemplate.askTo = item.askTo;
     await questionTemplate.save();
 
     for (let j = 0; j < item.questions.length; j++) {
