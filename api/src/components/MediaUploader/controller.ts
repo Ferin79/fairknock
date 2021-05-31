@@ -134,3 +134,37 @@ export const uploadMultipleVids = async (
     return next(error);
   }
 };
+
+export const uploadSinglePdf = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    cloudinary.v2.uploader.upload_large(
+      req.file.path,
+      {
+        upload_preset: "lar4klkp",
+        format: "pdf",
+      },
+      function (error, data) {
+        fs.unlinkSync(req.file.path);
+        if (error) {
+          return res.status(500).json({
+            success: false,
+            message: "pdf Uploading Failed",
+            error,
+          });
+        }
+
+        return res.status(200).json({
+          success: true,
+          data,
+        });
+      }
+    );
+  } catch (error) {
+    fs.unlinkSync(req.file.path);
+    return next(error);
+  }
+};

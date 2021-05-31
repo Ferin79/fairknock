@@ -144,6 +144,7 @@ export const getPropertyById = async (
         "propertyAdditionalCategory"
       )
       .leftJoinAndSelect("property.invitationsAccepted", "invitationsAccepted")
+      .leftJoinAndSelect("property.userAnswerTemplates", "userAnswerTemplates")
       .where("property.id = :id", { id: propertyId })
       .andWhere("property.status != :status", {
         status: PropertyStatusType.draft,

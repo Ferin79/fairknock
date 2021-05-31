@@ -31,3 +31,17 @@ export const VideoUpload = multer({
     fileSize: 1024 * 1024 * 20,
   },
 });
+
+export const PDFUpload = multer({
+  storage: multer.diskStorage({
+    destination: function (_req, _file, cb) {
+      cb(null, path.join(__dirname + "/../uploads/pdf"));
+    },
+    filename: function (_req, _file, cb) {
+      cb(null, Date.now().toString() + ".pdf");
+    },
+  }),
+  limits: {
+    fileSize: 1024 * 1024 * 2,
+  },
+});
