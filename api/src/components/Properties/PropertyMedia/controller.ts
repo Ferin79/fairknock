@@ -65,12 +65,14 @@ export const createPropertyMedia = async (
       throw new Unathorized();
     }
 
+    const uploadedData: PropertyMedia[] = [];
     for (let i = 0; i < validData.length; i++) {
       const item = validData[i];
       item.property = property;
 
       try {
-        await item.save({ reload: false });
+        await item.save();
+        uploadedData.push(item);
       } catch (error) {
         logger.error(error);
       }
@@ -80,6 +82,7 @@ export const createPropertyMedia = async (
 
     res.status(200).json({
       success: true,
+      data: uploadedData,
     });
   } catch (error) {
     return next(error);

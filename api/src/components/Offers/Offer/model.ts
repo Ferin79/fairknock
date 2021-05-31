@@ -1,12 +1,12 @@
 import {
-  BaseEntity,
-  Column,
-  CreateDateColumn,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity,
+    ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
 } from "typeorm";
 import { Property } from "./../../Properties/Property/model";
 import { User } from "./../../User/model";
@@ -22,6 +22,12 @@ export class Offer extends BaseEntity {
 
   @Column()
   expiration: Date;
+
+  @Column({ default: true })
+  isActive: boolean;
+
+  @Column({ nullable: true })
+  pdfUrl: string;
 
   @ManyToOne(() => Property, (property) => property.offers)
   property: Property;

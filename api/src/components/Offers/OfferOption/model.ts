@@ -1,12 +1,12 @@
 import {
-  BaseEntity,
-  Column,
-  CreateDateColumn,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity,
+    ManyToOne,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
 } from "typeorm";
 import { OfferAnswerOption } from "./../OfferAnswerOption/model";
 import { OfferQuestion } from "./../OfferQuestion/model";
@@ -18,6 +18,9 @@ export class OfferOption extends BaseEntity {
 
   @Column()
   name: string;
+
+  @Column()
+  key: string;
 
   @ManyToOne(() => OfferQuestion, (offerQuestion) => offerQuestion.offerOptions)
   offerQuestion: OfferQuestion;

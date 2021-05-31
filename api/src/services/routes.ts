@@ -4,6 +4,8 @@ import QuestionTemplateRouter from "../components/Disclouser/QuestionTemplate/ro
 import QuestionTypeRouter from "../components/Disclouser/QuestionType/routes";
 import userAnswerTemplateRouter from "../components/Disclouser/UserAnswerTemplate/routes";
 import MediaUploaderRouter from "../components/MediaUploader/routes";
+import offersRouter from "../components/Offers/Offer/routes";
+import offerQuestionRouter from "../components/Offers/OfferQuestion/routes";
 import PropertyRouter from "../components/Properties/Property/routes";
 import PropertyItemRouter from "../components/Properties/PropertyAddItems/routes";
 import PropertyInvitationRouter from "../components/Properties/PropertyInvitations/routes";
@@ -33,6 +35,8 @@ router.use("/questionType", QuestionTypeRouter);
 router.use("/questionTemplate", QuestionTemplateRouter);
 router.use("/propertyInvitation", PropertyInvitationRouter);
 router.use("/userAnswerTemplate", userAnswerTemplateRouter);
+router.use("/offerQuestion", offerQuestionRouter);
+router.use("/offers", offersRouter);
 
 router.get("/healthCheck", (_req: Request, res: Response) => {
   res.status(200).json({

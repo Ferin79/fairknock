@@ -30,6 +30,7 @@ export const seedOfferQuestions = async () => {
 
       const offerOptions = new OfferOption();
       offerOptions.name = option.name;
+      offerOptions.key = option.key;
       offerOptions.offerQuestion = offerQuestion;
 
       await offerOptions.save({ reload: false });
