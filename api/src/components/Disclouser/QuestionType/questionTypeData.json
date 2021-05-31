@@ -13,5 +13,11 @@
   },
   {
     "name": "boolean"
+  },
+  {
+    "name": "number"
+  },
+  {
+    "name": "date"
   }
 ]

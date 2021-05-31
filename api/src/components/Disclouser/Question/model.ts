@@ -8,7 +8,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
-import { UserType } from "../../../types/UserType";
 import { QuestionOption } from "../OuestionOption/model";
 import { QuestionTemplate } from "../QuestionTemplate/model";
 import { QuestionType } from "../QuestionType/model";
@@ -30,9 +29,6 @@ export class Question extends BaseEntity {
 
   @Column({ nullable: true })
   fileUrl: string;
-
-  @Column({ default: UserType.seller })
-  askTo: string;
 
   @Column()
   sequenceNumber: number;

@@ -3,6 +3,7 @@
     "name": "Transfer Disclouser Statement",
     "uniqueName": "CA_TDS",
     "state": "CA",
+    "askTo": "seller",
     "questions": [
       {
         "title": "Substituted Disclosures",
@@ -513,6 +514,7 @@
     "name": "Fire Hardening and Defensible Space Advisory, Disclosure, and Addendum",
     "uniqueName": "CA_FHDSADA",
     "state": "CA",
+    "askTo": "seller",
     "questions": [
       {
         "title": "Fire Severity Zone",
@@ -582,6 +584,7 @@
     "name": "Lead Based Paint and Lead based Paint hazard disclouser, Acknowledgement and Addendum",
     "uniqueName": "CA_LBP",
     "state": "CA",
+    "askTo": "seller",
     "questions": [
       {
         "title": "The following terms and conditions are hereby incorporated in and made a part of the",
@@ -618,6 +621,129 @@
         "sequenceNumber": 2,
         "questionType": "text",
         "isCompulsory": false,
+        "questionOptions": []
+      }
+    ]
+  },
+  {
+    "name": "Make A Offer",
+    "uniqueName": "CA_OFFER",
+    "state": "CA",
+    "askTo": "buyer",
+    "questions": [
+      {
+        "title": "What is offer price?",
+        "description": "",
+        "sequenceNumber": 0,
+        "questionType": "number",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "When you want the offer to get closed?",
+        "description": "",
+        "sequenceNumber": 1,
+        "questionType": "date",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "You are buying property with",
+        "description": "",
+        "sequenceNumber": 2,
+        "questionType": "radio",
+        "isCompulsory": true,
+        "questionOptions": [
+          {
+            "key": "2.1",
+            "name": "Loan"
+          },
+          {
+            "key": "2.2",
+            "name": "Cash"
+          }
+        ]
+      },
+      {
+        "title": "How long do you need to inspect the property (In Days)?",
+        "description": "",
+        "sequenceNumber": 3,
+        "questionType": "number",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "How long do you need to confirm  the loan funds (In Days)?",
+        "description": "",
+        "sequenceNumber": 4,
+        "questionType": "number",
+        "isCompulsory": false,
+        "questionOptions": []
+      },
+      {
+        "title": "Is this offer subject to appraisal?",
+        "description": "",
+        "sequenceNumber": 5,
+        "questionType": "boolean",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "Do you have an escrow company in mind?",
+        "description": "",
+        "sequenceNumber": 6,
+        "questionType": "text",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "Will you be getting home warranty?",
+        "description": "",
+        "sequenceNumber": 7,
+        "questionType": "boolean",
+        "isCompulsory": true,
+        "questionOptions": []
+      },
+      {
+        "title": "Who is paying for transfer taxes?",
+        "description": "",
+        "sequenceNumber": 8,
+        "questionType": "radio",
+        "isCompulsory": true,
+        "questionOptions": [
+          {
+            "key": "8.1",
+            "name": "Buyer"
+          },
+          {
+            "key": "8.2",
+            "name": "Seller"
+          }
+        ]
+      },
+      {
+        "title": "Who is paying escrow fees?",
+        "description": "",
+        "sequenceNumber": 9,
+        "questionType": "radio",
+        "isCompulsory": true,
+        "questionOptions": [
+          {
+            "key": "9.1",
+            "name": "Buyer"
+          },
+          {
+            "key": "9.2",
+            "name": "Seller"
+          }
+        ]
+      },
+      {
+        "title": "Is this offer contingent on you selling your current home?",
+        "description": "",
+        "sequenceNumber": 10,
+        "questionType": "boolean",
+        "isCompulsory": true,
         "questionOptions": []
       }
     ]
