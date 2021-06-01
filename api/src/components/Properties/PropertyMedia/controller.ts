@@ -114,7 +114,7 @@ export const deletePropertyMedia = async (
     }
 
     data.forEach((item) => {
-      PropertyMedia.delete(item.id);
+      PropertyMedia.delete({ id: item.id });
       cloudinary.v2.uploader.destroy(item.key).catch((error) => {
         logger.error(error.message);
       });
