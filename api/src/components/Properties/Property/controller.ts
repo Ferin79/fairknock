@@ -75,11 +75,13 @@ export const getInvitedProperty = async (
       .createQueryBuilder("property")
       .leftJoinAndSelect("property.state", "state")
       .leftJoinAndSelect("property.propertyType", "propertyType")
+      .leftJoinAndSelect("property.user", "user")
       .leftJoinAndSelect("property.invitationsAccepted", "invitationsAccepted")
       .where("invitationsAccepted.id = :id", { id: user.id })
       .andWhere("property.status != :status", {
         status: PropertyStatusType.draft,
-      });
+      })
+      .andWhere("property.id != :myId", { myId: user.id });
 
     if (status.trim().length) {
       properties = properties.andWhere("property.status = :status", { status });
@@ -146,9 +148,6 @@ export const getPropertyById = async (
       .leftJoinAndSelect("property.invitationsAccepted", "invitationsAccepted")
       .leftJoinAndSelect("property.userAnswerTemplates", "userAnswerTemplates")
       .where("property.id = :id", { id: propertyId })
-      .andWhere("property.status != :status", {
-        status: PropertyStatusType.draft,
-      })
       .andWhere("invitationsAccepted.id = :userId", {
         userId: user.id,
       })
